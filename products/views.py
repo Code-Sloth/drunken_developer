@@ -30,7 +30,7 @@ def create(request):
     context = {
         'form': form,
     }
-    return render(request, 'products/create.html')
+    return render(request, 'products/create.html', context)
 
 
 # @login_required

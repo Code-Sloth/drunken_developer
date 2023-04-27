@@ -5,7 +5,7 @@ class ProductForm(forms.ModelForm):
 
     class Meta:
         model = Product
-        exclude = ('discounted_price',)
+        fields = ('title','content','price','discount_rate','category','alcohol_percentage','sweetness','sourness','bitterness','carbonated','volume','delivery_date','image')
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
