@@ -58,3 +58,13 @@ def comment_delete(request, product_pk, comment_pk):
     if request.user == comment.user:
         comment.delete()
     return redirect('products:detail', product_pk)
+
+
+def likes(request, product_pk):
+    # product = get_object_or_404(pk=product_pk)
+    product = Product.objects.get(pk=product_pk)
+    if product.like_users.filter(pk=request.user.pk).exists():
+        product.like_users.remove(request.user)
+    else:
+        product.like_users.add(request.user)
+    return redirect('products:detail', product_pk)
