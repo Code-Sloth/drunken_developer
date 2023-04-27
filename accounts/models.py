@@ -18,7 +18,7 @@ class User(AbstractUser):
     def profile_image_path(instance, filename):
         return f'products/{instance.pk}/{filename}'
 
-    profile_image = ProcessedImageField(
+    image = ProcessedImageField(
         upload_to=profile_image_path,
         processors=[ResizeToFill(100,100)],
         format='JPEG',
@@ -28,8 +28,8 @@ class User(AbstractUser):
     )
 
     def delete(self, *args, **kargs):
-        if self.profile_image:
-            os.remove(os.path.join(settings.MEDIA_ROOT, self.profile_image.path))
+        if self.image:
+            os.remove(os.path.join(settings.MEDIA_ROOT, self.image.path))
             dir_path = os.path.dirname(os.path.join(settings.MEDIA_ROOT, self.image.name))
             if not os.listdir(dir_path):
                 os.rmdir(dir_path)
@@ -38,7 +38,7 @@ class User(AbstractUser):
     def save(self, *args, **kwargs):
         if self.id:
             old_user = User.objects.get(id=self.id)
-            if self.profile_image != old_user.profile_image:
-                if old_user.profile_image:
-                    os.remove(os.path.join(settings.MEDIA_ROOT, old_user.profile_image.path))
+            if self.image != old_user.image:
+                if old_user.image:
+                    os.remove(os.path.join(settings.MEDIA_ROOT, old_user.image.path))
         super(User, self).save(*args, **kwargs)
