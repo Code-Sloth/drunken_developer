@@ -14,6 +14,19 @@ def index(request):
     }
     return render(request, 'products/index.html',context)
 
+
+def detail(request, product_pk):
+    product = Product.objects.get(pk=product_pk)
+    comment_form = CommentForm()
+    comments = product.comment_set.all()
+    context = {
+        'product': product,
+        'comment_form': comment_form,
+        'comments': comments,
+    }
+    return render(request, 'products/detail.html', context)
+
+
 @login_required
 def create(request):
     if request.method == 'POST':
@@ -40,6 +53,26 @@ def delete(request, product_pk):
     if request.user == product.user:
         product.delete()
     return redirect('products:index')
+
+
+@login_required
+def update(request, product_pk):
+    product = Product.objects.get(pk=product_pk)
+    if request.user == product.user:
+        if request.method == 'POST':
+            form = ProductForm(request.POST, request.FILES, instance=product)
+            if form.is_valid():
+                form.save()
+                return redirect('products:detail', product.pk)
+        else:
+            form = ProductForm(instance=product)
+    else:
+        return redirect('products:detail', product.pk)
+    context = {
+        'product' : product,
+        'form' : form,
+    }
+    return render(request, 'products/update.html', context)
 
 
 @login_required
