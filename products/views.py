@@ -3,7 +3,7 @@ from .models import Product, Comment
 from .forms import ProductForm, CommentForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, get_list_or_404
-
+from django.db.models import Q
 # Create your views here.
 
 def index(request):
@@ -78,21 +78,36 @@ def likes(request, product_pk):
         product.like_users.add(request.user)
     return redirect('products:detail', product_pk)
 
-def listing(request, category):
+def listing(request):
     # products = get_list_or_404(Product)
-    products = Product.objects.all()
-    if category == '전체상품':
-        products = products.filter(category='전체상품')
-    elif category == '전통주':
-        products = products.filter(category='전통주')
-    elif category == '맥주':
-        products = products.filter(category='맥주')
-    elif category == '위스키':
-        products = products.filter(category='위스키')
-    elif category == '와인':
-        products = products.filter(category='와인')
+    category = request.GET.get('category','')
+    alcohol_percentage = request.GET.get('dosu','')
+    sweetness = request.GET.get('sweet','')
+    sourness = request.GET.get('sourness','')
+    bitterness = request.GET.get('bitterness','')
+    carbonated = request.GET.get('carbonated','')
+    price = request.GET.get('price','')
+    if price: p1,p2 = price.split(',')
+    else: p1,p2 = 0,1000000
+
+    if category == 'all':
+        products = Product.objects.all()
+    else:
+        products = Product.objects.filter(category = category)
+
+    products = products.filter(
+        alcohol_percentage__icontains=alcohol_percentage,
+        sweetness__icontains=sweetness,
+        sourness__icontains=sourness,
+        bitterness__icontains=bitterness,
+        carbonated__icontains=carbonated,
+        discounted_price__gte=int(p1),
+        discounted_price__lte=int(p2)
+    )
+
     context = {
-        products : 'products'
+        'products': products,
+        'category': category,
     }
-    return render(request, 'products/listing.html',context)
+    return render(request, 'products/listing.html', context)
 

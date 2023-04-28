@@ -1,4 +1,127 @@
 {% extends 'base.html' %}
 
 {% block content %}
+  <h1>Listing</h1>
+
+  {% comment %} 카테고리 {% endcomment %}
+  <div>
+    <div class='container w-50'>
+      <div>
+        <a href="{% url 'products:listing'%}?category=all">전체상품</a>
+      </div>
+  
+      <div>
+        <a href="{% url 'products:listing'%}?category=전통주">전통주</a>
+      </div>
+  
+      <div>
+        <a href="{% url 'products:listing'%}?category=맥주">맥주</a>
+      </div>
+  
+      <div>
+        <a href="{% url 'products:listing'%}?category=위스키">위스키</a>
+      </div>
+  
+      <div>
+        <a href="{% url 'products:listing'%}?category=와인">와인</a>
+      </div>
+    </div>
+  </div>
+
+  <div class='container w-50'>
+    {% comment %} 필터링 {% endcomment %}
+    <div class='my-5'>
+      aa
+    </div>
+  
+    {% comment %} Section {% endcomment %}
+    <div>
+      {% for product in products %}
+        <ul>
+          <li>{{ product.title }}</li>
+          <li>{{ product.content }}</li>
+          <li>{{ product.category }}</li>
+        </ul>
+      {% endfor %}
+    </div>
+  </div>
+
+  <button class='filtering' name='dosu' value='low'>0%~10%</button>
+  <button class='filtering' name='dosu' value='middle'>10%~20%</button>
+  <button class='filtering' name='dosu' value='high'>20%~30%</button>
+  <button class='filtering' name='dosu' value='very_high'>30%이상</button>
+
+  <button class='filtering' name='sweet' value='low'>약한</button>
+  <button class='filtering' name='sweet' value='middle'>중간</button>
+  <button class='filtering' name='sweet' value='strong'>강한</button>
+
+  <button class='filtering' name='sourness' value='low'>약한</button>
+  <button class='filtering' name='sourness' value='middle'>중간</button>
+  <button class='filtering' name='sourness' value='strong'>강한</button>
+
+  <button class='filtering' name='bitterness' value='low'>약한</button>
+  <button class='filtering' name='bitterness' value='middle'>중간</button>
+  <button class='filtering' name='bitterness' value='strong'>강한</button>
+
+  <button class='filtering' name='carbonated' value='True'>있음</button>
+  <button class='filtering' name='carbonated' value='False'>없음</button>
+
+  <button class='pricing' name='price' value='0,10000'>~1만원</button>
+  <button class='pricing' name='price' value='10000,30000'>1만원~3만원</button>
+  <button class='pricing' name='price' value='30000,50000'>3만원~5만원</button>
+  <button class='pricing' name='price' value='50000,100000'>5만원~10만원</button>
+  <button class='pricing' name='price' value='100000,1000000'>10만원 이상</button>
+
+
+
+
+
+  <script>
+    const buttons = document.querySelectorAll('.filtering')
+
+    buttons.forEach((btn) => {
+
+      const btnName = btn.getAttribute('name')
+      const btnValue = btn.getAttribute('value')
+
+      btn.addEventListener('click', () => {
+        const Url = window.location.href
+
+        if (Url.includes(`&${btnName}=${btnValue}`)) {
+
+          const newUrl = Url.replace(`&${btnName}=${btnValue}`,'')
+          window.location.href = newUrl
+
+        } else {
+
+          const newUrl = `${Url}&${btnName}=${btnValue}`
+          window.location.href = newUrl
+
+        }
+        
+      })
+    })
+
+    const prices = document.querySelectorAll('.pricing')
+
+    prices.forEach((price) => {
+
+      const priceName = price.getAttribute('name')
+      const priceValue = price.getAttribute('value')
+
+      price.addEventListener('click', () => {
+        const Url = window.location.href   
+
+        let reUrl = Url.replace('&price=0,10000','')
+        reUrl = reUrl.replace('&price=10000,30000','')
+        reUrl = reUrl.replace('&price=30000,50000','')
+        reUrl = reUrl.replace('&price=50000,100000','')
+        reUrl = reUrl.replace('&price=100000,1000000','')
+
+        const newUrl = `${reUrl}&price=${priceValue}`
+        window.location.href = newUrl
+        
+      })
+    })
+  </script>
 {% endblock content %}
