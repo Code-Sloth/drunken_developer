@@ -1,38 +1,739 @@
 {% extends 'base.html' %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-KSKQcaxZl42/LlN6xSQpslFrF2ga+bvSTYcPDb6h9N6U5PL6ZuH6RW1MN7g3wnrN" crossorigin="anonymous">
-</head>
-<body>
-{% block content %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'products:listing' '전체상품' %}">전체상품</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'products:listing' '전통주' %}">전통주</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'products:listing' '맥주' %}">맥주</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'products:listing' '위스키' %}">위스키</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'products:listing' '와인' %}">와인</a>
-      </li>
-    </ul>
-  </div>
-</nav>
 
-  <hr>
+{% load static %}
+
+{% block style %}
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+{% endblock style %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+<script src="https://kit.fontawesome.com/24c831e198.js" crossorigin="anonymous"></script>
+
+<div class='index-body'>
+  {% comment %} 배너 {% endcomment %}
+  <div class='index-banner'>
+    <img class='w-100' src="{% static 'image/banner1.jpg' %}" alt="banner1">
+  </div>
+  
+  {% comment %} 카테고리 {% endcomment %}
+  <div class='container'>
+  
+    <div class='d-flex justify-content-center text-center'>
+      <div class='category-box'>
+        <a href="">
+          <div>
+            <img class='w-75' src="{% static 'image/전체.svg' %}" alt="">
+          </div>
+          <span>전체</span>
+        </a>
+      </div>
+  
+      <div class='category-box'>
+        <a href="">
+          <div>
+            <img class='w-75' src="{% static 'image/소주.png' %}" alt="전통주">
+          </div>
+          <span>전통주</span>
+        </a>
+      </div>
+  
+      <div class='category-box'>
+        <a href="">
+          <div>
+            <img class='w-75' src="{% static 'image/맥주.png' %}" alt="맥주">
+          </div>
+          <span>맥주</span>
+        </a>
+      </div>
+  
+      <div class='category-box'>
+        <a href="">
+          <div>
+            <img class='w-75' src="{% static 'image/위스키.svg' %}" alt="위스키">
+          </div>
+          <span>위스키</span>
+        </a>
+      </div>
+  
+      <div class='category-box'>
+        <a href="">
+          <div>
+            <img class='w-75' src="{% static 'image/와인.svg' %}" alt="와인">
+          </div>
+          <span>와인</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  {% comment %} QUIZ {% endcomment %}
+  <div class='index-quiz'>
+    <a href="">
+        <p>
+          <span>AI 소믈리에</span> 무슨 술을 마실지 고민되시나요?
+          <span class='m-3'>
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="arrow" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg>
+          </span>
+        </p>
+    </a>
+  </div>
+  
+  {% comment %} 지금 인기있는 주류 Top 10 {% endcomment %}
+  <div class='container mt-5'>
+    <div class='container-title'>
+      <div class='d-flex'>
+        <div class='container-title-icon'>
+          <img class='w-100' src="{% static 'image/popular.svg' %}" alt="popular">
+        </div>
+        <h4 class='fw-bold'>
+          지금 인기있는 주류 Top 10 <br>
+          <span>요즘 대세 주류를 만나보세요!</span>
+        </h4>
+      </div>
+      <a href="">
+        <p>
+          <span>더보기</span>
+          <span class='container-title-svg'>
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="arrow" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+    {% comment %} 캐러셀 {% endcomment %}
+    <div id="carouselExampleIndicators" class="carousel slide mb-5 mt-4" data-bs-wrap="false">
+  
+      <div class="carousel-indicators mb-0">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+  
+      <div class="carousel-inner">
+  
+        <div class="carousel-item active">
+  
+          <div class="d-flex justify-content-around">
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="carousel-item">
+  
+          <div class="d-flex justify-content-around">
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="carousel-item">
+          
+          <div class="d-flex justify-content-around">
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+          </div>
+  
+        </div>
+      </div>
+  
+      <button class="carousel-control carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <div>
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </div>
+        <span class="visually-hidden">Previous</span>
+      </button>
+  
+      <button class="carousel-control carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <div>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </div>
+        <span class="visually-hidden">Next</span>
+      </button>
+  
+    </div>
+  </div>
+  
+  {% comment %} 실시간 베스트 리뷰 {% endcomment %}
+  <div class='container best-container mt-5'>
+    <div class='d-flex justify-content-center'>
+      <div class='best-title'>
+        <div>
+          <img class='w-100' src="{% static 'image/확성기아이콘.png' %}" alt="확성기">
+        </div>
+        <h5>
+          "이 순간 다른 분들은"
+        </h5>
+        <p class='fw-bold'>실시간 베스트 리뷰</p>
+      </div>
+    </div>
+  
+    {% comment %} 캐러셀 {% endcomment %}
+    <div id="carouselExampleIndicators-best" class="carousel slide mb-5 mt-4">
+  
+      <div class="carousel-indicators mb-0">
+        <button type="button" data-bs-target="#carouselExampleIndicators-best" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators-best" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators-best" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+  
+      <div class="carousel-inner-best">
+  
+        <div class="carousel-item active">
+  
+          <div class="d-flex justify-content-around">
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="carousel-item">
+  
+          <div class="d-flex justify-content-around">
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="carousel-item">
+          
+          <div class="d-flex justify-content-around">
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+          </div>
+  
+        </div>
+      </div>
+  
+      <button class="carousel-control-best carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators-best" data-bs-slide="prev">
+        <div>
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </div>
+        <span class="visually-hidden">Previous</span>
+      </button>
+  
+      <button class="carousel-control-best carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators-best" data-bs-slide="next">
+        <div>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </div>
+        <span class="visually-hidden">Next</span>
+      </button>
+  
+    </div>
+  </div>
+
+  {% comment %} 가장 평가좋은 주류 Top 10 {% endcomment %}
+  <div class='container mt-5'>
+    <div class='container-title'>
+      <div class='d-flex'>
+        <div class='container-title-icon'>
+          <img class='w-100' src="{% static 'image/star.svg' %}" alt="star">
+        </div>
+        <h4 class='fw-bold'>
+          가장 평가좋은 주류 Top 10 <br>
+          <span>별점이 가장 높아요!</span>
+        </h4>
+      </div>
+      <a href="">
+        <p>
+          <span>더보기</span>
+          <span class='container-title-svg'>
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="arrow" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+    {% comment %} 캐러셀 {% endcomment %}
+    <div id="carouselExampleIndicators-star" class="carousel slide mb-5 mt-4" data-bs-wrap="false">
+  
+      <div class="carousel-indicators mb-0">
+        <button type="button" data-bs-target="#carouselExampleIndicators-star" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators-star" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators-star" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+  
+      <div class="carousel-inner">
+  
+        <div class="carousel-item active">
+  
+          <div class="d-flex justify-content-around">
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="carousel-item">
+  
+          <div class="d-flex justify-content-around">
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="carousel-item">
+          
+          <div class="d-flex justify-content-around">
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+          </div>
+  
+        </div>
+      </div>
+  
+      <button class="carousel-control carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators-star" data-bs-slide="prev">
+        <div>
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </div>
+        <span class="visually-hidden">Previous</span>
+      </button>
+  
+      <button class="carousel-control carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators-star" data-bs-slide="next">
+        <div>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </div>
+        <span class="visually-hidden">Next</span>
+      </button>
+  
+    </div>
+  </div>
+
+  {% comment %} 현재 할인중인 주류 {% endcomment %}
+  <div class='container mt-5'>
+    <div class='container-title'>
+      <div class='d-flex'>
+        <div class='container-title-icon'>
+          <img class='w-100' src="{% static 'image/sale.svg' %}" alt="sail">
+        </div>
+        <h4 class='fw-bold'>
+          현재 할인중인 주류 <br>
+          <span>저렴한 가격으로 만나보세요!</span>
+        </h4>
+      </div>
+      <a href="">
+        <p>
+          <span>더보기</span>
+          <span class='container-title-svg'>
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="arrow" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+    {% comment %} 캐러셀 {% endcomment %}
+    <div id="carouselExampleIndicators-sale" class="carousel slide mb-5 mt-4" data-bs-wrap="false">
+  
+      <div class="carousel-indicators mb-0">
+        <button type="button" data-bs-target="#carouselExampleIndicators-sale" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators-sale" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators-sale" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+  
+      <div class="carousel-inner">
+  
+        <div class="carousel-item active">
+  
+          <div class="d-flex justify-content-around">
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="carousel-item">
+  
+          <div class="d-flex justify-content-around">
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="carousel-item">
+          
+          <div class="d-flex justify-content-around">
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+            <div class='carousel-innerbox'>
+              <a href="">
+                <div class="in-img">
+                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+              </a>
+            </div>
+  
+          </div>
+  
+        </div>
+      </div>
+  
+      <button class="carousel-control carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators-sale" data-bs-slide="prev">
+        <div>
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </div>
+        <span class="visually-hidden">Previous</span>
+      </button>
+  
+      <button class="carousel-control carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators-sale" data-bs-slide="next">
+        <div>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </div>
+        <span class="visually-hidden">Next</span>
+      </button>
+  
+    </div>
+  </div>
+</div>
 {% endblock content %}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-LmC95LE02aS1L51nntYRYTbT9Q/vTAPC1HQ0/VtdHbdJ0qm2xemDjl3Vq67zFj/Z" crossorigin="anonymous"></script>
-</body>
-</html>

@@ -1,0 +1,182 @@
+.index-body {
+  font-family: 'SpoqaHanSansNeo-Regular';
+}
+
+.index-banner {
+  margin-top: 56px;
+}
+
+.container {
+  max-width: 1244px;
+  padding: 0;
+}
+
+.category-box {
+  padding: 15px 30px;
+}
+
+.category-box div {
+  width: 50px;
+}
+
+.category-box a {
+  text-decoration: none;
+  color: black;
+  opacity: 0.9;
+  font-weight: bold;
+}
+
+.category-box a:hover {
+  opacity: 1;
+}
+
+.index-quiz {
+  height: 50px;
+  background-color: rgb(0, 151, 243);
+  line-height: 50px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.index-quiz a {
+  text-decoration: none;
+}
+
+.index-quiz a:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-underline-offset: 4px;
+}
+
+.index-quiz p {
+  color: white;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.index-quiz p span {
+  font-weight: 900;
+}
+
+.container-title {
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-title-icon {
+  width: 35px;
+  margin-right: 10px;
+}
+
+.container-title h4 span {
+  font-size: 18px;
+  color: rgb(255, 180, 59);
+}
+
+.container-title a {
+  display: flex;
+  align-items: end;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.container-title a:hover {
+  opacity: 0.7;
+}
+
+.container-title p {
+  display: flex;
+  align-items: end;
+  font-size: 15px;
+  font-weight: bold;
+  color:rgb(0 122 255);
+  margin: 0;
+}
+
+.container-title-svg {
+  padding-bottom: 3px;
+}
+
+
+.in-img {
+  width: 100%;
+}
+
+.carousel-inner {
+  width: 84%;
+  height: 510px;
+  margin: auto;
+}
+
+.carousel-innerbox {
+  width: 24%;
+}
+
+.carousel-control {
+  background-color: white;
+  width: 8%;
+}
+
+.carousel-control div {
+  border: 2px solid gray;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+  font-size: 30px;
+  color: black;
+  line-height: 1.5!important;
+}
+
+.best-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.best-title div {
+  width: 40px;
+  padding: 10px 0;
+}
+
+.best-title h5 {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(255, 186, 0);
+}
+
+.best-title p {
+  font-size: 18px;
+}
+
+.carousel-inner-best {
+  width: 70%;
+  /* width: 84%; */
+  height: 490px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-control-best {
+  background-color: white;
+  width: 18%;
+  /* width: 8%; */
+}
+
+.carousel-control-best div {
+  border: 2px solid rgb(255, 186, 0);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+#carouselExampleIndicators-best .fa-chevron-left,
+#carouselExampleIndicators-best .fa-chevron-right {
+  color: rgb(255, 186, 0);
+}
