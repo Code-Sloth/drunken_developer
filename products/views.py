@@ -79,7 +79,7 @@ def update(request, product_pk):
 def comment_create(request, product_pk):
     # product = get_object_or_404(pk=product_pk)
     product = Product.objects.get(pk=product_pk)
-    comment_form = CommentForm(request.POST)
+    comment_form = CommentForm(request.POST,request.FILES)
     if comment_form.is_valid():
         comment = comment_form.save(commit=False)
         comment.product = product
@@ -90,7 +90,7 @@ def comment_create(request, product_pk):
         'product': product,
         'comment_form': comment_form,
     }
-    return render(request, 'products/detail.html', context)
+    return render(request, 'products/comment_create.html', context)
 
 
 @login_required

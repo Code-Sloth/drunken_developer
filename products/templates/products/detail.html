@@ -25,7 +25,7 @@
   <a href="{% url 'products:update' product.pk %}">수정</a>
   {% endif %}
   {% for comment in comments %}
-    {{ comment.user }} - {{ comment.content }}
+    {{ comment.user }} - {{ comment.content }} {{ comment.star }}
     {% if request.user == comment.user %}
       <form action="{% url 'products:comment_delete' product.pk comment.pk %}" method="POST">
         {% csrf_token %}
@@ -33,6 +33,7 @@
       </form>
     {% endif %}
   {% endfor %}
+  <a href="{% url 'products:comment_create' product.pk %}">댓글 작성</a>
 </div>
 {% endblock content %}
 
