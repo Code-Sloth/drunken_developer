@@ -10,7 +10,7 @@ import os
 class User(AbstractUser):
     birthday = models.DateField()
 
-    gender_Choices = (('남','남') ,('여','여'))
+    gender_Choices = (('man','남') ,('woman','여'))
     gender = models.CharField(max_length=20, choices=gender_Choices)
 
     followings = models.ManyToManyField('self', symmetrical=False,related_name='followers')

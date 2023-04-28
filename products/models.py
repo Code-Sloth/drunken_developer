@@ -18,18 +18,18 @@ class Product(models.Model):
     discount_rate = models.IntegerField(default=0)
     discounted_price = models.IntegerField()
 
-    category_Choices = (('전체상품','전체상품') ,('전통주','전통주'), ('맥주','맥주'), ('위스키','위스키'), ('와인','와인'))
+    category_Choices = (('all','전체상품') ,('traditional','전통주'), ('beer','맥주'), ('whiskey','위스키'), ('wine','와인'))
     category = models.CharField(max_length=20, choices=category_Choices)
 
     alcohol_percentage = models.IntegerField()
 
-    sweetness_Choices = (('약한','약한') ,('중간','중간'), ('강한','강한'))
+    sweetness_Choices = (('low','약한') ,('middle','중간'), ('strong','강한'))
     sweetness = models.CharField(max_length=20, choices=sweetness_Choices)
 
-    sourness_Choices = (('약한','약한') ,('중간','중간'), ('강한','강한'))
+    sourness_Choices = (('low','약한') ,('middle','중간'), ('strong','강한'))
     sourness = models.CharField(max_length=20, choices=sourness_Choices)
 
-    bitterness_Choices = (('약한','약한') ,('중간','중간'), ('강한','강한'))
+    bitterness_Choices = (('low','약한') ,('middle','중간'), ('strong','강한'))
     bitterness = models.CharField(max_length=20, choices=bitterness_Choices)
 
     carbonated = models.BooleanField()
