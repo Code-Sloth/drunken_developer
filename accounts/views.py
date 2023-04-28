@@ -10,12 +10,11 @@ from django.contrib.auth.forms import PasswordChangeForm
 
 # Create your views here.
 @login_required
-def profile(request, user_pk):
-    user = get_user_model().objects.get(pk=user_pk)
-    reviews = user.review_set.all()
+def profile(request, username):
+    User = get_user_model()
+    person = User.objects.get(username=username)
     context = {
-        'user' : user,
-        'reviews' : reviews,
+        'person': person,
     }
     return render(request, 'accounts/profile.html', context)
 
