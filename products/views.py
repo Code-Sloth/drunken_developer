@@ -78,7 +78,6 @@ def likes(request, product_pk):
         product.like_users.add(request.user)
     return redirect('products:detail', product_pk)
 
-
 def listing(request, category):
     # products = get_list_or_404(Product)
     products = Product.objects.all()
@@ -96,3 +95,4 @@ def listing(request, category):
         products : 'products'
     }
     return render(request, 'products/listing.html',context)
+
