@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm
 from django import forms
 
 class CustomUserCreationForm(UserCreationForm):
@@ -8,37 +8,75 @@ class CustomUserCreationForm(UserCreationForm):
         fields = (
             'username',
             'email',
-            'first_name',
             'last_name',
             'password1',
             'password2',
+            'birthday',
             'image',
         )
-    
-    username = forms.CharField(
-        label='아이디',
-        required=True,
+    birthday = forms.DateField(
+        widget=forms.DateInput(
+            attrs={
+                'class': 'form-control mt-1',
+                'type': 'date',
+            }
+        ),
+        required=False
     )
-    email = forms.CharField(
-        label='이메일',
-        required=True,
+    image = forms.ImageField(
+        widget=forms.ClearableFileInput(
+            attrs={
+                'class': 'form-control mt-1',
+            }
+        ),
+        required=False
     )
-
-    
     def __init__(self, *args, **kwargs):
-        super(CustomUserCreationForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
-        for fieldname in ['username', 'password1', 'password2']:
-            self.fields[fieldname].help_text = None
-
+        self.fields['username'].widget.attrs['class'] = 'form-control mt-1'
+        self.fields['username'].widget.attrs['placeholder'] = '아이디'
+        self.fields['email'].widget.attrs['class'] = 'form-control mt-1'
+        self.fields['email'].widget.attrs['placeholder'] = '이메일'
+        self.fields['last_name'].widget.attrs['class'] = 'form-control mt-1'
+        self.fields['last_name'].widget.attrs['placeholder'] = '이름'
+        self.fields['password1'].widget.attrs['class'] = 'form-control mt-1'
+        self.fields['password1'].widget.attrs['placeholder'] = '비밀번호'
+        self.fields['password2'].widget.attrs['class'] = 'form-control mt-1'
+        self.fields['password2'].widget.attrs['placeholder'] = '비밀번호 확인'
+    
 
 class CustomUserChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):
         model = get_user_model()
-        fields = ('email', 'first_name', 'last_name', 'image',)
+        fields = ('email', 'last_name', 'image',)
+
+    image = forms.ImageField(
+        widget=forms.ClearableFileInput(
+            attrs={
+                'class': 'form-control mt-1',
+            }
+        ),
+        required=False
+    )
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['email'].widget.attrs['class'] = 'form-control mt-1'
+        self.fields['email'].widget.attrs['placeholder'] = '이메일'
+        self.fields['last_name'].widget.attrs['class'] = 'form-control mt-1'
+        self.fields['last_name'].widget.attrs['placeholder'] = '이름'
+
+
+class CustomAuthenticationForm(AuthenticationForm):
+    class Meta(AuthenticationForm):
+        model = get_user_model()
+        fields = ('username','password',)
 
     def __init__(self, *args, **kwargs):
-        super(CustomUserChangeForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
-        for fieldname in ['email', 'first_name', 'last_name', 'image',]:
-            self.fields[fieldname].help_text = None
+        self.fields['username'].widget.attrs['class'] = 'form-control mt-1'
+        self.fields['username'].widget.attrs['placeholder'] = '아이디'
+        self.fields['password'].widget.attrs['class'] = 'form-control mt-1'
+        self.fields['password'].widget.attrs['placeholder'] = '비밀번호'

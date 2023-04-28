@@ -1,19 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
-  <h1>로그인</h1>
-  <form action="{% url 'accounts:login' %}" method="POST">
-    {% csrf_token %}
-    {% for field in form  %}
-    <div calss="input-group">
-        <div class="input-gourp-text" id="{{ field.auto_id }}">{{ field.label }}</div>
-        {{ field }}
+<form class="mx-auto"action="{% url 'accounts:login' %}" method="POST" style="width: 20rem; margin-top: 14rem;">
+  {% csrf_token %}
+  {% for field in form %}
+    <div class="input-group mb-3">
+     {{ field }}
     </div>
-    <br>
-    {% endfor %}
-    <div class="container-fluid d-flex justify-content-center ms-5 mt-1">
-        <input type="submit" class="btn btn-light"  role="button">
-    </div>
-</div>
+  {% endfor %}
+  <div class="d-grid">
+    <input type="submit" class="btn btn-light" value='로그인'>
+  </div>
 {% endblock content %}

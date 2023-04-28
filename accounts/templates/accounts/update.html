@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="{% url 'accounts:update' %}" method ="POST">
+<form class="account-form mx-auto" action="{% url 'accounts:update' %}" method="POST" enctype = 'multipart/form-data' style="width: 20rem; margin-top: 14rem;">
   {% csrf_token %}
-  {{ form.as_p }}
+  {% for field in form %}
+    <div class="input-group mb-3">
+      {{ field }}
+    </div>
+  {% endfor %}
+  <div class="d-grid mb-3">
+    <a class="btn btn-light mb-3" href="{% url 'accounts:change_password' %}" role="button">비밀번호 변경</a>
+    <button class="btn btn-light" type="submit">회원정보 수정</button>
+  </div>
 </form>
-<input type="submit" class="btn btn-outline-primary">
 {% endblock content %}
