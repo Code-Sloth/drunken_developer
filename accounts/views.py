@@ -98,3 +98,14 @@ def change_password(request):
         'form': form,
     }
     return render(request, 'accounts/change_password.html', context) 
+
+
+def follow(request, user_pk):
+    User = get_user_model()
+    person = User.objects.get(pk=user_pk)
+    if person != request.user:
+        if person.followers.fillter(pk=request.user.pk).exists():
+            person.followrs.remove(request.user)
+        else:
+            person.followers.add(request.user)
+    return redirect('accounts:profile', person.username)
