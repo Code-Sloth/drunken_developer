@@ -34,6 +34,15 @@ def create(request):
 
 
 # @login_required
+def delete(request, product_pk):
+    # product = get_object_or_404(pk=product_pk)
+    product = Product.objects.get(pk=product_pk)
+    if request.user == product.user:
+        product.delete()
+    return redirect('products:index')
+
+
+# @login_required
 def comment_create(request, product_pk):
     # product = get_object_or_404(pk=product_pk)
     product = Product.objects.get(pk=product_pk)
