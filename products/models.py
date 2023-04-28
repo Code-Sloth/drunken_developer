@@ -21,7 +21,7 @@ class Product(models.Model):
     category_Choices = (('all','전체상품') ,('traditional','전통주'), ('beer','맥주'), ('whiskey','위스키'), ('wine','와인'))
     category = models.CharField(max_length=20, choices=category_Choices)
 
-    alcohol_percentage = models.IntegerField()
+    alcohol_percentage = models.DecimalField(max_digits=100,decimal_places=1)
 
     sweetness_Choices = (('low','약한') ,('middle','중간'), ('strong','강한'))
     sweetness = models.CharField(max_length=20, choices=sweetness_Choices)

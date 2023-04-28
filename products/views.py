@@ -115,6 +115,8 @@ def listing(request):
     # products = get_list_or_404(Product)
     category = request.GET.get('category','')
     alcohol_percentage = request.GET.get('dosu','')
+    if alcohol_percentage: a1,a2 = alcohol_percentage.split(',')
+    else: a1,a2 = 0,100
     sweetness = request.GET.get('sweet','')
     sourness = request.GET.get('sourness','')
     bitterness = request.GET.get('bitterness','')
@@ -129,7 +131,8 @@ def listing(request):
         products = Product.objects.filter(category = category)
 
     products = products.filter(
-        alcohol_percentage__icontains=alcohol_percentage,
+        alcohol_percentage__gte=int(a1),
+        alcohol_percentage__lte=int(a2),
         sweetness__icontains=sweetness,
         sourness__icontains=sourness,
         bitterness__icontains=bitterness,
