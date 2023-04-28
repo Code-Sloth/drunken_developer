@@ -1,4 +1,39 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+<div class="container">
+  <h1>Detail</h1>
+  <p>{{ product.pk }}</p>
+  <p>{{ product.title }}</p>
+  <p>{{ product.image }}</p>
+  <p>{{ product.content }}</p>
+  <p>단맛{{ product.sweetness }}</p>
+  <p>신맛{{ product.sourness }}</p>
+  <p>쓴맛{{ product.bitterness }}</p>
+  {% if product.carbonated is True %}
+  <p>탄산 있음</p>
+  {% else %}
+  <p>탄산 없음</p>
+  {% endif %}
+  <p>용량{{ product.volume }}</p>
+  {% comment %} <a href="{% url 'products:listing' %}">목록</a> {% endcomment %}
+  {% if request.user == product.user %}
+  <form action="{% url 'products:delete' product.pk  %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="삭제">
+  </form>
+  <a href="{% url 'products:update' product.pk %}">수정</a>
+  {% endif %}
+  {% for comment in comments %}
+    {{ comment.user }} - {{ comment.content }} {{ comment.star }}
+    {% if request.user == comment.user %}
+      <form action="{% url 'products:comment_delete' product.pk comment.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="삭제">
+      </form>
+    {% endif %}
+  {% endfor %}
+  <a href="{% url 'products:comment_create' product.pk %}">댓글 작성</a>
+</div>
 {% endblock content %}
+
