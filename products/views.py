@@ -82,7 +82,7 @@ def likes(request, product_pk):
 def listing(request, category):
     # products = get_list_or_404(Product)
     products = Product.objects.all()
-    if category == '전체상품':
+    if category != '전체상품':
         products = products.filter(category='전체상품')
     elif category == '전통주':
         products = products.filter(category='전통주')
