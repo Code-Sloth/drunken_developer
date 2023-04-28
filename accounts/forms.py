@@ -23,14 +23,7 @@ class CustomUserCreationForm(UserCreationForm):
         ),
         required=False
     )
-    image = forms.ImageField(
-        widget=forms.ClearableFileInput(
-            attrs={
-                'class': 'form-control mt-1',
-            }
-        ),
-        required=False
-    )
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

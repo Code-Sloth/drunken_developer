@@ -14,14 +14,14 @@ def index(request):
     }
     return render(request, 'products/index.html',context)
 
-# @login_required
+@login_required
 def create(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            # fo = form.save(commit=False)
-            # fo.user = request.user
-            form.save()
+            fo = form.save(commit=False)
+            fo.user = request.user
+            fo.save()
             return redirect('products:index')
         else:
             print(form.errors)
@@ -33,7 +33,7 @@ def create(request):
     return render(request, 'products/create.html', context)
 
 
-# @login_required
+@login_required
 def delete(request, product_pk):
     # product = get_object_or_404(pk=product_pk)
     product = Product.objects.get(pk=product_pk)
@@ -42,7 +42,7 @@ def delete(request, product_pk):
     return redirect('products:index')
 
 
-# @login_required
+@login_required
 def comment_create(request, product_pk):
     # product = get_object_or_404(pk=product_pk)
     product = Product.objects.get(pk=product_pk)
@@ -60,7 +60,7 @@ def comment_create(request, product_pk):
     return render(request, 'products/detail.html', context)
 
 
-# @login_required
+@login_required
 def comment_delete(request, product_pk, comment_pk):
     # comment = get_object_or_404(Comment, pk=comment_pk)
     comment = Comment.objects.get(pk=comment_pk)
