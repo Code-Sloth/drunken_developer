@@ -1,6 +1,38 @@
 {% extends 'base.html' %}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-KSKQcaxZl42/LlN6xSQpslFrF2ga+bvSTYcPDb6h9N6U5PL6ZuH6RW1MN7g3wnrN" crossorigin="anonymous">
+</head>
+<body>
 {% block content %}
-  <h1>Index</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'products:listing' '전체상품' %}">전체상품</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'products:listing' '전통주' %}">전통주</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'products:listing' '맥주' %}">맥주</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'products:listing' '위스키' %}">위스키</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'products:listing' '와인' %}">와인</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
   <hr>
 {% endblock content %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-LmC95LE02aS1L51nntYRYTbT9Q/vTAPC1HQ0/VtdHbdJ0qm2xemDjl3Vq67zFj/Z" crossorigin="anonymous"></script>
+</body>
+</html>
