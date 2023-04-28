@@ -77,3 +77,22 @@ def likes(request, product_pk):
     else:
         product.like_users.add(request.user)
     return redirect('products:detail', product_pk)
+
+
+def listing(request, category):
+    # products = get_list_or_404(Product)
+    products = Product.objects.all()
+    if category == '전체상품':
+        products = products.filter(category='전체상품')
+    elif category == '전통주':
+        products = products.filter(category='전통주')
+    elif category == '맥주':
+        products = products.filter(category='맥주')
+    elif category == '위스키':
+        products = products.filter(category='위스키')
+    elif category == '와인':
+        products = products.filter(category='와인')
+    context = {
+        products : 'products'
+    }
+    return render(request, 'products/listing.html',context)
