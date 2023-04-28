@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="{% url 'accounts:update' %}" method ="POST">
+<form action="{% url 'accounts:update' %}" method ="POST" enctype = 'multipart/form-data'>
   {% csrf_token %}
   {{ form.as_p }}
 </form>

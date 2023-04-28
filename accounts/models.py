@@ -42,3 +42,6 @@ class User(AbstractUser):
                 if old_user.image:
                     os.remove(os.path.join(settings.MEDIA_ROOT, old_user.image.path))
         super(User, self).save(*args, **kwargs)
+
+    
+    followings = models.ManyToManyField('self', symmetrical=False, related_name='followers')
