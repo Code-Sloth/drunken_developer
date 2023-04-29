@@ -1,127 +1,521 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+{% endblock style %}
 
 {% block content %}
-  <h1>Listing</h1>
+<link rel="stylesheet" type="text/css" href="{% static 'css/listing.css' %}">
+
+<div class='listing-body'>
 
   {% comment %} 카테고리 {% endcomment %}
-  <div>
-    <div class='container w-50'>
-      <div>
-        <a href="{% url 'products:listing'%}?category=all">전체상품</a>
-      </div>
-  
-      <div>
-        <a href="{% url 'products:listing'%}?category=전통주">전통주</a>
-      </div>
-  
-      <div>
-        <a href="{% url 'products:listing'%}?category=맥주">맥주</a>
-      </div>
-  
-      <div>
-        <a href="{% url 'products:listing'%}?category=위스키">위스키</a>
-      </div>
-  
-      <div>
-        <a href="{% url 'products:listing'%}?category=와인">와인</a>
+  <div class='listing-header'>
+    <div class='container'>
+      <div class='listing-category'>
+        <div {% if cate == 'all' %} class='cate-div'{% endif %}>
+          <a href="{% url 'products:listing'%}?category=all">전체상품</a>
+        </div>
+    
+        <div {% if cate == 'traditional' %} class='cate-div'{% endif %}>
+          <a href="{% url 'products:listing'%}?category=traditional">전통주</a>
+        </div>
+    
+        <div {% if cate == 'beer' %} class='cate-div'{% endif %}>
+          <a href="{% url 'products:listing'%}?category=beer">맥주</a>
+        </div>
+    
+        <div {% if cate == 'whiskey' %} class='cate-div'{% endif %}>
+          <a href="{% url 'products:listing'%}?category=whiskey">위스키</a>
+        </div>
+    
+        <div {% if cate == 'wine' %} class='cate-div'{% endif %}>
+          <a href="{% url 'products:listing'%}?category=wine">와인</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class='container w-50'>
-    {% comment %} 필터링 {% endcomment %}
-    <div class='my-5'>
-      aa
+  <div class='container my-3'>
+    <div class='listing-banner'>
+      <div class='listing-banner-box'>
+        <div class='listing-banner-title'>
+          전체
+        </div>
+        <div class='listing-banner-content'>
+          모든 술을 다 볼 수 있어요.
+        </div>
+      </div>
+      <div class='listing-banner-image'>
+        <img class='w-75' src="{% static 'image/전체.svg' %}" alt="all">
+      </div>
     </div>
+  </div>
+
+  <div class='container'>
+    {% comment %} 필터링 {% endcomment %}
+    <div class='d-flex my-5'>
+
+      {% comment %} 도수 {% endcomment %}
+      <div class='filtering-btn' name='dosu'>
+        <a class='filtering-a' data-bs-toggle="collapse" href="#multiCollapseExample-dosu" role="button" aria-expanded="false" aria-controls="multiCollapseExample-dosu">
+          <div class='filtering-title'>
+            <p>도수</p>
+          </div>
+          <div class='filtering-img'>
+            <img class='w-100' src="{% static 'image/down.png' %}" alt="down">
+          </div>
+        </a>
   
-    {% comment %} Section {% endcomment %}
-    <div>
+        <div class="filtering-collapse collapse multi-collapse" id="multiCollapseExample-dosu">
+          <button class='filtering' name='dosu' value='0,10'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                0%~10%
+              </div>
+            </div>
+          </button>
+
+          <button class='filtering' name='dosu' value='10,20'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                10%~20%
+              </div>
+            </div>
+          </button>
+
+          <button class='filtering' name='dosu' value='20,30'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                20%~30%
+              </div>
+            </div>
+          </button>
+
+          <button class='filtering' name='dosu' value='30,100'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                30%이상
+              </div>
+            </div>
+          </button>
+
+        </div>
+      </div>
+
+      {% comment %} 단맛 {% endcomment %}
+      <div class='filtering-btn' name='sweet'>
+        <a class='filtering-a' data-bs-toggle="collapse" href="#multiCollapseExample-sweet" role="button" aria-expanded="false" aria-controls="multiCollapseExample-sweet">
+          <div class='filtering-title'>
+            <p>단맛</p>
+          </div>
+          <div class='filtering-img'>
+            <img class='w-100' src="{% static 'image/down.png' %}" alt="down">
+          </div>
+        </a>
+  
+        <div class="filtering-collapse collapse multi-collapse" id="multiCollapseExample-sweet">
+          <button class='filtering' name='sweet' value='low'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                약한
+              </div>
+            </div>
+          </button>
+
+          <button class='filtering' name='sweet' value='middle'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                중간
+              </div>
+            </div>
+          </button>
+
+          <button class='filtering' name='sweet' value='strong'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                강한
+              </div>
+            </div>
+          </button>
+
+        </div>
+      </div>
+
+      {% comment %} 신맛 {% endcomment %}
+      <div class='filtering-btn' name='sourness'>
+        <a class='filtering-a' data-bs-toggle="collapse" href="#multiCollapseExample-sourness" role="button" aria-expanded="false" aria-controls="multiCollapseExample-sourness">
+          <div class='filtering-title'>
+            <p>신맛</p>
+          </div>
+          <div class='filtering-img'>
+            <img class='w-100' src="{% static 'image/down.png' %}" alt="down">
+          </div>
+        </a>
+  
+        <div class="filtering-collapse collapse multi-collapse" id="multiCollapseExample-sourness">
+          <button class='filtering' name='sourness' value='low'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                약한
+              </div>
+            </div>
+          </button>
+
+          <button class='filtering' name='sourness' value='middle'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                중간
+              </div>
+            </div>
+          </button>
+
+          <button class='filtering' name='sourness' value='strong'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                강한
+              </div>
+            </div>
+          </button>
+
+        </div>
+      </div>
+
+      {% comment %} 쓴맛 {% endcomment %}
+      <div class='filtering-btn' name='bitterness'>
+        <a class='filtering-a' data-bs-toggle="collapse" href="#multiCollapseExample-bitterness" role="button" aria-expanded="false" aria-controls="multiCollapseExample-bitterness">
+          <div class='filtering-title'>
+            <p>쓴맛</p>
+          </div>
+          <div class='filtering-img'>
+            <img class='w-100' src="{% static 'image/down.png' %}" alt="down">
+          </div>
+        </a>
+  
+        <div class="filtering-collapse collapse multi-collapse" id="multiCollapseExample-bitterness">
+          <button class='filtering' name='bitterness' value='low'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                약한
+              </div>
+            </div>
+          </button>
+
+          <button class='filtering' name='bitterness' value='middle'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                중간
+              </div>
+            </div>
+          </button>
+
+          <button class='filtering' name='bitterness' value='strong'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                강한
+              </div>
+            </div>
+          </button>
+
+        </div>
+      </div>
+
+      {% comment %} 탄산 {% endcomment %}
+      <div class='filtering-btn' name='carbonated'>
+        <a class='filtering-a' data-bs-toggle="collapse" href="#multiCollapseExample-carbonated" role="button" aria-expanded="false" aria-controls="multiCollapseExample-carbonated">
+          <div class='filtering-title'>
+            <p>탄산</p>
+          </div>
+          <div class='filtering-img'>
+            <img class='w-100' src="{% static 'image/down.png' %}" alt="down">
+          </div>
+        </a>
+  
+        <div class="filtering-collapse collapse multi-collapse" id="multiCollapseExample-carbonated">
+          <button class='filtering' name='carbonated' value='True'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                있음
+              </div>
+            </div>
+          </button>
+
+          <button class='filtering' name='carbonated' value='False'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                없음
+              </div>
+            </div>
+          </button>
+
+        </div>
+      </div>
+
+      {% comment %} 가격 {% endcomment %}
+      <div class='filtering-btn' name='price' style='margin:0;'>
+        <a class='filtering-a' data-bs-toggle="collapse" href="#multiCollapseExample-price" role="button" aria-expanded="false" aria-controls="multiCollapseExample-price">
+          <div class='filtering-title'>
+            <p>가격</p>
+          </div>
+          <div class='filtering-img'>
+            <img class='w-100' src="{% static 'image/down.png' %}" alt="down">
+          </div>
+        </a>
+  
+        <div class="filtering-collapse collapse multi-collapse" id="multiCollapseExample-price">
+
+          <div class='price-search'>
+            <input placeholder="0원" class='price-number1' type="text">
+            <span>~</span>
+            <input placeholder="100,000원" class='price-number2' type="text">
+            <button class='price-search-submit'>적용</button>
+          </div>
+
+          <button class='filtering pricing' name='price' value='0,10000'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                ~ 1만원
+              </div>
+            </div>
+          </button>
+  
+          <button class='filtering pricing' name='price' value='10000,30000'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                1만원 ~ 3만원
+              </div>
+            </div>
+          </button>
+  
+          <button class='filtering pricing' name='price' value='30000,50000'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                3만원 ~ 5만원
+              </div>
+            </div>
+          </button>
+  
+          <button class='filtering pricing' name='price' value='50000,100000'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                5만원 ~ 10만원
+              </div>
+            </div>
+          </button>
+  
+          <button class='filtering pricing' name='price' value='100000,1000000'>
+            <div class='filtering-collapse-box'>
+              <div class='filtering-check'>
+                <img class='w-100' src="{% static 'image/no-check.png' %}" alt="no-check">
+              </div>
+              <div class='filtering-text'>
+                10만원 이상
+              </div>
+            </div>
+          </button>
+  
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  {% comment %} 필터링 리스트 {% endcomment %}
+  {% comment %} <div class='container'>
+    <div class='filtering-list'>
+      <hr class='hr'>
+
+      <div class='filtering-parent d-flex flex-wrap'>
+
+        <button class='filtering-list-box'>
+          <div class='filtering-list-text'>
+            신맛 중간
+          </div>
+          <div class='filtering-list-img'>
+            <img class='w-100' src="{% static 'image/x.svg' %}" alt="x">
+          </div>
+        </button>
+
+        <button class='filtering-list-box'>
+          <div class='filtering-list-text'>
+            신맛 중간
+          </div>
+          <div class='filtering-list-img'>
+            <img class='w-100' src="{% static 'image/x.svg' %}" alt="x">
+          </div>
+        </button>
+
+      </div>
+    </div>
+  </div> {% endcomment %}
+
+  <div class='listing-middle'></div>  
+
+  {% comment %} Section {% endcomment %}
+  <div class='container mt-5'>
+
+    <div class='product-header'>
+      <div>
+        <span class='fw-bold'>{{ products.count }}</span> 건의 결과가 있어요
+      </div>
+
+      <div class='product-sort'>
+        <a class='sort-a' data-bs-toggle="collapse" href="#multiCollapseExample-sort" role="button" aria-expanded="false" aria-controls="multiCollapseExample-sort">
+          <div class='sort-title'>
+            추천순
+          </div>
+
+          <div class='sort-down'>
+            <img class='w-100' src="{% static 'image/fullright.svg' %}" alt="fullright">
+          </div>
+        </a>
+
+        <div class="sort-collapse collapse multi-collapse" id="multiCollapseExample-sort">
+
+          <div>
+            <button class='sort-btn' value='recommend' type="submit">추천순</button>
+          </div>
+
+          <div>
+            <button class='sort-btn' value='recent' type="submit">최신순</button>
+          </div>
+
+          <div>
+            <button class="sort-btn" value='rating' type="submit">평점순</button>
+          </div>
+
+          <div>
+            <button class="sort-btn" value='review' type="submit">리뷰많은순</button>
+          </div>
+
+          <div>
+            <button class="sort-btn" value='high' type="submit">높은가격순</button>
+          </div>
+
+          <div>
+            <button class="sort-btn" value='low' type="submit">낮은가격순</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class='listing-section'>
       {% for product in products %}
-        <ul>
-          <li>{{ product.title }}</li>
-          <li>{{ product.content }}</li>
-          <li>{{ product.category }}</li>
-        </ul>
+
+        <div class='listing-product'>
+          <a class='listing-product-a' href="{% url 'products:detail' product.pk %}">
+            {% if product.image %}
+              <div class='product-img'>
+                <img class='w-100 rounded' src="{{ product.image.url }}" alt="{{ product.title }}">
+              </div>
+            {% endif %}
+            
+            <div class='product-title'>
+              {{ product.title }}
+            </div>
+
+            {% if product.discount_rate %}
+              <div class='product-price'>
+                {{ product.price }}원
+              </div>
+            {% else %}
+              <div class='product-price'></div>
+            {% endif %}
+
+            <div>
+              {{ product.discounted_price }}원
+            </div>
+
+            <div class='product-star-comment'>
+              <div class='product-star'>
+                <img class='h-100' src="{% static 'image/star1.png' %}" alt="star1">
+                <div>
+                  4.7
+                </div>
+              </div>
+
+              <div class='product-comment'>
+                리뷰 {{ product.comment_set.count }}
+              </div>
+            </div>
+            
+            <div class='product-content'>
+              {{ product.content }}
+            </div>
+          </a>
+        </div>
+        
       {% endfor %}
     </div>
   </div>
-
-  <button class='filtering' name='dosu' value='0,10'>0%~10%</button>
-  <button class='filtering' name='dosu' value='10,20'>10%~20%</button>
-  <button class='filtering' name='dosu' value='20,30'>20%~30%</button>
-  <button class='filtering' name='dosu' value='30,100'>30%이상</button>
-
-  <button class='filtering' name='sweet' value='low'>약한</button>
-  <button class='filtering' name='sweet' value='middle'>중간</button>
-  <button class='filtering' name='sweet' value='strong'>강한</button>
-
-  <button class='filtering' name='sourness' value='low'>약한</button>
-  <button class='filtering' name='sourness' value='middle'>중간</button>
-  <button class='filtering' name='sourness' value='strong'>강한</button>
-
-  <button class='filtering' name='bitterness' value='low'>약한</button>
-  <button class='filtering' name='bitterness' value='middle'>중간</button>
-  <button class='filtering' name='bitterness' value='strong'>강한</button>
-
-  <button class='filtering' name='carbonated' value='True'>있음</button>
-  <button class='filtering' name='carbonated' value='False'>없음</button>
-
-  <button class='pricing' name='price' value='0,10000'>~1만원</button>
-  <button class='pricing' name='price' value='10000,30000'>1만원~3만원</button>
-  <button class='pricing' name='price' value='30000,50000'>3만원~5만원</button>
-  <button class='pricing' name='price' value='50000,100000'>5만원~10만원</button>
-  <button class='pricing' name='price' value='100000,1000000'>10만원 이상</button>
+</div>
 
 
-
-
-
-  <script>
-    const buttons = document.querySelectorAll('.filtering')
-
-    buttons.forEach((btn) => {
-
-      const btnName = btn.getAttribute('name')
-      const btnValue = btn.getAttribute('value')
-
-      btn.addEventListener('click', () => {
-        const Url = window.location.href
-
-        if (Url.includes(`&${btnName}=${btnValue}`)) {
-
-          const newUrl = Url.replace(`&${btnName}=${btnValue}`,'')
-          window.location.href = newUrl
-
-        } else {
-
-          const newUrl = `${Url}&${btnName}=${btnValue}`
-          window.location.href = newUrl
-
-        }
-        
-      })
-    })
-
-    const prices = document.querySelectorAll('.pricing')
-
-    prices.forEach((price) => {
-
-      const priceName = price.getAttribute('name')
-      const priceValue = price.getAttribute('value')
-
-      price.addEventListener('click', () => {
-        const Url = window.location.href   
-
-        let reUrl = Url.replace('&price=0,10000','')
-        reUrl = reUrl.replace('&price=10000,30000','')
-        reUrl = reUrl.replace('&price=30000,50000','')
-        reUrl = reUrl.replace('&price=50000,100000','')
-        reUrl = reUrl.replace('&price=100000,1000000','')
-
-        const newUrl = `${reUrl}&price=${priceValue}`
-        window.location.href = newUrl
-        
-      })
-    })
-  </script>
+<script src="{% static 'js/listing.js' %}"></script>
 {% endblock content %}

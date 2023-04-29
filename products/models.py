@@ -42,7 +42,7 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def product_image_path(instance, filename):
-        return f'products/{instance.pk}/{filename}'
+        return f'products/{instance.title}/{filename}'
     
     image = ProcessedImageField(
         upload_to=product_image_path,
