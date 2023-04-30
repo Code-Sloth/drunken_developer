@@ -1,39 +1,229 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
+{% load customtags %}
+
+{% block style %}
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+{% endblock style %}
+
 {% block content %}
-<div class="container">
-  <h1>Detail</h1>
-  <p>{{ product.pk }}</p>
-  <p>{{ product.title }}</p>
-  <p>{{ product.image }}</p>
-  <p>{{ product.content }}</p>
-  <p>단맛{{ product.sweetness }}</p>
-  <p>신맛{{ product.sourness }}</p>
-  <p>쓴맛{{ product.bitterness }}</p>
-  {% if product.carbonated is True %}
-  <p>탄산 있음</p>
-  {% else %}
-  <p>탄산 없음</p>
-  {% endif %}
-  <p>용량{{ product.volume }}</p>
-  {% comment %} <a href="{% url 'products:listing' %}">목록</a> {% endcomment %}
-  {% if request.user == product.user %}
-  <form action="{% url 'products:delete' product.pk  %}" method="POST">
-    {% csrf_token %}
-    <input type="submit" value="삭제">
-  </form>
-  <a href="{% url 'products:update' product.pk %}">수정</a>
-  {% endif %}
-  {% for comment in comments %}
-    {{ comment.user }} - {{ comment.content }} {{ comment.star }}
-    {% if request.user == comment.user %}
-      <form action="{% url 'products:comment_delete' product.pk comment.pk %}" method="POST">
+<link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+
+<div class='detail-body'>
+
+  <div class="container">
+    {% comment %} 상품 메인 {% endcomment %}
+    <div class='detail-mainbox'>
+      {% if product.image %}
+        <div class='product-img'>
+          <img class='w-100' src="{{ product.image.url }}" alt="{{ product.title }}">
+        </div>
+      {% endif %}
+  
+      <div>
+        <div class='product-title'>
+          {{ product.title }}
+        </div>
+  
+        <div class='product-content'>
+          {{ product.content }}
+        </div>
+
+        <div class='detail-star'>
+          <div class='star-box'>
+            <div class='star-gray'>
+              <img src="{% static 'image/product_graystar.png' %}" alt="graystar">
+            </div>
+            <div class='star-star' style='width: {{ product.star_multiple }}%;'>
+              <img src="{% static 'image/product_star.png' %}" alt="star">
+            </div>
+          </div>
+
+          <div class='star-score'>
+            {{ product.star }}
+          </div>
+
+          <div class='star-comment'>
+            [{{ product.comments.count }} 리뷰]
+          </div>
+        </div>
+
+        <div class='detail-content'>
+          <div>종류: {{ product.category|string_kr }}</div>
+          <div>도수: {{ product.alcohol_percentage }}%</div>
+          <div>용량: {{ product.volume }}ml</div>
+          <div class='content-delivery'>배송기간: {{ product.delivery_date }}일</div>
+        </div>
+
+        <div class='detail-sale'>
+          판매가격:
+        </div>
+        
+        {% if product.discount_rate %}
+          <div class='detail-price'>
+            {{ product.price|intcomma }}원
+          </div>
+        {% endif %}
+
+        <div class='detail-discounted-price'>
+          {{ product.discounted_price|intcomma }}원
+        </div>
+
+      </div>
+
+    </div>
+
+    {% comment %} 리모컨 {% endcomment %}
+    <div class='product-sidebar'>
+      <div>
+        <div>옵션</div>
+        <select class='form-select' name="option" id="product-option">
+          <option value="">어떤 옵션을 원하시나요?</option>
+          <option value="">{{ product.title }}</option>
+        </select>
+      </div>
+
+      <div>
+        <div>수량</div>
+        <div class='sidebar-numbox'>
+          <div class='sidebar-minus'>
+            <button>
+              <img class='w-100' src="{% static 'image/minus.png' %}" alt="minus">
+            </button>
+          </div>
+
+          <div class='sidebar-number'>
+            1
+          </div>
+
+          <div class='sidebar-plus'>
+            <button>
+              <img class='w-100' src="{% static 'image/plus.png' %}" alt="plus">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div>총 상품가격</div>
+        <div class='sidebar-price'>
+          {{ product.discounted_price|intcomma }}원
+        </div>
+      </div>
+
+      <form class='sidebar-interest' action="{% url 'products:likes' product.pk %}" method="POST">
         {% csrf_token %}
-        <input type="submit" value="삭제">
+        <button type='sutmit'>
+          <div class='sidebar-interest-img'>
+            <img class='w-100' src="{% static 'image/interest.png' %}" alt="">
+          </div>
+          <div>관심상품</div>
+        </button>
       </form>
-    {% endif %}
-  {% endfor %}
-  <a href="{% url 'products:comment_create' product.pk %}">댓글 작성</a>
+
+      <button type='submit' class='sidebar-buy'>
+        바로 구매하기
+      </button>
+    </div>
+
+    {% comment %} 댓글 sort {% endcomment %}
+    <div class='comment-create'>
+      <div class='comment-create-review'>
+        <a href="{% url 'products:comment_create' product.pk %}">
+          <div>
+            <img class='w-100' src="{% static 'image/write.svg' %}" alt="write">
+          </div>
+          <span>리뷰 작성하기</span>
+        </a>
+      </div>
+
+      <div class='comment-create-sort'>
+        <a data-bs-toggle="collapse" href="#multiCollapseExample-comment" role="button" aria-expanded="false" aria-controls="multiCollapseExample-comment">
+          <div class='d-flex'>
+            <div class='comment-sort-title'>최신순</div>
+            <div class='comment-sort-img'>
+              <img class='w-100' src="{% static 'image/down.png' %}" alt="down">
+            </div>
+          </div>
+        </a>
+
+        <div class="comment-collapse collapse multi-collapse" id="multiCollapseExample-comment">
+
+          <div>
+            <button value='recent' type='submit'>최신순</button>
+          </div>
+          <div>
+            <button value='high' type='submit'>평점높은순</button>
+          </div>
+          <div>
+            <button value='low' type='submit'>평점낮은순</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    {% comment %} 댓글 상세 {% endcomment %}
+    <div class='detail-comment'>
+      {% for comment in comments %}
+        <div class='detail-comment-allbox'>
+          <div class='comment-header'>
+            <div class='comment-header-title'>
+              {{ comment.user.last_name }}
+            </div>
+
+            <div class='comment-header-right'>
+              <div class='star-box comment-starbox'>
+                <div class='star-gray'>
+                  <img class='w-100' src="{% static 'image/product_graystar.png' %}" alt="graystar">
+                </div>
+                <div class='star-star comment-star-star' style='width: {{ comment.star_multiple }}%;'>
+                  <img src="{% static 'image/product_star.png' %}" alt="star">
+                </div>
+              </div>
+
+              <div class='comment-star-count'>
+                {{ comment.star }}
+              </div>
+
+              <div class='comment-time'>
+                {{ comment.created_time }}
+              </div>
+
+              {% if request.user == comment.user %}
+                <form action="{% url 'products:comment_delete' product.pk comment.pk %}" method="POST">
+                  {% csrf_token %}
+                  <button class='comment-delete' class='btn btn-outline-secondary' type='submit'>삭제</button>
+                </form>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class='comment-contentbox'>
+            <div class='comment-content'>
+              {{ comment.content }}
+            </div>
+
+            {% if comment.image %}
+              <div class='comment-img'>
+                <img class='h-100' src="{{ comment.image.url }}" alt="{{ comment.title }}">
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  
+  </div>
+
 </div>
+
+<script src="{% static 'js/detail.js' %}"></script>
 {% endblock content %}
 

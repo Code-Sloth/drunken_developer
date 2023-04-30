@@ -1,0 +1,365 @@
+.detail-body {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  position: relative;
+}
+
+.detail-mainbox {
+  display: flex;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgb(150 150 150);
+}
+
+.container {
+  max-width: 1244px;
+  padding: 0 90px;
+  padding-right: 454px;
+  margin-top: 76px;
+}
+
+.product-img {
+  width: 390px;
+  padding-right: 30px;
+}
+
+.product-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(112, 112, 112);
+}
+
+.product-content {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(178, 178, 178);
+}
+
+/* 스타, 리뷰 */
+.detail-star {
+  display: flex;
+  align-items: end;
+  padding: 10px 0;
+}
+
+.star-box {
+  position: relative;
+  width: 140px;
+}
+
+.star-star {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+.star-score {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.star-comment {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(0, 151, 243);
+}
+
+.detail-content {
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+
+.detail-content div {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(90 90 90);
+  margin-bottom: 10px;
+}
+
+.content-delivery {
+  color: rgb(178 178 178)!important;
+}
+
+.detail-price {
+  height: 18px;
+  font-size: 16px;
+  color: rgb(178, 178, 178);
+  text-decoration: line-through;
+}
+
+.detail-sale {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(112, 112, 112);
+}
+
+.detail-discounted-price {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(112, 112, 112);
+}
+
+.detail-category span {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(0, 151, 243);
+  margin-right: 10px;
+}
+
+/* 댓글 */
+.detail-comment-allbox {
+  margin-bottom: 20px;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(244, 244, 244);
+  padding: 12.4px 30px;
+  height: 45px;
+  border-radius: 10px;
+}
+
+.comment-header-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: rgb(112, 112, 112);
+  padding-top: 5px;
+}
+
+.comment-header-right {
+  display: flex;
+}
+
+.comment-starbox {
+  width: 75px;
+}
+
+.comment-star-star img {
+  width: 75px;
+}
+
+.comment-star-count {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 30px;
+  padding: 0 10px;
+  padding-left: 5px;
+}
+
+.comment-time {
+  font-size: 13px;
+  color: rgb(112, 112, 112);
+  line-height: 30px;
+}
+
+.comment-contentbox {
+  padding: 20px 25px;
+}
+
+.comment-content {
+  max-width: 600px;
+  font-size: 12px;
+  color: rgb(112, 112, 112);
+}
+
+.comment-img {
+  height: 100px;
+  margin: 20px 0;
+}
+
+.comment-create {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.comment-create-sort {
+  position: relative;
+  font-size: 13px;
+}
+
+.comment-create-review a {
+  display: flex;
+  opacity: 0.8;
+  color: black;
+  text-decoration: none;
+}
+
+.comment-create-review a:hover {
+  opacity: 1;
+  color: rgb(240, 180, 59);
+  text-decoration: underline;
+}
+
+.comment-create-review div {
+  width: 23px;
+}
+
+.comment-create-review span {
+  line-height: 25px;
+  margin-left: 5px;
+}
+
+.comment-create-sort a {
+  color: black;
+  text-decoration: none;
+}
+
+.comment-sort-img {
+  width: 15px;
+  margin-left: 5px;
+}
+
+.comment-collapse {
+  position: absolute;
+  text-align: center;
+  left: 5px;
+  top: 25px;
+  width: 100px;
+  padding: 5px 2px;
+  background-color: white;
+  box-shadow: 1px 7px 15px 4px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  z-index: 5;
+}
+
+.comment-collapse button {
+  background-color: white;
+  border: 0;
+  margin: 5px 0;
+}
+
+.comment-collapse button:hover {
+  text-decoration: underline;
+  color: rgb(240, 180, 59);
+}
+
+.comment-delete {
+  color: rgb(112, 112, 112);
+  background-color: rgb(244, 244, 244);
+  font-size: 12px;
+  border: 0;
+  line-height: 30px;
+  opacity: 0.8;
+  margin-left: 5px;
+}
+
+.comment-delete:hover {
+  color: black;
+  opacity: 1;
+}
+
+/* 리모콘 */
+.product-sidebar {
+  position: fixed;
+  top: 110px;
+  right: 300px;
+  width: 300px;
+  padding: 30px 10px;
+  border: 1px solid rgb(230 230 230);
+  border-radius: 10px;
+}
+
+.product-sidebar select {
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: lighter;
+  opacity: 0.8;
+  margin: 10px 0;
+  margin-bottom: 15px;
+}
+
+.sidebar-numbox {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgb(230 230 230);
+  border-radius: 5px;
+  margin: 10px 0;
+  margin-bottom: 15px;
+}
+
+.sidebar-minus, .sidebar-plus {
+  flex-grow: 1;
+}
+
+.sidebar-minus {
+  display: flex;
+  justify-content: end;
+}
+
+.sidebar-minus button, .sidebar-plus button {
+  width: 24px;
+  background-color: white;
+  padding: 0;
+  border: 0;
+}
+
+.sidebar-number {
+  width: 118px;
+  height: 43px;
+  margin: 0 28px;
+  line-height: 43px;
+  color: rgb(110 110 110);
+  border-right: 1px solid rgb(230 230 230);
+  border-left: 1px solid rgb(230 230 230);
+}
+
+.sidebar-price {
+  border: 1px solid rgb(230 230 230);
+  border-radius: 5px;
+  height: 43px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 13px;
+  font-weight: bold;
+  color: rgb(80 80 80);
+  margin: 10px 0;
+  margin-bottom: 50px;
+}
+
+.sidebar-interest button {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border: 1px solid rgb(230 230 230);
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.sidebar-interest button:hover {
+  background-color: rgb(250 250 250);
+  opacity: 1;
+}
+
+.sidebar-interest-img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.sidebar-buy {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  background-color: rgb(0, 150, 243);
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin-top: 12px;
+}
+
+.sidebar-buy:hover {
+  background-color: rgb(14, 114, 201);
+}

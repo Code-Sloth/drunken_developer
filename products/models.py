@@ -60,6 +60,10 @@ class Product(models.Model):
     def save(self,*args, **kargs):
         self.discounted_price = self.calculate_discount_price()
         super().save(*args, **kargs)
+    
+    @property
+    def star_multiple(self):
+        return self.star*20
 
 class Comment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -84,7 +88,7 @@ class Comment(models.Model):
     star = models.IntegerField(default=5, validators=[MinValueValidator(1), MaxValueValidator(5)])
 
     @property
-    def created_string(self):
+    def created_time(self):
         time = datetime.now(tz=timezone.utc) - self.created_at
 
         if time < timedelta(minutes=1):
@@ -98,3 +102,12 @@ class Comment(models.Model):
             return str(time.days) + '일 전'
         else:
             return self.strftime('%Y-%m-%d')
+
+    @property
+    def star_multiple(self):
+        return self.star*20
+    
+    def save(self, *args, **kwargs):
+        self.product.star = (self.product.star * self.product.comments.count() + self.star) / (self.product.comments.count() + 1)
+        self.product.save()
+        super(Comment, self).save(*args, **kwargs)
