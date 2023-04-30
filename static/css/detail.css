@@ -256,7 +256,7 @@
 .product-sidebar {
   position: fixed;
   top: 110px;
-  right: 300px;
+  right: 420px;
   width: 300px;
   padding: 30px 10px;
   border: 1px solid rgb(230 230 230);
@@ -291,6 +291,11 @@
 .sidebar-minus {
   display: flex;
   justify-content: end;
+}
+
+.sidebar-plus {
+  display: flex;
+  justify-content: start;
 }
 
 .sidebar-minus button, .sidebar-plus button {
