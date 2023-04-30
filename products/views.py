@@ -4,6 +4,8 @@ from .forms import ProductForm, CommentForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.db.models import Q
+from django.db.models import Count
+
 # Create your views here.
 
 def index(request):
@@ -18,7 +20,12 @@ def index(request):
 def detail(request, product_pk):
     product = Product.objects.get(pk=product_pk)
     comment_form = CommentForm()
-    comments = product.comments.all()
+    comments = product.comments.all().order_by('-pk')
+
+    sort = request.GET.get('sort','')
+    if sort:
+        comments = comment_sort(comments, sort)
+
     context = {
         'product': product,
         'comment_form': comment_form,
@@ -26,6 +33,13 @@ def detail(request, product_pk):
     }
     return render(request, 'products/detail.html', context)
 
+def comment_sort(queryset, s):
+    if s == 'recent':
+        return queryset.order_by('-pk')
+    elif s == 'high':
+        return queryset.order_by('-star')
+    else:
+        return queryset.order_by('star')
 
 @login_required
 def create(request):
@@ -110,8 +124,6 @@ def likes(request, product_pk):
     else:
         product.like_users.add(request.user)
     return redirect('products:detail', product_pk)
-
-from django.db.models import Count
 
 def listing(request):
     # products = get_list_or_404(Product)
