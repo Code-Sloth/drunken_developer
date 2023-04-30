@@ -18,7 +18,7 @@ def index(request):
 def detail(request, product_pk):
     product = Product.objects.get(pk=product_pk)
     comment_form = CommentForm()
-    comments = product.comment_set.all()
+    comments = product.comments.all()
     context = {
         'product': product,
         'comment_form': comment_form,
@@ -169,10 +169,9 @@ def func_sort(queryset, s):
     elif s == 'recent':
         return queryset.order_by('-pk')
     elif s == 'rating':
-        return queryset # -star로 수정해야 함
+        return queryset.order_by('-star')
     elif s == 'review':
-        return queryset # 모델 relatedname comments로 수정
-        # return queryset.annotate(num_comments=Count('comments')).order_by('-num_comments')
+        return queryset.annotate(num_comments=Count('comments')).order_by('-num_comments')
     elif s == 'high':
         return queryset.order_by('-discounted_price')
     elif s == 'low':

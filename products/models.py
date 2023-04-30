@@ -14,6 +14,7 @@ class Product(models.Model):
     content = models.TextField()
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_products')
 
+    star = models.DecimalField(default=0, max_digits=5, decimal_places=1)
     price = models.IntegerField()
     discount_rate = models.IntegerField(default=0)
     discounted_price = models.IntegerField()
@@ -62,7 +63,7 @@ class Product(models.Model):
 
 class Comment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
     title = models.CharField(max_length=200)
     content = models.TextField(null=False)
     created_at = models.DateTimeField(auto_now_add=True)
