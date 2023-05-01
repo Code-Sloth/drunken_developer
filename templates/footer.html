@@ -1,7 +1,40 @@
-<div class='p-5 border-top border-2'>
-    <p class='fw-bold' style='font-size: 16px;'>하이퍼그로스컴퍼니 주식회사</p>
-    <p class='ms-1' style='font-size: 10px;'>고객센터:777-7777
-    <p class='ms-2' style='font-size: 10px;'>주말 18:00 - 24:00, 평일 휴무</p>
-    <p class='fw-bold ms-2' style='font-size: 12px;'>이용약관 개인정보처리방침 입점문의</p>
-    <p class='' style='font-size: 12px; color: grey;'>작업: 이민욱, 서유영, 홍순혁, 상필진 사업자등록번호: 1111-111111</p>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+
+<div class='footer'>
+  <div class='footer-inner'>
+    <div class='d-flex justify-content-between'>
+      <div>
+        <h5 class='text-black'>
+          DRINK IT
+        </h5>
+
+        <div>
+          평일 09:10 ~ 17:51, 주말 휴무
+        </div>
+      </div>
+
+      <div>
+        <a class='footer-img' href="https://github.com/Code-Sloth/drunken_developer">
+          <div>
+            <img class='w-100' src="{% static 'image/github.svg' %}" alt="github">
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class='mt-5 fs-6 mb-2'>
+      드개자(Drunken Developer)
+    </div>
+
+    <div>
+      조장: 이민욱 <a class='footer-link' href="https://github.com/Code-Sloth">[GitHub]</a>
+    </div>
+
+    <div>조원: 서유영 <a class='footer-link' href="">[GitHub]</a></div>
+
+    <div class='footer-ms'>홍순혁 <a class='footer-link' href="">[GitHub]</a></div>
+
+    <div class='footer-ms'>상필진 <a class='footer-link' href="">[GitHub]</a></div>
+  </div>
 </div>
