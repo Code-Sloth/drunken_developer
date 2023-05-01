@@ -250,3 +250,4 @@ def func_sort(queryset, s):
         return queryset.order_by('-discounted_price')
     elif s == 'low':
         return queryset.order_by('discounted_price')
+
