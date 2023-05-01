@@ -1,9 +1,44 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<h2>결제가 완료되었습니다</h2>
-<p>주문 번호 {{ result.partner_order_id }}</p>
-<p>상품명 {{ result.item_name }}</p>
-<p>결제 금액 {{ result.amount.total }}원</p>
-<p>결제승인시각 {{ result.approved_at }}</p>
+<link rel="stylesheet" type="text/css" href="{% static 'css/kakao.css' %}">
+
+<div class='container'>
+  <div class='complete-title'>
+    결제가 완료되었습니다!
+  </div>
+
+  <div class='complete-box'>
+    <div class='complete-user'>
+      주문자 정보
+    </div>
+
+    <div class='complete-flex'>
+      <h5>주문번호</h5>
+      <p>{{ result.partner_order_id }}</p>
+    </div>
+
+    <div class='complete-flex'>
+      <h5>상품명</h5>
+      <p>{{ result.item_name }}</p>
+    </div>
+
+    <div class='complete-flex'>
+      <h5>결제금액</h5>
+      <p>{{ result.amount.total }}</p>
+    </div>
+
+    <div class='complete-flex'>
+      <h5>결제승인시각</h5>
+      <p>{{ result.approved_at }}</p>
+    </div>
+
+    <div class='kakao-main w-100 mt-5'>
+      <a href="{% url 'products:index' %}">메인으로 이동</a>
+    </div>
+  </div>
+
+</div>
+
 {% endblock content %}

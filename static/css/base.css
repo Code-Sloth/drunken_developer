@@ -1,0 +1,33 @@
+.kakao-container {
+  width: 1144px;
+  margin: 100px auto;
+}
+
+.kakao-main {
+  width: 200px;
+  height: 50px;
+  margin-top: 30px;
+}
+
+.kakao-main a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 238, 0);
+  border-radius: 10px;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px;
+  box-shadow: 1px 7px 15px 4px rgba(0,0,0,0.1);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.kakao-main a:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}

@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<h2>결제 실패</h2>
+<div class='kakao-container'>
+  <h3>결제에 실패하였습니다.</h3>
+  <div class='kakao-main'>
+    <a href="{% url 'products:index' %}">메인으로 이동</a>
+  </div>
+</div>
 {% endblock content %}

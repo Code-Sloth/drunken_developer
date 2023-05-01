@@ -84,7 +84,7 @@
         <div>수량</div>
         <div class='sidebar-numbox'>
           <div class='sidebar-minus'>
-            <button>
+            <button class='minus'>
               <img class='w-100' src="{% static 'image/minus.png' %}" alt="minus">
             </button>
           </div>
@@ -94,7 +94,7 @@
           </div>
 
           <div class='sidebar-plus'>
-            <button>
+            <button class='plus'>
               <img class='w-100' src="{% static 'image/plus.png' %}" alt="plus">
             </button>
           </div>
@@ -114,14 +114,20 @@
           <div class='sidebar-interest-img'>
             <img class='w-100' src="{% static 'image/interest.png' %}" alt="">
           </div>
-          <div>관심상품</div>
+          {% if request.user in product.like_users.all %}
+            <div>관심상품 취소</div>
+          {% else %}
+            <div>관심상품</div>
+          {% endif %}
         </button>
       </form>
 
       <form action="{% url 'products:kakaopay' product.pk %}" method="GET">
-      <button type='submit' class='sidebar-buy'>
-        카카오페이로 결제하기
-      </button>
+        <input type="hidden" class='kakao-count' name='kakao-count' value='1'>
+        <input type="hidden" class='original-price' value='{{ product.discounted_price }}'>
+        <button name='kakao-price' value='5000' type='submit' class='sidebar-buy'>
+          카카오페이 결제
+        </button>
       </form>
     </div>
 
