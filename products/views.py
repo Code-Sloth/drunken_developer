@@ -36,6 +36,10 @@ def detail(request, product_pk):
 
 
 def kakaopay(request, product_pk):
+    kakao_price = request.GET.get('kakao-price')
+    kakao_count = request.GET.get('kakao-count')
+    product = Product.objects.get(pk=product_pk)
+
     admin_key = '5c7f81cf35fcdc52ae7aabe26b5e762e'
     url = f'https://kapi.kakao.com/v1/payment/ready'
     headers = {
@@ -44,10 +48,10 @@ def kakaopay(request, product_pk):
     data = {
         'cid': 'TC0ONETIME',
         'partner_order_id':'partner_order_id', #주문 번호
-        'partner_user_id':'partner_user_id', #유저 이름
-        'item_name':'위스키', #제품명
-        'quantity':'1', #수량
-        'total_amount':'50000', #가격
+        'partner_user_id': 'partner_user_id', #유저 이름
+        'item_name': product.title, #제품명
+        'quantity': kakao_count, #수량
+        'total_amount': kakao_price, #가격
         'tax_free_amount':'0',
  
         'approval_url':'http://127.0.0.1:8000/products/pay_success', 
@@ -189,6 +193,15 @@ def likes(request, product_pk):
 
 def listing(request):
     # products = get_list_or_404(Product)
+    q = request.GET.get('q','')
+    if q:
+      products = Product.objects.filter(
+				Q(title__icontains=q)|
+				Q(content__icontains=q)|
+				Q(category__icontains=q)
+			)
+    else: products = Product.objects.all()
+
     category = request.GET.get('category','')
 
     alcohol_percentage = request.GET.getlist('dosu','')
@@ -208,10 +221,11 @@ def listing(request):
     if price: p1,p2 = price.split(',')
     else: p1,p2 = 0,1000000
 
-    if category == 'all':
-        products = Product.objects.all()
-    else:
-        products = Product.objects.filter(category = category)
+    if category:
+      if category == 'all':
+          products = Product.objects.all()
+      else:
+          products = Product.objects.filter(category = category)
 
     products = products.filter(
         alcohol_percentage__gte=int(a1),

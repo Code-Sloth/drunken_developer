@@ -1,45 +1,64 @@
 {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
 
-    <div class="collapse navbar-collapse d-flex flex-row justify-content-between border-bottom border-2" style='padding: 0px 200px;'>
-        <ul class="navbar-nav d-flex flex-row ">
-            <li class="nav-item my-2">
-                <a class="nav-link active d-flex flex-row align-items-center" aria-current="page" href="{% url 'products:index' %}">
-                    <img src="{% static 'base/logo.jpg' %}" class="me-3" width="65" height="30">
-                </a>
-            </li>
-            <li class="nav-item d-flex flex-row align-items-center">
-                <a class="nav-link active d-flex flex-row align-items-center fw-bold me-3" aria-current="page" href="#">
-                    구독
-                </a>
-            </li>
-            <li class="nav-item d-flex flex-row align-items-center">
-                <a class="nav-link active d-flex flex-row align-items-center fw-bold me-3" aria-current="page" href="#">
-                    스토어
-                </a>
-            </li>
-            <li class="nav-item d-flex flex-row align-items-center">
-                <form class=''>
-                  <input class='form-control' type='search' value='무엇을 찾고계신가요?'>
-                </form>
-            </li>
-        </ul>  
-        <ul class='navbar-nav d-flex flex-row'>
-            <li class='nav-item d-flex flex-row align-items-center'>
 
-            {% if request.user.is_authenticated %}
-              <li><a class="dropdown-item nav-link active d-flex flex-row align-items-center fw-bold me-3" href="{% url 'accounts:logout' %}">로그아웃</a></li>
-              <li class="nav-item">
-                <a class="nav-link active d-flex flex-row align-items-center" aria-current="page" href="{% url 'accounts:profile' user.username %}">
-                    <img src="{% static 'base/cart.jpg' %}" width="25" height="25">
-                </a>
-              </li>
-            {% else %}
-                <li><a class="dropdown-item nav-link active d-flex flex-row align-items-center fw-bold me-3" href="{% url 'accounts:login' %}">로그인</a></li>
-                <li class="nav-link active d-flex flex-row align-items-center fw-bold me-3">/</li>
-                <li><a class="dropdown-item nav-link active d-flex flex-row align-items-center fw-bold me-3" href="{% url 'accounts:signup' %}">회원가입</a></li>
-            {% endif %}
+<nav class='nav-bar'>
+	<div class='nav-container'>
+		<div class='nav-left'>
+			<div class='nav-logo'>
+				<a href="{% url 'products:index' %}">
+					<div class='nav-logo'>
+						<img class='w-100' src="{% static 'image/logo.png' %}" alt="logo">
+					</div>
+				</a>
+			</div>
+	
+			<div class='nav-all'>
+				<a href="{% url 'products:listing' %}?category=all">전체</a>
+			</div>
 
-            </li>
-        </ul>
-    </div>
-  </div>
+			<div class='nav-category'>
+				<a href="{% url 'products:listing' %}?category=traditional">종류별</a>
+			</div>
+
+			<div class='nav-search'>
+				<form action="{% url 'products:listing' %}?category=all">
+					<input class='search-input' name='q' type="search" placeholder='무엇을 찾고 계신가요?' autocomplete='off'>
+				</form>
+
+				<div class='search-inner'>
+					<img src="{% static 'image/search.svg' %}" alt="search">
+				</div>
+			</div>
+		</div>
+
+		<div class='nav-right'>
+			{% if user.is_authenticated %}
+				<div class='right-user'>
+					<a href="{% url 'accounts:profile' request.user.username %}">
+						<div class='d-flex'>
+							<div class='right-username'>{{ request.user }} 님</div>
+							<div class='right-img'>
+								<img class='w-100' src="{% static 'image/blue-right.png' %}" alt="right">
+							</div>
+						</div>
+					</a>
+
+					<form class='right-logout' action="{% url 'accounts:logout' %}" method="POST">
+						{% csrf_token %}
+						<button type='submit'>로그아웃</button>
+					</form>
+				</div>
+			{% else %}
+				<div class='right-sign d-flex'>
+					<div>
+						<a href="{% url 'accounts:login' %}">로그인</a>
+					</div>
+					<div>
+						<a href="{% url 'accounts:signup' %}">회원가입</a>
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</nav>
