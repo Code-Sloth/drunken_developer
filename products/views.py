@@ -189,6 +189,15 @@ def likes(request, product_pk):
 
 def listing(request):
     # products = get_list_or_404(Product)
+    q = request.GET.get('q','')
+    if q:
+      products = Product.objects.filter(
+				Q(title__icontains=q)|
+				Q(content__icontains=q)|
+				Q(category__icontains=q)
+			)
+    else: products = Product.objects.all()
+
     category = request.GET.get('category','')
 
     alcohol_percentage = request.GET.getlist('dosu','')
@@ -208,10 +217,11 @@ def listing(request):
     if price: p1,p2 = price.split(',')
     else: p1,p2 = 0,1000000
 
-    if category == 'all':
-        products = Product.objects.all()
-    else:
-        products = Product.objects.filter(category = category)
+    if category:
+      if category == 'all':
+          products = Product.objects.all()
+      else:
+          products = Product.objects.filter(category = category)
 
     products = products.filter(
         alcohol_percentage__gte=int(a1),
