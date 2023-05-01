@@ -127,9 +127,11 @@
         </button>
       </form>
 
+      <form action="{% url 'products:kakaopay' product.pk %}" method="GET">
       <button type='submit' class='sidebar-buy'>
-        바로 구매하기
+        카카오페이로 결제하기
       </button>
+      </form>
     </div>
 
     {% comment %} 댓글 sort {% endcomment %}
