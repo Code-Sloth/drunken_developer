@@ -75,10 +75,14 @@ def pay_success(request):
     }
     res = requests.post(url, data=data, headers=headers)
     result = res.json()
+    context = {
+        'res':res,
+        'result':result,
+    }
     if result.get('msg'): #msg = 오류 코드
         return redirect('products:pay_fail')
     else:
-        return render(request, 'products/pay_success.html')
+        return render(request, 'products/pay_success.html', context)
 
 
 def pay_fail(request):
