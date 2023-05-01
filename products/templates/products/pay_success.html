@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>결제 완료</h2>
+<h2>결제가 완료되었습니다</h2>
+<p>주문 번호 {{ result.partner_order_id }}</p>
+<p>상품명 {{ result.item_name }}</p>
+<p>결제 금액 {{ result.amount.total }}원</p>
+<p>결제승인시각 {{ result.approved_at }}</p>
 {% endblock content %}
