@@ -2,6 +2,18 @@
 
 {% load static %}
 
+{% block style %}
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.img_in {
+  width : 200px;
+}
+{% endblock style %}
+
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 <script src="https://kit.fontawesome.com/24c831e198.js" crossorigin="anonymous"></script>
@@ -74,7 +86,6 @@
         </p>
     </a>
   </div>
-  
   {% comment %} 지금 인기있는 주류 Top 10 {% endcomment %}
   <div class='container mt-5'>
     <div class='container-title'>
@@ -105,7 +116,7 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-  
+
       <div class="carousel-inner">
   
         <div class="carousel-item active">
@@ -113,11 +124,14 @@
           <div class="d-flex justify-content-around">
   
             <div class='carousel-innerbox'>
-              <a href="">
-                <div class="in-img">
-                  <img src="{% static 'image/sample.jpg' %}" class="d-block w-100" alt="...">
-                </div>
-              </a>
+              {% for product in products %}
+              {% if  product.star > 3 and product.comments.count >= 3  %}
+                  <div class='w-100'>
+                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
+                  </div>
+                {{product.content}} {{product.star}} ({{product.comments.count}})
+              {% endif %}
+            {% endfor %}
             </div>
   
             <div class='carousel-innerbox'>
