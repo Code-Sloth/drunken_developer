@@ -1,13 +1,90 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+{% endblock style %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/comment_create.css' %}">
+
+<div class='comment-create-body'>
   <div class='container w-50'>
 
     <form action="{% url 'products:comment_create' product.pk %}" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-      {{ comment_form }}
-      <button class='btn btn-primary w-100 mb-3' type='submit'>작성</button>
+
+      <div class='review-header'>
+        <div class='d-flex'>
+          <div class='review-header-img'>
+            <img class='w-100' src="{% static 'image/review.png' %}" alt="review">
+          </div>
+          <h4>상품 리뷰</h4>
+        </div>
+  
+        <p>이 상품의 품질에 대해서 얼마나 만족하시나요?</p>
+      </div>
+
+
+      <hr class='hr'>
+
+      <div class='d-flex my-3'>
+        {% if product.image %}
+          <div class='comment-create-img'>
+            <img class='h-100' src="{{ product.image.url }}" alt="{{ product.title }}">
+          </div>
+        {% endif %}
+
+        <div>
+          <div class='comment-product-title'>
+            {{ product.title }}
+          </div>
+
+          <div class='d-flex'>
+            <button type="button" class='comment_star' id="star1" data-value="1">
+              <img src="{% static 'image/star1.svg' %}" id="img1" alt="star" data-value="1">
+            </button>
+            <button type="button" class='comment_star' id="star2" data-value="2">
+              <img src="{% static 'image/star1.svg' %}" id="img2" alt="star" data-value="2">
+            </button>
+            <button type="button" class='comment_star' id="star3" data-value="3">
+              <img src="{% static 'image/star1.svg' %}" id="img3" alt="star" data-value="3">
+            </button>
+            <button type="button" class='comment_star' id="star4" data-value="4">
+              <img src="{% static 'image/star1.svg' %}" id="img4" alt="star" data-value="4">
+            </button>
+            <button type="button" class='comment_star' id="star5" data-value="5">
+              <img src="{% static 'image/star1.svg' %}" id="img5" alt="star" data-value="5">
+            </button>
+          </div>
+
+          <div class='comment-star-content'>
+            최고
+          </div>
+        </div>
+      </div>
+
+      <hr class='hr'>
+
+      {{ comment_form.content }}
+
+      <hr class='hr'>
+
+      {{ comment_form.image }}
+
+      <button id='star_rating' name='star_rating' value='5' class='btn btn-primary w-100 mt-5 mb-3' type='submit'>등록</button>
     </form>
 
+    <div class='comment-back'>
+      <a href="javascript:window.history.back();">취소</a>
+    </div>
+
   </div>
+</div>
+<script src="{% static 'js/comment_create.js' %}"></script>
 {% endblock content %}
