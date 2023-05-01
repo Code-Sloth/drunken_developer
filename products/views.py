@@ -94,10 +94,12 @@ def comment_create(request, product_pk):
     # product = get_object_or_404(pk=product_pk)
     product = Product.objects.get(pk=product_pk)
     comment_form = CommentForm(request.POST,request.FILES)
+
     if comment_form.is_valid():
         comment = comment_form.save(commit=False)
         comment.product = product
         comment.user = request.user
+        comment.star = int(request.POST.get('star_rating'))
         comment.save()
         return redirect('products:detail', product_pk)
     context = {

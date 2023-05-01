@@ -1,0 +1,80 @@
+.comment-create-body {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  margin-top: 56px;
+}
+
+.comment-create-img {
+  width: 100px;
+  height: 100px;
+}
+
+.comment_star {
+  background-color: white;
+  border: 0;
+  padding: 0;
+  width: 30px;
+}
+
+.comment-product-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(112, 112, 112);
+  padding: 10px 5px;
+}
+
+.hr {
+  border-color:rgb(200 200 200);
+}
+
+textarea[name='content']::placeholder {
+  font-size: 13px;
+}
+
+.review-header {
+  margin: 20px 0;
+}
+
+.review-header h4 {
+  margin: 0;
+  line-height: 43px;
+  opacity: 0.9;
+}
+
+.review-header p {
+  color: rgb(112, 112, 112);
+}
+
+.review-header-img {
+  width: 40px;
+}
+
+.comment-star-content {
+  font-size: 14px;
+  margin: 3px 2px;
+  color: rgb(112, 112, 112);
+}
+
+.comment-back {
+  width: 100%;
+  height: 36px;
+  margin-bottom: 50px;
+}
+
+.comment-back a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: dimgrey;
+  text-align: center;
+  line-height: 36px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.comment-back a:hover {
+  opacity: 1;
+}

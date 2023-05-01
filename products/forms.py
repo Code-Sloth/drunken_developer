@@ -28,13 +28,11 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ('__all__')
+        fields = ('content','image',)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.fields['title'].widget.attrs['class'] = 'form-control mt-1'
-        self.fields['product'].widget.attrs['class'] = 'form-control mt-1'
         self.fields['content'].widget.attrs['class'] = 'form-control mt-1'
+        self.fields['content'].widget.attrs['placeholder'] = '다른 고객님에게 도움이 되도록 상품에 대한 솔직한 평가를 남겨주세요.'
         self.fields['image'].widget.attrs['class'] = 'form-control mt-1'
-        self.fields['star'].widget.attrs['class'] = 'form-control mt-1'
