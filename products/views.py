@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.db.models import Q
 from django.db.models import Count
+import requests
 
 # Create your views here.
 
@@ -32,6 +33,61 @@ def detail(request, product_pk):
         'comments': comments,
     }
     return render(request, 'products/detail.html', context)
+
+
+def kakaopay(request, product_pk):
+    admin_key = '5c7f81cf35fcdc52ae7aabe26b5e762e'
+    url = f'https://kapi.kakao.com/v1/payment/ready'
+    headers = {
+        'Authorization': f'KakaoAK {admin_key}',
+    }
+    data = {
+        'cid': 'TC0ONETIME',
+        'partner_order_id':'partner_order_id', #주문 번호
+        'partner_user_id':'partner_user_id', #유저 이름
+        'item_name':'위스키', #제품명
+        'quantity':'1', #수량
+        'total_amount':'50000', #가격
+        'tax_free_amount':'0',
+ 
+        'approval_url':'http://127.0.0.1:8000/products/pay_success', 
+        'fail_url':'http://127.0.0.1:8000/products/pay_fail',
+        'cancel_url':'http://127.0.0.1:8000/products/pay_cancel'
+    }
+    res = requests.post(url, data=data, headers=headers)
+    result = res.json()
+    request.session['tid'] = result['tid']
+    return redirect(result['next_redirect_pc_url'])
+
+
+def pay_success(request):
+    url = 'https://kapi.kakao.com/v1/payment/approve'
+    admin_key = '5c7f81cf35fcdc52ae7aabe26b5e762e'
+    headers = {
+        'Authorization': f'KakaoAK {admin_key}'
+    }
+    data = {
+        'cid':'TC0ONETIME',
+        'tid': request.session['tid'], #결제 고유 번호
+        'partner_order_id':'partner_order_id', #주문 번호
+        'partner_user_id':'partner_user_id', #유저 아이디
+        'pg_token': request.GET['pg_token'] 
+    }
+    res = requests.post(url, data=data, headers=headers)
+    result = res.json()
+    if result.get('msg'): #msg = 오류 코드
+        return redirect('products:pay_fail')
+    else:
+        return render(request, 'products/pay_success.html')
+
+
+def pay_fail(request):
+    return render(request, 'products/pay_fail.html')
+
+
+def pay_cancel(request):
+    return render(request, 'products/pay_cancel.html')
+
 
 def comment_sort(queryset, s):
     if s == 'recent':
