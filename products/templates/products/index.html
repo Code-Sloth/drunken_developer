@@ -77,13 +77,13 @@
   
   {% comment %} QUIZ {% endcomment %}
   <div class='index-quiz'>
-    <a href="">
-        <p>
-          <span>AI 소믈리에</span> 무슨 술을 마실지 고민되시나요?
-          <span class='m-3'>
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="arrow" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg>
-          </span>
-        </p>
+    <a href="{% url 'products:quiz' %}">
+      <p>
+        <span>AI 소믈리에</span> 무슨 술을 마실지 고민되시나요?
+        <span class='m-3'>
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="arrow" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg>
+        </span>
+      </p>
     </a>
   </div>
   {% comment %} 지금 인기있는 주류 Top 10 {% endcomment %}

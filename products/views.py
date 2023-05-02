@@ -272,3 +272,42 @@ def func_sort(queryset, s):
     elif s == 'low':
         return queryset.order_by('discounted_price')
 
+def quiz(request):
+    responses = {}
+    request.session['survey_data'] = {'responses': responses}
+
+    return render(request, 'products/quiz.html', {'index': 0})
+
+def quiz_response(request):
+    survey_data = request.session.get('survey_data')
+    responses = survey_data['responses']
+    index = int(request.POST['index'])
+    response = request.POST['response']
+
+    responses[index] = response
+    request.session['survey_data'] = survey_data
+
+    if index < 6:
+        next_index = index + 1
+    else:
+
+        if responses['1'] == 'all':
+            products = Product.objects.all()
+        else:
+            products = Product.objects.filter(category = responses['1'])
+
+        products = products.filter(
+            alcohol_percentage__gte = int(responses['2'].split(',')[0]),
+            alcohol_percentage__lte = int(responses['2'].split(',')[1]),
+            sweetness__in = [responses['3'], 'middle'],
+            sourness__in = [responses['4'], 'middle'],
+            bitterness__in = [responses['5'], 'middle'],
+            carbonated = bool(responses[6]),
+        )
+
+        if products:
+            products = products.annotate(num_likes=Count('like_users')).order_by('-num_likes')[:3]
+
+        return render(request, 'products/quiz.html', {'products':products, 'index':7})
+
+    return render(request, 'products/quiz.html', {'index': next_index})

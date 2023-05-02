@@ -17,4 +17,6 @@ urlpatterns = [
     path('<int:product_pk>/delete/', views.delete, name='delete'),
     path('<int:product_pk>/kakaopay/', views.kakaopay, name='kakaopay'),
     path('listing/', views.listing, name='listing'),
+    path('quiz/', views.quiz, name='quiz'),
+    path('quiz_response/', views.quiz_response, name='quiz_response'),
 ]
