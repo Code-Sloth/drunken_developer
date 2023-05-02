@@ -64,7 +64,7 @@ def kakaopay(request, product_pk):
     return redirect(result['next_redirect_pc_url'])
 
 
-def pay_success(request, username, product_pk):
+def pay_success(request):
     url = 'https://kapi.kakao.com/v1/payment/approve'
     admin_key = '5c7f81cf35fcdc52ae7aabe26b5e762e'
     
@@ -87,8 +87,12 @@ def pay_success(request, username, product_pk):
     if result.get('msg'): #msg = 오류 코드
         return redirect('products:pay_fail')
     else:
-        # product = Product.objects.get(pk=product_pk)
-        # if not product.purchase_users.filter(user=username):
+        product = Product.objects.get(title=result['item_name'])
+        product.purchase_users.add(request.user, through_defaults={
+            'title': product.title,
+            'count': result['quantity'],
+            'price': result['amount']['total']
+        })
         return render(request, 'products/pay_success.html', context)
 
 

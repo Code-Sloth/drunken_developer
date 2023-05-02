@@ -75,7 +75,7 @@ class Purchase(models.Model):
     created_time = models.DateTimeField(auto_now_add=True)
 
     @property
-    def created_time(self):
+    def created_string_time(self):
         time = datetime.now(tz=timezone.utc) - self.purchase_time
 
         if time < timedelta(minutes=1):
