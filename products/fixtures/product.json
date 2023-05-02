@@ -1,0 +1,1061 @@
+[
+{
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+        "user": 1,
+        "title": "베니카피노 그리지오 제세",
+        "content": "껍질을 짧은 시간동안 함께 침용시켜 연한 핑크빛 색상과 약한 탄닌이 더해진 피노그리지오. 아로마가 매우 풍부하고 쥬시한 와인",
+        "star": "2.0",
+        "price": 80000,
+        "discount_rate": 0,
+        "discounted_price": 80000,
+        "category": "wine",
+        "alcohol_percentage": "12.0",
+        "sweetness": "middle",
+        "sourness": "strong",
+        "bitterness": "low",
+        "carbonated": false,
+        "volume": 750,
+        "delivery_date": 3,
+        "created_at": "2023-05-02T01:12:59.064Z",
+        "updated_at": "2023-05-02T01:55:58.480Z",
+        "image": "products/베니카피노 그리지오 제세/01.jpg",
+        "like_users": [
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+        "user": 1,
+        "title": "에스쿠도로호 오리진",
+        "content": "카페르네 소비뇽",
+        "star": "5.0",
+        "price": 120000,
+        "discount_rate": 43,
+        "discounted_price": 68400,
+        "category": "wine",
+        "alcohol_percentage": "14.5",
+        "sweetness": "strong",
+        "sourness": "strong",
+        "bitterness": "middle",
+        "carbonated": false,
+        "volume": 800,
+        "delivery_date": 2,
+        "created_at": "2023-05-02T01:14:17.113Z",
+        "updated_at": "2023-05-02T01:53:16.405Z",
+        "image": "products/에스쿠도로호 오리진/02.jpg",
+        "like_users": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+        "user": 1,
+        "title": "제나토 아마로네 델라 발폴리첼라 클라시코",
+        "content": "James Suckling 선정 2019 TOP 100 유일한 아마로네 브랜드",
+        "star": "5.0",
+        "price": 250000,
+        "discount_rate": 0,
+        "discounted_price": 250000,
+        "category": "wine",
+        "alcohol_percentage": "15.0",
+        "sweetness": "low",
+        "sourness": "middle",
+        "bitterness": "middle",
+        "carbonated": false,
+        "volume": 750,
+        "delivery_date": 4,
+        "created_at": "2023-05-02T01:15:01.646Z",
+        "updated_at": "2023-05-02T02:13:29.644Z",
+        "image": "products/제나토 아마로네 델라 발폴리첼라 클라시코/03.jpg",
+        "like_users": [
+            2,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+        "user": 1,
+        "title": "토마스 하디 카베르네소비뇽",
+        "content": "1989년 호주 와인의 개척자이자 하디스의 창업주인 토마스 하디를 기리기 위해 만들어진 와인",
+        "star": "4.0",
+        "price": 400000,
+        "discount_rate": 50,
+        "discounted_price": 200000,
+        "category": "wine",
+        "alcohol_percentage": "13.5",
+        "sweetness": "strong",
+        "sourness": "strong",
+        "bitterness": "middle",
+        "carbonated": true,
+        "volume": 800,
+        "delivery_date": 2,
+        "created_at": "2023-05-02T01:16:20.584Z",
+        "updated_at": "2023-05-02T01:57:22.660Z",
+        "image": "products/토마스 하디 카베르네소비뇽/04.jpg",
+        "like_users": [
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+        "user": 1,
+        "title": "쿠네 리오하 레세르바",
+        "content": "2021년 세계에서 가장 존경 받는 와이너리 최초 선정",
+        "star": "3.0",
+        "price": 60000,
+        "discount_rate": 47,
+        "discounted_price": 31800,
+        "category": "wine",
+        "alcohol_percentage": "12.5",
+        "sweetness": "low",
+        "sourness": "middle",
+        "bitterness": "strong",
+        "carbonated": true,
+        "volume": 800,
+        "delivery_date": 3,
+        "created_at": "2023-05-02T01:16:59.153Z",
+        "updated_at": "2023-05-02T01:58:33.193Z",
+        "image": "products/쿠네 리오하 레세르바/05.jpg",
+        "like_users": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+        "user": 1,
+        "title": "테 와레 라 소비뇽 블랑",
+        "content": "2020 JAMES SUCKLING - 10 TOP VALUE NEWZEALAND SAUVIGNON BLANC WINES",
+        "star": "5.0",
+        "price": 50000,
+        "discount_rate": 40,
+        "discounted_price": 30000,
+        "category": "wine",
+        "alcohol_percentage": "13.0",
+        "sweetness": "middle",
+        "sourness": "middle",
+        "bitterness": "middle",
+        "carbonated": false,
+        "volume": 750,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T01:17:44.931Z",
+        "updated_at": "2023-05-02T02:17:30.383Z",
+        "image": "products/테 와레 라 소비뇽 블랑/06.jpg",
+        "like_users": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+        "user": 1,
+        "title": "베니카 피노 그리지오 제세라",
+        "content": "껍질을 짧은 시간동안 함께 침용시켜 연한 핑크빛 색상과 약한 탄닌이 더해진 피노그리지오",
+        "star": "4.0",
+        "price": 80000,
+        "discount_rate": 0,
+        "discounted_price": 80000,
+        "category": "wine",
+        "alcohol_percentage": "12.0",
+        "sweetness": "strong",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": true,
+        "volume": 800,
+        "delivery_date": 2,
+        "created_at": "2023-05-02T01:18:34.662Z",
+        "updated_at": "2023-05-02T02:00:06.945Z",
+        "image": "products/베니카 피노 그리지오 제세라/07.jpg",
+        "like_users": [
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+        "user": 1,
+        "title": "샤또 루빈 라이온 앤 드래곤 프로방스 로제",
+        "content": "Wine Enthusiast에 25년간 와인&푸드 관련 글을 기고해온 로저 보스(Roger Voss)가 고득점을 준 루빈의 오가닉 로제 와인",
+        "star": "0.0",
+        "price": 70000,
+        "discount_rate": 36,
+        "discounted_price": 44800,
+        "category": "wine",
+        "alcohol_percentage": "12.0",
+        "sweetness": "middle",
+        "sourness": "strong",
+        "bitterness": "strong",
+        "carbonated": false,
+        "volume": 700,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T01:20:23.125Z",
+        "updated_at": "2023-05-02T01:20:23.125Z",
+        "image": "products/샤또 루빈 라이온 앤 드래곤 프로방스 로제/08.jpg",
+        "like_users": []
+    }
+},
+{
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+        "user": 1,
+        "title": "보리우 빈야드 캘리포니아 카베르네소비뇽",
+        "content": "100년이 넘는 전통과 나파의 기준이라 불리우는 BV에서 \r\n생산하는 BEST VALUE 캘리포니아 와인",
+        "star": "2.0",
+        "price": 60000,
+        "discount_rate": 50,
+        "discounted_price": 30000,
+        "category": "wine",
+        "alcohol_percentage": "12.5",
+        "sweetness": "low",
+        "sourness": "middle",
+        "bitterness": "middle",
+        "carbonated": false,
+        "volume": 750,
+        "delivery_date": 3,
+        "created_at": "2023-05-02T01:21:04.557Z",
+        "updated_at": "2023-05-02T02:12:38.359Z",
+        "image": "products/보리우 빈야드 캘리포니아 카베르네소비뇽/09.jpg",
+        "like_users": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+        "user": 2,
+        "title": "클라우드",
+        "content": "롯데의 라거",
+        "star": "4.5",
+        "price": 1900,
+        "discount_rate": 10,
+        "discounted_price": 1710,
+        "category": "beer",
+        "alcohol_percentage": "4.5",
+        "sweetness": "middle",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": true,
+        "volume": 355,
+        "delivery_date": 3,
+        "created_at": "2023-05-02T01:21:31.400Z",
+        "updated_at": "2023-05-02T01:52:10.431Z",
+        "image": "products/클라우드/클라우드.jpg",
+        "like_users": [
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 17,
+    "fields": {
+        "user": 1,
+        "title": "폴 당장 뀌베 카르트 블랑쉬",
+        "content": "영국 왕실 납품 샴페인 하우스",
+        "star": "0.0",
+        "price": 110000,
+        "discount_rate": 27,
+        "discounted_price": 80300,
+        "category": "wine",
+        "alcohol_percentage": "12.5",
+        "sweetness": "strong",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": true,
+        "volume": 750,
+        "delivery_date": 2,
+        "created_at": "2023-05-02T01:21:39.063Z",
+        "updated_at": "2023-05-02T01:21:39.063Z",
+        "image": "products/폴 당장 뀌베 카르트 블랑쉬/10.jpg",
+        "like_users": []
+    }
+},
+{
+    "model": "products.product",
+    "pk": 18,
+    "fields": {
+        "user": 2,
+        "title": "테라",
+        "content": "하이트의 라거",
+        "star": "3.0",
+        "price": 1300,
+        "discount_rate": 5,
+        "discounted_price": 1240,
+        "category": "beer",
+        "alcohol_percentage": "4.6",
+        "sweetness": "middle",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": true,
+        "volume": 330,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T01:22:48.522Z",
+        "updated_at": "2023-05-02T01:53:47.526Z",
+        "image": "products/테라/테라.jpg",
+        "like_users": [
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 19,
+    "fields": {
+        "user": 2,
+        "title": "제주 위트 에일",
+        "content": "시트러스향 밀맥주",
+        "star": "4.8",
+        "price": 2700,
+        "discount_rate": 25,
+        "discounted_price": 2020,
+        "category": "beer",
+        "alcohol_percentage": "5.3",
+        "sweetness": "middle",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": true,
+        "volume": 500,
+        "delivery_date": 7,
+        "created_at": "2023-05-02T01:23:43.015Z",
+        "updated_at": "2023-05-02T02:00:07.832Z",
+        "image": "products/제주 위트 에일/제주_위트_에일.jpg",
+        "like_users": [
+            4,
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 20,
+    "fields": {
+        "user": 2,
+        "title": "코젤",
+        "content": "코젤다크의 흑맥주",
+        "star": "4.0",
+        "price": 2700,
+        "discount_rate": 20,
+        "discounted_price": 2160,
+        "category": "beer",
+        "alcohol_percentage": "4.6",
+        "sweetness": "low",
+        "sourness": "strong",
+        "bitterness": "middle",
+        "carbonated": true,
+        "volume": 500,
+        "delivery_date": 5,
+        "created_at": "2023-05-02T01:25:13.212Z",
+        "updated_at": "2023-05-02T02:02:36.194Z",
+        "image": "products/코젤/코젤.jpeg",
+        "like_users": []
+    }
+},
+{
+    "model": "products.product",
+    "pk": 21,
+    "fields": {
+        "user": 3,
+        "title": "맥캘란 12년 쉐리",
+        "content": "Macallan은 1824년에 설립된 이래로 나무와 증류주에 대한 비할 데 없는 헌신으로 알려져 있습니다. 이것의 쇼케이스인 12년 산 Sherry Oak는 Macallan의 Sherry Oak 제품군의 일부로 싱글 몰트 시리즈를 특징으로 합니다.\r\nJerez에서 공급되는 손으로 선별한 셰리 시즈닝 오크통에서만 독점적으로 숙성된 위스키입니다. Oloroso 셰리로 맛을 낸 오크 캐스크에서 12년 동안 숙성시킨 이 풍부하고 복합적인 위스키는 풍부한 우드 스파이스, 풍부한 바닐라, 말린 과일, 천연의 풍부한 금색을 제공합니다.",
+        "star": "4.7",
+        "price": 130000,
+        "discount_rate": 10,
+        "discounted_price": 117000,
+        "category": "whiskey",
+        "alcohol_percentage": "40.0",
+        "sweetness": "strong",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": false,
+        "volume": 700,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T01:26:27.648Z",
+        "updated_at": "2023-05-02T01:57:31.462Z",
+        "image": "products/맥캘란 12년 쉐리/맥캘란_12.jpg",
+        "like_users": [
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 22,
+    "fields": {
+        "user": 2,
+        "title": "호가든",
+        "content": "벨기에의 맥주",
+        "star": "4.7",
+        "price": 4000,
+        "discount_rate": 30,
+        "discounted_price": 2800,
+        "category": "beer",
+        "alcohol_percentage": "3.0",
+        "sweetness": "middle",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": false,
+        "volume": 500,
+        "delivery_date": 2,
+        "created_at": "2023-05-02T01:26:31.334Z",
+        "updated_at": "2023-05-02T02:05:57.240Z",
+        "image": "products/호가든/호가든.jpg",
+        "like_users": [
+            4
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 23,
+    "fields": {
+        "user": 3,
+        "title": "발베니 12년 더블우드",
+        "content": "‘발베니 더블우드 12년’은 전 세계 최초로 버번 오크와 셰리 오크, 두 가지 오크통 숙성 기법으로 독특하고 매력적인 맛을 입고 비로소 완성되는 싱글몰트 위스키입니다. 먼저 아메리칸 버번 오크에서 12년 동안 깊은 부드러움과 바닐라의 풍미를 입은 후 유러피안 셰리 와인 오크통에서 다시 약 6개월~10개월 동안 과일의 향긋함과 벌꿀의 달콤함이 더해지게 되죠. 바닐라향, 화려한 꽃향 그리고 달콤한 과일의 향기로 가득 찬 진한 황금빛 술 한잔은 혀끝에 감도는 부드러운 질감을 시작으로 잘 조합된 견과류의 풍미와 시나몬의 스파이시한 맛을 선사합니다.",
+        "star": "3.0",
+        "price": 130000,
+        "discount_rate": 10,
+        "discounted_price": 117000,
+        "category": "whiskey",
+        "alcohol_percentage": "40.0",
+        "sweetness": "strong",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": false,
+        "volume": 700,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T01:27:15.664Z",
+        "updated_at": "2023-05-02T01:53:24.429Z",
+        "image": "products/발베니 12년 더블우드/발베니12.jpg",
+        "like_users": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 24,
+    "fields": {
+        "user": 2,
+        "title": "에델바이스",
+        "content": "오스트리아의 밀맥주",
+        "star": "2.0",
+        "price": 2300,
+        "discount_rate": 10,
+        "discounted_price": 2070,
+        "category": "beer",
+        "alcohol_percentage": "5.0",
+        "sweetness": "middle",
+        "sourness": "middle",
+        "bitterness": "middle",
+        "carbonated": true,
+        "volume": 330,
+        "delivery_date": 3,
+        "created_at": "2023-05-02T01:27:39.398Z",
+        "updated_at": "2023-05-02T02:04:00.583Z",
+        "image": "products/에델바이스/에델바이스.jpg",
+        "like_users": [
+            4
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 25,
+    "fields": {
+        "user": 2,
+        "title": "스텔라",
+        "content": "벨기에의 라거",
+        "star": "4.0",
+        "price": 3500,
+        "discount_rate": 15,
+        "discounted_price": 2980,
+        "category": "beer",
+        "alcohol_percentage": "5.0",
+        "sweetness": "middle",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": true,
+        "volume": 500,
+        "delivery_date": 7,
+        "created_at": "2023-05-02T01:28:59.630Z",
+        "updated_at": "2023-05-02T02:02:03.499Z",
+        "image": "products/스텔라/스텔라.jpg",
+        "like_users": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 26,
+    "fields": {
+        "user": 2,
+        "title": "덕덕구스",
+        "content": "구스 아일랜드 덕덕구스 세션",
+        "star": "2.5",
+        "price": 2500,
+        "discount_rate": 10,
+        "discounted_price": 2250,
+        "category": "beer",
+        "alcohol_percentage": "4.7",
+        "sweetness": "middle",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": true,
+        "volume": 500,
+        "delivery_date": 3,
+        "created_at": "2023-05-02T01:29:52.485Z",
+        "updated_at": "2023-05-02T02:10:04.660Z",
+        "image": "products/덕덕구스/덕덕_구스.jpg",
+        "like_users": [
+            5
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 27,
+    "fields": {
+        "user": 2,
+        "title": "somersby",
+        "content": "애플 사이다",
+        "star": "2.7",
+        "price": 4000,
+        "discount_rate": 20,
+        "discounted_price": 3200,
+        "category": "beer",
+        "alcohol_percentage": "4.5",
+        "sweetness": "strong",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": true,
+        "volume": 500,
+        "delivery_date": 7,
+        "created_at": "2023-05-02T01:30:45.480Z",
+        "updated_at": "2023-05-02T02:28:32.169Z",
+        "image": "products/somersby/somersby.jpg",
+        "like_users": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 29,
+    "fields": {
+        "user": 2,
+        "title": "BEURRE",
+        "content": "블랑제리뵈르의 맥주",
+        "star": "3.0",
+        "price": 6500,
+        "discount_rate": 0,
+        "discounted_price": 6500,
+        "category": "beer",
+        "alcohol_percentage": "4.5",
+        "sweetness": "middle",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": true,
+        "volume": 500,
+        "delivery_date": 20,
+        "created_at": "2023-05-02T01:31:42.296Z",
+        "updated_at": "2023-05-02T02:09:29.187Z",
+        "image": "products/BEURRE/BEURRE.jpg",
+        "like_users": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 30,
+    "fields": {
+        "user": 3,
+        "title": "라프로익 10년",
+        "content": "라프로익 10년은 Jim Murray의 위스키 바이블에 의해 2019년 최고의 싱글 몰트 스카치 10년 언더에 선정되면서 그 가치를 세계적으로 인정받고 있습니다.",
+        "star": "5.0",
+        "price": 110000,
+        "discount_rate": 10,
+        "discounted_price": 99000,
+        "category": "whiskey",
+        "alcohol_percentage": "40.0",
+        "sweetness": "low",
+        "sourness": "low",
+        "bitterness": "strong",
+        "carbonated": false,
+        "volume": 700,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T01:33:29.807Z",
+        "updated_at": "2023-05-02T01:51:03.215Z",
+        "image": "products/라프로익 10년/라프로익10.jpg",
+        "like_users": [
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 31,
+    "fields": {
+        "user": 3,
+        "title": "글렌드로낙 12년",
+        "content": "스페인의 최고급 캐스크인 올로로쏘(Oloroso)와 페드로 히메네즈(Pedro Ximenez) 캐스크의 조합에 최소 12년 동안 숙성했습니다.",
+        "star": "4.5",
+        "price": 130000,
+        "discount_rate": 10,
+        "discounted_price": 117000,
+        "category": "whiskey",
+        "alcohol_percentage": "43.0",
+        "sweetness": "strong",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": false,
+        "volume": 700,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T01:34:23.895Z",
+        "updated_at": "2023-05-02T02:10:56.370Z",
+        "image": "products/글렌드로낙 12년/드로낙12.jpg",
+        "like_users": []
+    }
+},
+{
+    "model": "products.product",
+    "pk": 32,
+    "fields": {
+        "user": 3,
+        "title": "아벨라워 아부나흐",
+        "content": "게일어로 '아부나흐(A'bunadh)'란 '오리지널'이라는 의미를 가지고 있습니다. '아벨라워 아부나흐'는 아벨라워 증류소의 설립자 제임스 플레밍에게 경의를 표하기 위해 만들어진 위스키로, 시작부터 끝까지 핸드메이드로 제작되는 것이 특징입니다.",
+        "star": "4.0",
+        "price": 250000,
+        "discount_rate": 10,
+        "discounted_price": 225000,
+        "category": "whiskey",
+        "alcohol_percentage": "60.0",
+        "sweetness": "strong",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": false,
+        "volume": 700,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T01:35:45.107Z",
+        "updated_at": "2023-05-02T01:52:18.486Z",
+        "image": "products/아벨라워 아부나흐/아벨라워아브나흐.jpg",
+        "like_users": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 33,
+    "fields": {
+        "user": 3,
+        "title": "발렌타인 30년",
+        "content": "한국인이 가장 사랑하는 스카치 위스키, 발렌타인은 1827년 스코틀랜드에서 시작되었습니다. 최상의 원료와 발렌타인 마스터 블렌더의 블렌딩, 그리고 수제작한 부르봉 통에서의 에이징이 약 200년 동안 세계적으로 인정 받는 발렌타인 맛의 비밀입니다.",
+        "star": "5.0",
+        "price": 980000,
+        "discount_rate": 34,
+        "discounted_price": 646800,
+        "category": "whiskey",
+        "alcohol_percentage": "43.0",
+        "sweetness": "middle",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": false,
+        "volume": 700,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T01:36:56.667Z",
+        "updated_at": "2023-05-02T02:23:29.316Z",
+        "image": "products/발렌타인 30년/발렌타인30.jpg",
+        "like_users": [
+            5
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 34,
+    "fields": {
+        "user": 3,
+        "title": "일리악 CS",
+        "content": "'일리악 캐스크 스트렝스'는 철저하게 비밀에 싸인 미스테리한 아일라 싱글몰트 독립 병입자 The Vintage Malt Whisky Co Ltd.의 싱글몰트 위스키입니다. 해안가의 뚜렷한 활기를 띤 강력한 피트 위스키 일리악은 진정한 아일라 그 자체를 상징합니다. '일리악 캐스크 스트렝스'는 특히 평론가들의 찬사를 한 몸에 받아온 제품으로, 위스키 바이블의 짐 머레이에게 97점이라는 높은 점수를 얻은 바 있습니다.",
+        "star": "3.0",
+        "price": 120000,
+        "discount_rate": 13,
+        "discounted_price": 104400,
+        "category": "whiskey",
+        "alcohol_percentage": "58.0",
+        "sweetness": "middle",
+        "sourness": "low",
+        "bitterness": "strong",
+        "carbonated": false,
+        "volume": 700,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T01:38:16.522Z",
+        "updated_at": "2023-05-02T02:06:52.553Z",
+        "image": "products/일리악 CS/일리악_CS.jpg",
+        "like_users": []
+    }
+},
+{
+    "model": "products.product",
+    "pk": 35,
+    "fields": {
+        "user": 3,
+        "title": "라가불린 16년",
+        "content": "남부 아일라 지역에서 흔히 볼 수 있는 굉장한 피트향과 스모키함을 품고 있는 라가불린 증류소의 핵심 라인업, ‘라가불린 16년’입니다. 라가불린 16년은 강력한 피트향을 내뿜는 동시에 그 맛의 풍성함과 건조함을 동시에 선사하고 있죠. 라가불린 증류소의 16년 숙성 위스키는 모든 아일라 위스키의 진정한 벤치마킹이 되어 왓습니다. 만약 ‘라가불린 16년’과 함께 할 음식을 찾고 있다면, 강렬한 맛을 내는 짠 블루 치즈를 추천합니다. 블루 치즈는 라가불린의 강렬하고, 두껍고, 달콤하면서도 짭쪼름한 캐릭터를 훌륭하게 보완해 줄 것입니다.",
+        "star": "0.0",
+        "price": 220000,
+        "discount_rate": 24,
+        "discounted_price": 167200,
+        "category": "whiskey",
+        "alcohol_percentage": "43.0",
+        "sweetness": "middle",
+        "sourness": "low",
+        "bitterness": "middle",
+        "carbonated": false,
+        "volume": 700,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T01:39:10.772Z",
+        "updated_at": "2023-05-02T01:39:10.772Z",
+        "image": "products/라가불린 16년/라가불린16.jpg",
+        "like_users": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 36,
+    "fields": {
+        "user": 3,
+        "title": "달위니 15",
+        "content": "달위니는 '만남의 장소'라는 뜻으로, 스코틀랜드에서도 높은 지대, 여러 산맥이 만나는 곳에 위치하여 달위니라는 이름을 가지게 되었다고 합니다. 높은 지대에 위치하여 1년 내내 평균 기온의 차이가 크지 않아, 밸런스가 좋은 위스키를 생산해내는 것으로도 알려져 있죠. '달위니 15년' 은 달콤함으로 시작하여, 은은한 피트향과 함께 오래 지속되는 여운이 특징인 위스키입니다. 특히 달위니 15년은 차갑게 먹으면 맛있다고 하니, 냉장고에 넣어서 새로운 매력을 느껴보세요.",
+        "star": "0.0",
+        "price": 135000,
+        "discount_rate": 6,
+        "discounted_price": 126900,
+        "category": "whiskey",
+        "alcohol_percentage": "43.0",
+        "sweetness": "middle",
+        "sourness": "low",
+        "bitterness": "middle",
+        "carbonated": false,
+        "volume": 700,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T01:40:21.019Z",
+        "updated_at": "2023-05-02T01:40:21.019Z",
+        "image": "products/달위니 15/달위니_15.jpg",
+        "like_users": []
+    }
+},
+{
+    "model": "products.product",
+    "pk": 37,
+    "fields": {
+        "user": 3,
+        "title": "맥캘란 18년 쉐리",
+        "content": "맥캘란은 세계적으로 유명한 싱글몰트 위스키 브랜드 중 하나입니다.",
+        "star": "5.0",
+        "price": 420000,
+        "discount_rate": 0,
+        "discounted_price": 420000,
+        "category": "whiskey",
+        "alcohol_percentage": "43.0",
+        "sweetness": "strong",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": false,
+        "volume": 700,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T01:42:25.942Z",
+        "updated_at": "2023-05-02T01:58:29.183Z",
+        "image": "products/맥캘란 18년 쉐리/맥캘란18.jpg",
+        "like_users": [
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 38,
+    "fields": {
+        "user": 3,
+        "title": "복순도가 손 막걸리 3병",
+        "content": "막페인의 원조, 스파클링 막걸리",
+        "star": "4.8",
+        "price": 36000,
+        "discount_rate": 0,
+        "discounted_price": 36000,
+        "category": "traditional",
+        "alcohol_percentage": "6.5",
+        "sweetness": "strong",
+        "sourness": "strong",
+        "bitterness": "middle",
+        "carbonated": false,
+        "volume": 935,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T02:03:52.663Z",
+        "updated_at": "2023-05-02T02:27:38.821Z",
+        "image": "products/복순도가 손 막걸리 3병/복순도가.jpg",
+        "like_users": [
+            2,
+            3,
+            4,
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 39,
+    "fields": {
+        "user": 3,
+        "title": "토박이 한산 소곡주",
+        "content": "한 번 마시면 멈출 수 없는 맛",
+        "star": "5.0",
+        "price": 11000,
+        "discount_rate": 10,
+        "discounted_price": 9900,
+        "category": "traditional",
+        "alcohol_percentage": "16.0",
+        "sweetness": "strong",
+        "sourness": "middle",
+        "bitterness": "middle",
+        "carbonated": false,
+        "volume": 1000,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T02:07:19.814Z",
+        "updated_at": "2023-05-02T02:16:23.276Z",
+        "image": "products/토박이 한산 소곡주/소곡주.jpg",
+        "like_users": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 40,
+    "fields": {
+        "user": 3,
+        "title": "고운달 오크",
+        "content": "37년 내공으로 빚은 증류주",
+        "star": "4.5",
+        "price": 360000,
+        "discount_rate": 0,
+        "discounted_price": 360000,
+        "category": "traditional",
+        "alcohol_percentage": "52.0",
+        "sweetness": "middle",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": false,
+        "volume": 500,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T02:09:41.649Z",
+        "updated_at": "2023-05-02T02:16:10.014Z",
+        "image": "products/고운달 오크/고운달.jpg",
+        "like_users": [
+            2,
+            5
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 41,
+    "fields": {
+        "user": 3,
+        "title": "추사 40%",
+        "content": "사과 와인을 증류하여 오크통에 숙성한 브랜디",
+        "star": "5.0",
+        "price": 66000,
+        "discount_rate": 10,
+        "discounted_price": 59400,
+        "category": "traditional",
+        "alcohol_percentage": "40.0",
+        "sweetness": "strong",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": false,
+        "volume": 500,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T02:11:04.651Z",
+        "updated_at": "2023-05-02T02:18:17.233Z",
+        "image": "products/추사 40%/추사.jpg",
+        "like_users": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 42,
+    "fields": {
+        "user": 3,
+        "title": "솔송",
+        "content": "소나무의 송순과 지리산 맑은 물로 빚은 약주",
+        "star": "4.0",
+        "price": 9000,
+        "discount_rate": 10,
+        "discounted_price": 8100,
+        "category": "traditional",
+        "alcohol_percentage": "13.0",
+        "sweetness": "low",
+        "sourness": "low",
+        "bitterness": "low",
+        "carbonated": false,
+        "volume": 375,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T02:13:54.539Z",
+        "updated_at": "2023-05-02T02:15:29.505Z",
+        "image": "products/솔송/솔송주.jpg",
+        "like_users": []
+    }
+},
+{
+    "model": "products.product",
+    "pk": 43,
+    "fields": {
+        "user": 3,
+        "title": "면천 두견주 2병",
+        "content": "진달래를 넣어 빚은 전설 속의 약주",
+        "star": "3.0",
+        "price": 55000,
+        "discount_rate": 10,
+        "discounted_price": 49500,
+        "category": "traditional",
+        "alcohol_percentage": "18.0",
+        "sweetness": "strong",
+        "sourness": "middle",
+        "bitterness": "middle",
+        "carbonated": false,
+        "volume": 700,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T02:15:43.542Z",
+        "updated_at": "2023-05-02T02:17:48.366Z",
+        "image": "products/면천 두견주 2병/두견주.jpg",
+        "like_users": []
+    }
+},
+{
+    "model": "products.product",
+    "pk": 44,
+    "fields": {
+        "user": 3,
+        "title": "진도 아리랑 홍주 40%",
+        "content": "진도에서 빚어야 진짜 진도 홍주랍니다",
+        "star": "5.0",
+        "price": 17900,
+        "discount_rate": 10,
+        "discounted_price": 16110,
+        "category": "traditional",
+        "alcohol_percentage": "40.0",
+        "sweetness": "low",
+        "sourness": "middle",
+        "bitterness": "middle",
+        "carbonated": false,
+        "volume": 375,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T02:17:58.301Z",
+        "updated_at": "2023-05-02T02:20:58.710Z",
+        "image": "products/진도 아리랑 홍주 40%/홍주.jpg",
+        "like_users": [
+            4,
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 45,
+    "fields": {
+        "user": 3,
+        "title": "안동소주 일품 40% 골드",
+        "content": "안동소주 일품 시리즈의 끝판왕 ‘골드’",
+        "star": "4.0",
+        "price": 27000,
+        "discount_rate": 10,
+        "discounted_price": 24300,
+        "category": "traditional",
+        "alcohol_percentage": "40.0",
+        "sweetness": "low",
+        "sourness": "low",
+        "bitterness": "strong",
+        "carbonated": false,
+        "volume": 500,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T02:20:29.925Z",
+        "updated_at": "2023-05-02T02:23:25.447Z",
+        "image": "products/안동소주 일품 40% 골드/소주.jpg",
+        "like_users": [
+            6
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 46,
+    "fields": {
+        "user": 3,
+        "title": "서울의 밤 25%",
+        "content": "늦은 밤, 어느 안주와도 어울리는 술",
+        "star": "2.0",
+        "price": 7900,
+        "discount_rate": 10,
+        "discounted_price": 7110,
+        "category": "traditional",
+        "alcohol_percentage": "25.0",
+        "sweetness": "low",
+        "sourness": "low",
+        "bitterness": "strong",
+        "carbonated": false,
+        "volume": 375,
+        "delivery_date": 1,
+        "created_at": "2023-05-02T02:23:43.871Z",
+        "updated_at": "2023-05-02T02:27:56.051Z",
+        "image": "products/서울의 밤 25%/서울의밤.jpg",
+        "like_users": []
+    }
+}
+]

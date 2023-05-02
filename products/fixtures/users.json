@@ -1,0 +1,156 @@
+[
+{
+    "model": "accounts.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$cQlKrHGpps6jJYdCvDFPFT$AcDCjlK/laCLTc8L7sE6Ek8daH+B034jsjHK6rZMPYI=",
+        "last_login": "2023-05-01T12:01:07.055Z",
+        "is_superuser": false,
+        "username": "lmw",
+        "first_name": "",
+        "last_name": "이민욱",
+        "email": "djqmflsk@naver.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-28T13:26:59.737Z",
+        "birthday": "1996-08-22",
+        "gender": "",
+        "image": "products/None/맥주_dShAVU2.jpg",
+        "groups": [],
+        "user_permissions": [],
+        "followings": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$MXNNKXVaUjvAdxg39hrlDc$O+6nGVRuQPF5gM2HwoA+pHSBd0hyN8awayi/vaimBFY=",
+        "last_login": "2023-05-02T02:26:29.500Z",
+        "is_superuser": false,
+        "username": "admin911",
+        "first_name": "",
+        "last_name": "min",
+        "email": "cghhld@naver.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-05-02T01:19:37.573Z",
+        "birthday": "2023-04-05",
+        "gender": "",
+        "image": "",
+        "groups": [],
+        "user_permissions": [],
+        "followings": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$xUgqJRgWdzAGuIAu0k8MAm$7pyaWuQbZts+MpqFkPRY5Z3Q48wSHD9MAj8Q0rnNiTw=",
+        "last_login": "2023-05-02T01:24:51.953Z",
+        "is_superuser": false,
+        "username": "yuyoung",
+        "first_name": "",
+        "last_name": "yuyoung",
+        "email": "asdf@asdf.asdf",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-05-02T01:24:51.689Z",
+        "birthday": "2023-05-02",
+        "gender": "",
+        "image": "",
+        "groups": [],
+        "user_permissions": [],
+        "followings": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$Og2exq7T7Ev4IbZ3YoegQb$nYaIuk/+q0ux0DsZR6xi+b1gr/1NzeG4A3iIoC1P2kA=",
+        "last_login": "2023-05-02T02:27:33.525Z",
+        "is_superuser": false,
+        "username": "lmw2",
+        "first_name": "",
+        "last_name": "세계술다먹어봄",
+        "email": "dkqmflsk@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-05-02T02:06:16.419Z",
+        "birthday": "1988-02-03",
+        "gender": "",
+        "image": "products/None/m2_Oy8AK8L.jpg",
+        "groups": [],
+        "user_permissions": [],
+        "followings": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$xg3t75zQ10UsRZsRrlIlZH$0waPWj8jBCX6G7oG0tmDqE/WxDSWTVNTXuS7aCaJICM=",
+        "last_login": "2023-05-02T02:21:29.363Z",
+        "is_superuser": false,
+        "username": "sunhyeok",
+        "first_name": "",
+        "last_name": "sun",
+        "email": "cghhld@naver.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-05-02T02:14:13.020Z",
+        "birthday": "2023-04-05",
+        "gender": "",
+        "image": "",
+        "groups": [],
+        "user_permissions": [],
+        "followings": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$K5WWMB1NnGir5gSTBmUbiS$a+aCtQ93vmiFNFz8g4VmJ0Sly53ercaOSqvpGfyHrqw=",
+        "last_login": "2023-05-02T02:26:27.249Z",
+        "is_superuser": false,
+        "username": "lmw3",
+        "first_name": "",
+        "last_name": "동탄그라가스",
+        "email": "djqmflsk@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-05-02T02:20:33.209Z",
+        "birthday": "2000-06-22",
+        "gender": "",
+        "image": "products/None/c6_1xneQA8.jpg",
+        "groups": [],
+        "user_permissions": [],
+        "followings": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$1WakTnf94iJOrmfcDgU6mU$y9xAjZ2YSF79QrQ/CZRWPH7iamN+/loNid0WA1uAzA4=",
+        "last_login": "2023-05-02T02:26:17.546Z",
+        "is_superuser": false,
+        "username": "yuyoung2",
+        "first_name": "",
+        "last_name": "드렁큰타이거",
+        "email": "asdf@asdf.asdf",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-05-02T02:26:17.352Z",
+        "birthday": "2023-04-04",
+        "gender": "",
+        "image": "",
+        "groups": [],
+        "user_permissions": [],
+        "followings": []
+    }
+}
+]

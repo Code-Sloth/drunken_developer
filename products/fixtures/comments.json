@@ -1,0 +1,834 @@
+[
+{
+    "model": "products.comment",
+    "pk": 14,
+    "fields": {
+        "user": 3,
+        "product": 21,
+        "content": "쉐리 위스키 베스트셀러",
+        "created_at": "2023-05-02T01:49:57.137Z",
+        "updated_at": "2023-05-02T01:49:57.137Z",
+        "image": "products/None/맥캘란_12.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 15,
+    "fields": {
+        "user": 3,
+        "product": 33,
+        "content": "면세점에서 사세요 거기가 더 쌈",
+        "created_at": "2023-05-02T01:50:30.701Z",
+        "updated_at": "2023-05-02T01:50:30.702Z",
+        "image": "products/None/발렌타인30.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 17,
+    "fields": {
+        "user": 3,
+        "product": 30,
+        "content": "피트 짱좋음 소독약좋아요",
+        "created_at": "2023-05-02T01:51:03.229Z",
+        "updated_at": "2023-05-02T01:51:03.229Z",
+        "image": "products/None/라프로익10.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 18,
+    "fields": {
+        "user": 2,
+        "product": 16,
+        "content": "정말 맛있습니다.",
+        "created_at": "2023-05-02T01:51:39.206Z",
+        "updated_at": "2023-05-02T01:51:39.206Z",
+        "image": "products/None/클라우드1.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 19,
+    "fields": {
+        "user": 2,
+        "product": 16,
+        "content": "not bad",
+        "created_at": "2023-05-02T01:52:10.468Z",
+        "updated_at": "2023-05-02T01:52:10.468Z",
+        "image": "products/None/Kloud_클라우드.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 20,
+    "fields": {
+        "user": 3,
+        "product": 32,
+        "content": "제주 중문면세점에서 제일 저렴하게 파는데 거기 가서 사세요",
+        "created_at": "2023-05-02T01:52:18.499Z",
+        "updated_at": "2023-05-02T01:52:18.499Z",
+        "image": "products/None/아벨라워아브나흐.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 21,
+    "fields": {
+        "user": 1,
+        "product": 8,
+        "content": "이거 맛있어요!",
+        "created_at": "2023-05-02T01:53:16.416Z",
+        "updated_at": "2023-05-02T01:53:16.416Z",
+        "image": "products/None/comment1_lN9cxjM.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 22,
+    "fields": {
+        "user": 3,
+        "product": 23,
+        "content": "믿고 먹는 발베니\r\n무조건 추천합니다",
+        "created_at": "2023-05-02T01:53:24.442Z",
+        "updated_at": "2023-05-02T01:53:24.442Z",
+        "image": "products/None/발베니12.jpg",
+        "star": 3
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 23,
+    "fields": {
+        "user": 2,
+        "product": 18,
+        "content": "부드럽습니다",
+        "created_at": "2023-05-02T01:53:24.578Z",
+        "updated_at": "2023-05-02T01:53:24.578Z",
+        "image": "products/None/테라1.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 24,
+    "fields": {
+        "user": 2,
+        "product": 18,
+        "content": "전 별로인거 같아요",
+        "created_at": "2023-05-02T01:53:47.538Z",
+        "updated_at": "2023-05-02T01:53:47.538Z",
+        "image": "products/None/테라2.jpg",
+        "star": 1
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 25,
+    "fields": {
+        "user": 3,
+        "product": 31,
+        "content": "달달합니다 맛있어요",
+        "created_at": "2023-05-02T01:53:55.458Z",
+        "updated_at": "2023-05-02T01:53:55.458Z",
+        "image": "products/None/드로낙12.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 26,
+    "fields": {
+        "user": 1,
+        "product": 9,
+        "content": "존맛...",
+        "created_at": "2023-05-02T01:54:28.221Z",
+        "updated_at": "2023-05-02T01:54:28.221Z",
+        "image": "products/None/c2.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 27,
+    "fields": {
+        "user": 2,
+        "product": 19,
+        "content": "해변에 놓고 길뻔..",
+        "created_at": "2023-05-02T01:55:43.820Z",
+        "updated_at": "2023-05-02T01:55:43.820Z",
+        "image": "products/None/제주위트에일.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 28,
+    "fields": {
+        "user": 1,
+        "product": 7,
+        "content": "내가 생각한 맛이 아님....",
+        "created_at": "2023-05-02T01:55:58.492Z",
+        "updated_at": "2023-05-02T01:55:58.492Z",
+        "image": "products/None/c3.jpg",
+        "star": 2
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 29,
+    "fields": {
+        "user": 2,
+        "product": 19,
+        "content": "마씨따",
+        "created_at": "2023-05-02T01:56:06.268Z",
+        "updated_at": "2023-05-02T01:56:06.269Z",
+        "image": "products/None/제주위트에일2.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 31,
+    "fields": {
+        "user": 2,
+        "product": 19,
+        "content": "충동구매햇습니다 벌써 3번째...",
+        "created_at": "2023-05-02T01:57:05.473Z",
+        "updated_at": "2023-05-02T01:57:05.473Z",
+        "image": "products/None/제주3.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 32,
+    "fields": {
+        "user": 3,
+        "product": 21,
+        "content": "벌써 다 먹어가네요",
+        "created_at": "2023-05-02T01:57:14.136Z",
+        "updated_at": "2023-05-02T01:57:14.136Z",
+        "image": "",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 33,
+    "fields": {
+        "user": 1,
+        "product": 10,
+        "content": "제 입맛에 맞네요",
+        "created_at": "2023-05-02T01:57:22.674Z",
+        "updated_at": "2023-05-02T01:57:22.674Z",
+        "image": "products/None/c4_sFoi26n.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 34,
+    "fields": {
+        "user": 3,
+        "product": 21,
+        "content": "위스키는 역시 맥이죠",
+        "created_at": "2023-05-02T01:57:31.475Z",
+        "updated_at": "2023-05-02T01:57:31.475Z",
+        "image": "",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 35,
+    "fields": {
+        "user": 2,
+        "product": 19,
+        "content": "종류별로 맛보는 재미가 있습니다.",
+        "created_at": "2023-05-02T01:58:15.970Z",
+        "updated_at": "2023-05-02T01:58:15.970Z",
+        "image": "products/None/엥ㄹ.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 36,
+    "fields": {
+        "user": 3,
+        "product": 37,
+        "content": "수집용으로 샀습니다",
+        "created_at": "2023-05-02T01:58:29.198Z",
+        "updated_at": "2023-05-02T01:58:29.198Z",
+        "image": "products/None/맥캘란18.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 37,
+    "fields": {
+        "user": 1,
+        "product": 11,
+        "content": "바디감 좋네요\r\n맛은 좀 애매해서 3점 주고 갑니다",
+        "created_at": "2023-05-02T01:58:33.206Z",
+        "updated_at": "2023-05-02T01:58:33.207Z",
+        "image": "products/None/c5.jpg",
+        "star": 3
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 38,
+    "fields": {
+        "user": 3,
+        "product": 20,
+        "content": "코젤좋아요 짱짱",
+        "created_at": "2023-05-02T01:58:51.171Z",
+        "updated_at": "2023-05-02T01:58:51.171Z",
+        "image": "",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 39,
+    "fields": {
+        "user": 3,
+        "product": 22,
+        "content": "조장님이좋아하는 호가든",
+        "created_at": "2023-05-02T01:59:41.164Z",
+        "updated_at": "2023-05-02T01:59:41.164Z",
+        "image": "",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 40,
+    "fields": {
+        "user": 3,
+        "product": 9,
+        "content": "너무 비싸요 할인해주세요",
+        "created_at": "2023-05-02T02:00:04.401Z",
+        "updated_at": "2023-05-02T02:00:04.401Z",
+        "image": "",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 41,
+    "fields": {
+        "user": 1,
+        "product": 13,
+        "content": "괜찮네요",
+        "created_at": "2023-05-02T02:00:06.959Z",
+        "updated_at": "2023-05-02T02:00:06.959Z",
+        "image": "products/None/c6.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 42,
+    "fields": {
+        "user": 2,
+        "product": 19,
+        "content": "박스에 하나 비어있길래 채울려고 구매했습니다",
+        "created_at": "2023-05-02T02:00:07.848Z",
+        "updated_at": "2023-05-02T02:00:07.848Z",
+        "image": "products/None/제주1.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 43,
+    "fields": {
+        "user": 1,
+        "product": 25,
+        "content": "스텔라는 역시..",
+        "created_at": "2023-05-02T02:02:03.515Z",
+        "updated_at": "2023-05-02T02:02:03.515Z",
+        "image": "products/None/m1.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 44,
+    "fields": {
+        "user": 2,
+        "product": 20,
+        "content": "쓰다",
+        "created_at": "2023-05-02T02:02:04.574Z",
+        "updated_at": "2023-05-02T02:02:04.574Z",
+        "image": "products/None/코젤1.jpg",
+        "star": 3
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 45,
+    "fields": {
+        "user": 2,
+        "product": 20,
+        "content": "생각보다 먹을만 했습니다",
+        "created_at": "2023-05-02T02:02:36.207Z",
+        "updated_at": "2023-05-02T02:02:36.207Z",
+        "image": "products/None/코젤3.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 46,
+    "fields": {
+        "user": 1,
+        "product": 26,
+        "content": "이건 뭔 맛이지?",
+        "created_at": "2023-05-02T02:03:01.207Z",
+        "updated_at": "2023-05-02T02:03:01.207Z",
+        "image": "products/None/m2.jpg",
+        "star": 2
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 47,
+    "fields": {
+        "user": 1,
+        "product": 24,
+        "content": "에델은 좀 나랑 안 맞다",
+        "created_at": "2023-05-02T02:04:00.597Z",
+        "updated_at": "2023-05-02T02:04:00.597Z",
+        "image": "products/None/m2_kv2s5Up.jpg",
+        "star": 2
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 48,
+    "fields": {
+        "user": 2,
+        "product": 22,
+        "content": "조장님이 좋아하는 호가든\r\n가득 담아 드세요",
+        "created_at": "2023-05-02T02:05:29.530Z",
+        "updated_at": "2023-05-02T02:05:29.531Z",
+        "image": "products/None/호2.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 49,
+    "fields": {
+        "user": 2,
+        "product": 22,
+        "content": "전 먹을만 하더라구요\r\n그래서 잔도 구매했습니다",
+        "created_at": "2023-05-02T02:05:57.253Z",
+        "updated_at": "2023-05-02T02:05:57.253Z",
+        "image": "products/None/호가든1.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 50,
+    "fields": {
+        "user": 4,
+        "product": 34,
+        "content": "너무 비쌈;",
+        "created_at": "2023-05-02T02:06:52.569Z",
+        "updated_at": "2023-05-02T02:06:52.569Z",
+        "image": "",
+        "star": 3
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 51,
+    "fields": {
+        "user": 2,
+        "product": 27,
+        "content": "달고 마씨다 입니다",
+        "created_at": "2023-05-02T02:07:07.591Z",
+        "updated_at": "2023-05-02T02:07:07.591Z",
+        "image": "products/None/썸머2.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 52,
+    "fields": {
+        "user": 2,
+        "product": 27,
+        "content": "이게 맥주냐 음류지 이딴걸 팔아",
+        "created_at": "2023-05-02T02:07:24.391Z",
+        "updated_at": "2023-05-02T02:07:24.391Z",
+        "image": "products/None/썸머1.jpg",
+        "star": 1
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 53,
+    "fields": {
+        "user": 2,
+        "product": 29,
+        "content": "Smooth like butter\r\nLike a criminal undercover\r\nGon' pop like trouble\r\nBreakin' into your heart like that\r\nCool shade stunner\r\nYeah I owe it all to my mother",
+        "created_at": "2023-05-02T02:09:12.725Z",
+        "updated_at": "2023-05-02T02:09:12.725Z",
+        "image": "",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 54,
+    "fields": {
+        "user": 2,
+        "product": 29,
+        "content": "더럽게 비싸네 거 참",
+        "created_at": "2023-05-02T02:09:29.202Z",
+        "updated_at": "2023-05-02T02:09:29.202Z",
+        "image": "products/None/BEURRE.jpg",
+        "star": 1
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 55,
+    "fields": {
+        "user": 4,
+        "product": 26,
+        "content": "좀 별로...",
+        "created_at": "2023-05-02T02:10:04.673Z",
+        "updated_at": "2023-05-02T02:10:04.673Z",
+        "image": "",
+        "star": 3
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 57,
+    "fields": {
+        "user": 4,
+        "product": 31,
+        "content": "아직 안 먹었지만 맛있음ㅋㅋ",
+        "created_at": "2023-05-02T02:10:56.383Z",
+        "updated_at": "2023-05-02T02:10:56.383Z",
+        "image": "products/None/c7.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 58,
+    "fields": {
+        "user": 2,
+        "product": 15,
+        "content": "전 너무 싼 와인은 별로 더라구요 그래서 안마셨습니다. 뭔 맛인지는 모르겟지만 맛없을거같아서 1점 드릴게요",
+        "created_at": "2023-05-02T02:11:50.655Z",
+        "updated_at": "2023-05-02T02:11:50.655Z",
+        "image": "",
+        "star": 1
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 59,
+    "fields": {
+        "user": 4,
+        "product": 38,
+        "content": "좀 참신한 막걸리 맛",
+        "created_at": "2023-05-02T02:12:18.795Z",
+        "updated_at": "2023-05-02T02:12:18.796Z",
+        "image": "products/None/j1.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 60,
+    "fields": {
+        "user": 2,
+        "product": 15,
+        "content": "와인도 맥주처럼 찍는 마법",
+        "created_at": "2023-05-02T02:12:38.373Z",
+        "updated_at": "2023-05-02T02:12:38.373Z",
+        "image": "products/None/소비뇽1.jpg",
+        "star": 3
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 61,
+    "fields": {
+        "user": 4,
+        "product": 41,
+        "content": "여기 제품들은 다 맛있네요 ㅋㅋ",
+        "created_at": "2023-05-02T02:13:16.063Z",
+        "updated_at": "2023-05-02T02:13:16.063Z",
+        "image": "products/None/j2.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 62,
+    "fields": {
+        "user": 2,
+        "product": 9,
+        "content": "역시 비싼게 짱이야!!",
+        "created_at": "2023-05-02T02:13:29.657Z",
+        "updated_at": "2023-05-02T02:13:29.657Z",
+        "image": "",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 63,
+    "fields": {
+        "user": 4,
+        "product": 42,
+        "content": "솔향이 기가 맥힘 그냥..",
+        "created_at": "2023-05-02T02:15:29.519Z",
+        "updated_at": "2023-05-02T02:15:29.519Z",
+        "image": "products/None/j3.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 64,
+    "fields": {
+        "user": 5,
+        "product": 40,
+        "content": "이름이 예쁘고 색감도 아름답네요 실물로 보니 더 맘에 듭니다",
+        "created_at": "2023-05-02T02:15:31.237Z",
+        "updated_at": "2023-05-02T02:15:31.237Z",
+        "image": "products/None/고운달.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 65,
+    "fields": {
+        "user": 5,
+        "product": 40,
+        "content": "선물햇습니다 고맙다고 하더라구요 감사합니다",
+        "created_at": "2023-05-02T02:16:10.027Z",
+        "updated_at": "2023-05-02T02:16:10.027Z",
+        "image": "products/None/고운달2.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 66,
+    "fields": {
+        "user": 4,
+        "product": 39,
+        "content": "처음 먹어보는데 존맛이네요 ㅋㅋ",
+        "created_at": "2023-05-02T02:16:23.290Z",
+        "updated_at": "2023-05-02T02:16:23.290Z",
+        "image": "products/None/j4.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 67,
+    "fields": {
+        "user": 5,
+        "product": 12,
+        "content": "테 와카테 키오 쿠라이!!!",
+        "created_at": "2023-05-02T02:17:30.396Z",
+        "updated_at": "2023-05-02T02:17:30.396Z",
+        "image": "",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 68,
+    "fields": {
+        "user": 4,
+        "product": 43,
+        "content": "맛있긴 한데 좀 애매한 듯..",
+        "created_at": "2023-05-02T02:17:48.378Z",
+        "updated_at": "2023-05-02T02:17:48.378Z",
+        "image": "products/None/j5.jpg",
+        "star": 3
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 69,
+    "fields": {
+        "user": 5,
+        "product": 41,
+        "content": "도수가 그리 높게 느껴지지 않았습니다",
+        "created_at": "2023-05-02T02:18:17.247Z",
+        "updated_at": "2023-05-02T02:18:17.247Z",
+        "image": "products/None/추사.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 70,
+    "fields": {
+        "user": 5,
+        "product": 44,
+        "content": "선물용",
+        "created_at": "2023-05-02T02:20:01.719Z",
+        "updated_at": "2023-05-02T02:20:01.719Z",
+        "image": "products/None/아리랑아.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 71,
+    "fields": {
+        "user": 2,
+        "product": 44,
+        "content": "표지만 보고 음류수인줄 알고 마실 뻔 햇습니다. 좀만 덜 예쁘게 만들어주세요",
+        "created_at": "2023-05-02T02:20:58.723Z",
+        "updated_at": "2023-05-02T02:20:58.723Z",
+        "image": "products/None/홍주.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 72,
+    "fields": {
+        "user": 6,
+        "product": 45,
+        "content": "술이 잘 들어가네요",
+        "created_at": "2023-05-02T02:23:25.462Z",
+        "updated_at": "2023-05-02T02:23:25.462Z",
+        "image": "products/None/j6.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 73,
+    "fields": {
+        "user": 5,
+        "product": 33,
+        "content": "30년동안 이것만 마시고 싶다...",
+        "created_at": "2023-05-02T02:23:29.332Z",
+        "updated_at": "2023-05-02T02:23:29.332Z",
+        "image": "products/None/발렌타인.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 74,
+    "fields": {
+        "user": 5,
+        "product": 38,
+        "content": "막걸리를 제가 잘 못마시는데도 나쁘지 않앗습니다",
+        "created_at": "2023-05-02T02:25:34.094Z",
+        "updated_at": "2023-05-02T02:25:34.094Z",
+        "image": "products/None/막걸리.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 75,
+    "fields": {
+        "user": 3,
+        "product": 38,
+        "content": "막걸리 치고는 비싼 가격이지만 그 값어치를 합니다. 너무 맛있어요.",
+        "created_at": "2023-05-02T02:25:37.796Z",
+        "updated_at": "2023-05-02T02:25:37.796Z",
+        "image": "products/None/복순도가.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 76,
+    "fields": {
+        "user": 6,
+        "product": 38,
+        "content": "스파클링 막걸리 첨 먹어보는데 맛있네요",
+        "created_at": "2023-05-02T02:25:43.635Z",
+        "updated_at": "2023-05-02T02:25:43.636Z",
+        "image": "products/None/main1.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 77,
+    "fields": {
+        "user": 2,
+        "product": 38,
+        "content": "아침부터 저녁까지 마시기 좋습니다",
+        "created_at": "2023-05-02T02:26:18.356Z",
+        "updated_at": "2023-05-02T02:26:18.356Z",
+        "image": "products/None/막걸리2.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 78,
+    "fields": {
+        "user": 7,
+        "product": 38,
+        "content": "진짜 맛있어요 매우맛있음 매일매일 먹고싶어요",
+        "created_at": "2023-05-02T02:27:38.834Z",
+        "updated_at": "2023-05-02T02:27:38.834Z",
+        "image": "products/None/리뷰.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 79,
+    "fields": {
+        "user": 4,
+        "product": 46,
+        "content": "별로..",
+        "created_at": "2023-05-02T02:27:56.063Z",
+        "updated_at": "2023-05-02T02:27:56.063Z",
+        "image": "",
+        "star": 2
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 80,
+    "fields": {
+        "user": 7,
+        "product": 27,
+        "content": "너무 달아요",
+        "created_at": "2023-05-02T02:28:32.181Z",
+        "updated_at": "2023-05-02T02:28:32.181Z",
+        "image": "",
+        "star": 2
+    }
+}
+]

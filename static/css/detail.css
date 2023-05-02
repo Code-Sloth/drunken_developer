@@ -18,7 +18,7 @@
 }
 
 .product-img {
-  width: 390px;
+  min-width: 390px;
   padding-right: 30px;
 }
 
@@ -367,4 +367,10 @@
 
 .sidebar-buy:hover {
   background-color: rgb(231, 217, 31);
+}
+
+/* right */
+
+.product-rightbox {
+  padding-top: 30px;
 }

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/listing.css' %}">
@@ -473,14 +474,14 @@
 
             {% if product.discount_rate %}
               <div class='product-price'>
-                {{ product.price }}원
+                {{ product.price|intcomma }}원
               </div>
             {% else %}
               <div class='product-price'></div>
             {% endif %}
 
             <div>
-              {{ product.discounted_price }}원
+              {{ product.discounted_price|intcomma }}원
             </div>
 
             <div class='product-star-comment'>
