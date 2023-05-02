@@ -2,20 +2,40 @@ from django.shortcuts import render,redirect
 from .models import Product, Comment
 from .forms import ProductForm, CommentForm
 from django.contrib.auth.decorators import login_required
+from django.db.models import Subquery, OuterRef
 from django.shortcuts import get_object_or_404, get_list_or_404
-from django.db.models import Q
-from django.db.models import Count
+from django.db.models import Q,F
+from django.db.models import Count, Avg, Max
+from django.db.models import Case, When, Value, IntegerField
 import requests
 
 # Create your views here.
 
+
 def index(request):
-    # products = get_list_or_404(Product)
-    products = Product.objects.all()
+    popular_products = Product.objects.annotate(num_likes=Count('like_users')).order_by('-num_likes')
+    top_commented_products = Product.objects.annotate(num_comments=Count('comments')).order_by('-num_comments').prefetch_related('comments__user')
+    for product in top_commented_products:
+        for comment in product.comments.all():
+            content = comment.content
+
+    top_rated_products = Product.objects.annotate(num_stars=Avg('star')).order_by('-num_stars')
+    discounted_products = Product.objects.annotate(
+    discount_rate_max=Max('discount_rate')
+    ).annotate(
+    discount_price=Case(
+        When(discount_rate=F('discount_rate_max'), then=F('price') - F('price') * F('discount_rate_max') / 100),
+        default=F('price'),
+        output_field=IntegerField(),
+    )
+    ).order_by('-discount_rate_max', '-discount_price')
     context = {
-        'products' : products,
+        'popular_products': popular_products,
+        'top_commented_products': top_commented_products,
+        'top_rated_products': top_rated_products,
+        'discounted_products': discounted_products,
     }
-    return render(request, 'products/index.html',context)
+    return render(request, 'products/index.html', context)
 
 
 def detail(request, product_pk):
