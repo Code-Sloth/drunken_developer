@@ -13,6 +13,7 @@ class Product(models.Model):
     title = models.CharField(max_length=80)
     content = models.TextField()
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_products')
+    purchase_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='purchase_products', through='Purchase')
 
     star = models.DecimalField(default=0, max_digits=5, decimal_places=1)
     price = models.IntegerField()
@@ -64,6 +65,30 @@ class Product(models.Model):
     @property
     def star_multiple(self):
         return self.star*20
+
+class Purchase(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    title = models.CharField(max_length=80)
+    count = models.IntegerField(default=1)
+    price = models.IntegerField(default=0)
+    created_time = models.DateTimeField(auto_now_add=True)
+
+    @property
+    def created_time(self):
+        time = datetime.now(tz=timezone.utc) - self.purchase_time
+
+        if time < timedelta(minutes=1):
+            return '방금 전'
+        elif time < timedelta(hours=1):
+            return str(int(time.seconds / 60)) + '분 전'
+        elif time < timedelta(days=1):
+            return str(int(time.seconds / 3600)) + '시간 전'
+        elif time < timedelta(days=7):
+            time = datetime.now(tz=timezone.utc).date() - self.purchase_time.date()
+            return str(time.days) + '일 전'
+        else:
+            return self.strftime('%Y-%m-%d')
 
 class Comment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
