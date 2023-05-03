@@ -7,16 +7,20 @@ from django.contrib.auth import get_user_model
 from .forms import CustomUserCreationForm, CustomUserChangeForm, CustomAuthenticationForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
+from products.models import Purchase,Product
 
 # Create your views here.
 @login_required
-def mypage(request, username):
-    User = get_user_model()
-    person = User.objects.get(username=username)
-    context = {
-        'person': person,
-    }
-    return render(request, 'accounts/mypage.html', context)
+def mypage(request):
+    q = request.GET.get('q')
+    purchases = Purchase.objects.filter(user=request.user)
+
+    product_purchase = []
+    for purchase in purchases:
+        product = Product.objects.get(pk=purchase.product.pk)
+        product_purchase.append((product, purchase))
+
+    return render(request, 'accounts/mypage.html', {'q': q, 'product_purchase':product_purchase})
 
 
 def login(request):
@@ -99,7 +103,7 @@ def change_password(request):
     return render(request, 'accounts/change_password.html', context) 
 
 
-def follow(request, user_pk):
+def follow(request):
     User = get_user_model()
     person = User.objects.get(pk=user_pk)
     if person != request.user:
@@ -108,39 +112,3 @@ def follow(request, user_pk):
         else:
             person.followers.add(request.user)
     return redirect('accounts:mypage', person.username)
-
-
-def like(request, username):
-    User = get_user_model()
-    person = User.objects.get(username=username)
-    context = {
-        'person': person,
-    }
-    return render(request, 'accounts/like.html', context)
-
-
-def review(request, username):
-    User = get_user_model()
-    person = User.objects.get(username=username)
-    context = {
-        'person': person,
-    }
-    return render(request, 'accounts/review.html', context)
-
-
-def profile(request, username):
-    User = get_user_model()
-    person = User.objects.get(username=username)
-    context = {
-        'person': person,
-    }
-    return render(request, 'accounts/profile.html', context)
-
-
-def purchase(request, username):
-    User = get_user_model()
-    person = User.objects.get(username=username)
-    context = {
-        'person': person,
-    }
-    return render(request, 'accounts/purchase.html', context)

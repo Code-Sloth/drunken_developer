@@ -2,42 +2,41 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
-{% include 'mypage_top.html' %}
+
 <div class="container mt-4">
   <div class="mypage_box">
     <div class="mypage_info">
       <p class="mypage_info_item">회원정보</p>
-      <img class="img_size title_img" src="{% static 'image/mypage_profile.png' %}" alt="">
+      <img class="img_size title_img" src="{% static 'image/mypage_profile.png' %}" alt="profile">
     </div>
-    <div>
+    <div class='mt-5'>
       <div class="info_item">
         <span class="label">아이디</span>
-        <strong class="content">{{ person.username }}</strong>
+        <strong class="content">{{ user.username }}</strong>
       </div>
       <div class="info_item">
         <span class="label">회원명</span>
-        <strong class="content">{{ person.last_name }}</strong>
+        <strong class="content">{{ user.last_name }}</strong>
       </div>
       <div class="info_item">
         <span class="label">비밀번호</span>
-        <strong class="content"><a href="{% url 'accounts:change_password' %}">설정하기 &gt; </a></strong>
+        <strong class="content"><a class='profile-setting' href="{% url 'accounts:change_password' %}">설정하기 &gt; </a></strong>
       </div>
       <div class="info_item">
         <span class="label">이메일</span>
-        <strong class="content">{{ person.email }}</strong>
+        <strong class="content">{{ user.email }}</strong>
       </div>
       <div class="info_item">
         <span class="label">성별</span>
-        <strong class="content">{{ person.gender }}</strong>
+        <strong class="content">{{ user.gender }}</strong>
       </div>
       <div class="info_item">
         <span class="label">생년월일</span>
-        <strong class="content">{{ person.birthday }}</strong>
+        <strong class="content">{{ user.birthday }}</strong>
       </div>
     </div>
     <a class="profile_update" href="{% url 'accounts:update' %}">수정</a>
   </div>
 
 </div>
-</div><!-- mypage_top에서 열린 .body-->
 {% endblock content %}
