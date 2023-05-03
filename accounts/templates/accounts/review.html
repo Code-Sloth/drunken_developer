@@ -11,23 +11,12 @@
     </div>
     <div>
       {% for comment in person.comment_set.all %}
-    <p>{{ comment.content }}
-      {{ comment.star }}
-      {{ comment.created_time }}
-    </p>
-    {% endfor %}
+        <p>
+          {{ comment.content }}{{ comment.star }}{{ comment.created_time }}
+        </p>
+      {% endfor %}
     </div>
   </div>
 </div>
-{% comment %} <div class="container mt-4">
-  <div class="review_box">
-    {% for comment in person.comment_set.all %}
-    <p>{{ comment.content }}
-      {{ comment.star }}
-      {{ comment.created_time }}
-    </p>
-    {% endfor %}
-  </div>
-</div> {% endcomment %}
 </div><!-- mypage_top에서 열린 .body-->
 {% endblock content %}
