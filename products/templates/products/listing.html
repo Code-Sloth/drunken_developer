@@ -468,37 +468,39 @@
               </div>
             {% endif %}
             
-            <div class='product-title'>
-              {{ product.title }}
-            </div>
-
-            {% if product.discount_rate %}
-              <div class='product-price'>
-                {{ product.price|intcomma }}원
+            <div class='product-contentbox'>
+              <div class='product-title'>
+                {{ product.title }}
               </div>
-            {% else %}
-              <div class='product-price'></div>
-            {% endif %}
-
-            <div>
-              {{ product.discounted_price|intcomma }}원
-            </div>
-
-            <div class='product-star-comment'>
-              <div class='product-star'>
-                <img class='h-100' src="{% static 'image/star1.png' %}" alt="star1">
-                <div>
-                  {{ product.star }}
+  
+              {% if product.discount_rate %}
+                <div class='product-price'>
+                  {{ product.price|intcomma }}원
+                </div>
+              {% else %}
+                <div class='product-price'></div>
+              {% endif %}
+  
+              <div>
+                {{ product.discounted_price|intcomma }}원
+              </div>
+  
+              <div class='product-star-comment'>
+                <div class='product-star'>
+                  <img class='h-100' src="{% static 'image/star1.png' %}" alt="star1">
+                  <div>
+                    {{ product.star }}
+                  </div>
+                </div>
+  
+                <div class='product-comment'>
+                  리뷰 {{ product.comments.count }}
                 </div>
               </div>
-
-              <div class='product-comment'>
-                리뷰 {{ product.comments.count }}
+              
+              <div class='product-content'>
+                {{ product.content }}
               </div>
-            </div>
-            
-            <div class='product-content'>
-              {{ product.content }}
             </div>
           </a>
         </div>
