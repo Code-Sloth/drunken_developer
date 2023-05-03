@@ -108,7 +108,7 @@
         </div>
       </div>
 
-      <form class='sidebar-interest' action="{% url 'products:likes' product.pk %}" method="POST">
+      <form class='sidebar-interest' action="{% if user.is_anonymous %}{% url 'accounts:login' %}{% else %}{% url 'products:likes' product.pk %}{% endif %}" method="POST">
         {% csrf_token %}
         <button type='sutmit'>
           <div class='sidebar-interest-img'>
@@ -122,7 +122,8 @@
         </button>
       </form>
 
-      <form action="{% url 'products:kakaopay' product.pk %}" method="GET">
+      <form action="{% if user.is_anonymous %}{% url 'accounts:login' %}{% else %}{% url 'products:kakaopay' product.pk %}{% endif %}" method="POST">
+        {% csrf_token %}
         <input type="hidden" class='kakao-count' name='kakao-count' value='1'>
         <input type="hidden" class='original-price' value='{{ product.discounted_price }}'>
         <button name='kakao-price' value='5000' type='submit' class='sidebar-buy'>

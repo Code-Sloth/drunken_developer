@@ -57,12 +57,12 @@ def detail(request, product_pk):
     }
     return render(request, 'products/detail.html', context)
 
-
+@login_required
 def kakaopay(request, product_pk):
-    kakao_price = request.GET.get('kakao-price')
-    kakao_count = request.GET.get('kakao-count')
+    kakao_price = request.POST.get('kakao-price')
+    kakao_count = request.POST.get('kakao-count')
     product = Product.objects.get(pk=product_pk)
-
+    
     admin_key = '5c7f81cf35fcdc52ae7aabe26b5e762e'
     url = f'https://kapi.kakao.com/v1/payment/ready'
     headers = {
@@ -70,14 +70,14 @@ def kakaopay(request, product_pk):
     }
     data = {
         'cid': 'TC0ONETIME',
-        'partner_order_id':'partner_order_id', #주문 번호
-        'partner_user_id': 'partner_user_id', #유저 이름
+        'partner_order_id': product.pk, #주문 번호
+        'partner_user_id': request.user.username, #유저 이름
         'item_name': product.title, #제품명
         'quantity': kakao_count, #수량
         'total_amount': kakao_price, #가격
         'tax_free_amount':'0',
  
-        'approval_url':f'http://127.0.0.1:8000/products/pay_success/', 
+        'approval_url':f'http://127.0.0.1:8000/products/{product.pk}/pay_success/', 
         'fail_url':'http://127.0.0.1:8000/products/pay_fail',
         'cancel_url':'http://127.0.0.1:8000/products/pay_cancel'
     }
@@ -86,8 +86,9 @@ def kakaopay(request, product_pk):
     request.session['tid'] = result['tid']
     return redirect(result['next_redirect_pc_url'])
 
-
-def pay_success(request):
+@login_required
+def pay_success(request, product_pk):
+    product = Product.objects.get(pk=product_pk)
     url = 'https://kapi.kakao.com/v1/payment/approve'
     admin_key = '5c7f81cf35fcdc52ae7aabe26b5e762e'
     
@@ -97,8 +98,8 @@ def pay_success(request):
     data = {
         'cid':'TC0ONETIME',
         'tid': request.session['tid'], #결제 고유 번호
-        'partner_order_id':'partner_order_id', #주문 번호
-        'partner_user_id':'partner_user_id', #유저 아이디
+        'partner_order_id': product.pk, #주문 번호
+        'partner_user_id': request.user.username, #유저 아이디
         'pg_token': request.GET['pg_token'] 
     }
     res = requests.post(url, data=data, headers=headers)
@@ -110,7 +111,6 @@ def pay_success(request):
     if result.get('msg'): #msg = 오류 코드
         return redirect('products:pay_fail')
     else:
-        product = Product.objects.get(title=result['item_name'])
         product.purchase_users.add(request.user, through_defaults={
             'title': product.title,
             'count': result['quantity'],
@@ -118,11 +118,11 @@ def pay_success(request):
         })
         return render(request, 'products/pay_success.html', context)
 
-
+@login_required
 def pay_fail(request):
     return render(request, 'products/pay_fail.html')
 
-
+@login_required
 def pay_cancel(request):
     return render(request, 'products/pay_cancel.html')
 
@@ -211,7 +211,7 @@ def comment_delete(request, product_pk, comment_pk):
         comment.delete()
     return redirect('products:detail', product_pk)
 
-
+@login_required
 def likes(request, product_pk):
     # product = get_object_or_404(pk=product_pk)
     product = Product.objects.get(pk=product_pk)
