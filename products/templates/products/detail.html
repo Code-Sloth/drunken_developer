@@ -126,7 +126,7 @@
         {% csrf_token %}
         <input type="hidden" class='kakao-count' name='kakao-count' value='1'>
         <input type="hidden" class='original-price' value='{{ product.discounted_price }}'>
-        <button name='kakao-price' value='5000' type='submit' class='sidebar-buy'>
+        <button name='kakao-price' value='{{ product.discounted_price }}' type='submit' class='sidebar-buy'>
           카카오페이 결제
         </button>
       </form>
