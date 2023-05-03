@@ -77,13 +77,13 @@
   
   {% comment %} QUIZ {% endcomment %}
   <div class='index-quiz'>
-    <a href="{% url 'products:quiz' %}">
-      <p>
-        <span>AI 소믈리에</span> 무슨 술을 마실지 고민되시나요?
-        <span class='m-3'>
-          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="arrow" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg>
-        </span>
-      </p>
+    <a href="url 'products:quiz'">
+        <p>
+          <span>AI 소믈리에</span> 무슨 술을 마실지 고민되시나요?
+          <span class='m-3'>
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="arrow" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg>
+          </span>
+        </p>
     </a>
   </div>
 
@@ -137,53 +137,6 @@
               </a>
             </div>
             {% endfor %}
-          
-  
-          {% comment %} <div class='carousel-innerbox'>
-            {% for product in popular_products|slice:"1:2" %}
-            <a href="{% url 'products:detail' product.pk %}">
-                <div class="in-img">
-                    <div class='w-100'>
-                        <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                    </div>
-                    <div class="col">
-                        <p>{{ product.title }}</p>
-                    </div>
-                </div>
-            </a>
-            {% endfor %}
-          </div>
-  
-          <div class='carousel-innerbox'>
-            {% for product in popular_products|slice:"2:3" %}
-            <a href="{% url 'products:detail' product.pk %}">
-                <div class="in-img">
-                    <div class='w-100'>
-                        <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                    </div>
-                    <div class="col">
-                        <p>{{ product.title }}</p>
-                    </div>
-                </div>
-            </a>
-            {% endfor %}
-          </div>
-  
-          <div class='carousel-innerbox'>
-            {% for product in popular_products|slice:"3:4" %}
-            <a href="{% url 'products:detail' product.pk %}">
-                <div class="in-img">
-                    <div class='w-100'>
-                        <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                    </div>
-                    <div class="col">
-                        <p>{{ product.title }}</p>
-                    </div>
-                </div>
-            </a>
-            {% endfor %}
-          </div> {% endcomment %}
-  
           </div>
   
         </div>
@@ -192,8 +145,8 @@
   
           <div class="d-flex justify-content-around">
   
+            {% for product in popular_products|slice:"4:8" %}
             <div class='carousel-innerbox'>
-              {% for product in popular_products|slice:"4:5" %}
               <a href="{% url 'products:detail' product.pk %}">
                   <div class="in-img">
                       <div class='w-100'>
@@ -204,53 +157,9 @@
                       </div>
                   </div>
               </a>
-              {% endfor %}
             </div>
-  
-            <div class='carousel-innerbox'>
-              {% for product in popular_products|slice:"5:6" %}
-              <a href="{% url 'products:detail' product.pk %}">
-                  <div class="in-img">
-                      <div class='w-100'>
-                          <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                      </div>
-                      <div class="col">
-                          <p>{{ product.title }}</p>
-                      </div>
-                  </div>
-              </a>
-              {% endfor %}
-            </div>
-  
-            <div class='carousel-innerbox'>
-              {% for product in popular_products|slice:"6:7" %}
-              <a href="{% url 'products:detail' product.pk %}">
-                  <div class="in-img">
-                      <div class='w-100'>
-                          <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                      </div>
-                      <div class="col">
-                          <p>{{ product.title }}</p>
-                      </div>
-                  </div>
-              </a>
-              {% endfor %}
-            </div>
-  
-            <div class='carousel-innerbox'>
-              {% for product in popular_products|slice:"7:8" %}
-              <a href="{% url 'products:detail' product.pk %}">
-                  <div class="in-img">
-                      <div class='w-100'>
-                          <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                      </div>
-                      <div class="col">
-                          <p>{{ product.title }}</p>
-                      </div>
-                  </div>
-              </a>
-              {% endfor %}
-            </div>
+            {% endfor %}
+
   
           </div>
   
@@ -260,8 +169,8 @@
           
           <div class="d-flex justify-content-around">
   
+            {% for product in popular_products|slice:"8:12" %}
             <div class='carousel-innerbox'>
-              {% for product in popular_products|slice:"8:9" %}
               <a href="{% url 'products:detail' product.pk %}">
                   <div class="in-img">
                       <div class='w-100'>
@@ -272,53 +181,8 @@
                       </div>
                   </div>
               </a>
-              {% endfor %}
             </div>
-  
-            <div class='carousel-innerbox'>
-              {% for product in popular_products|slice:"9:10" %}
-              <a href="{% url 'products:detail' product.pk %}">
-                  <div class="in-img">
-                      <div class='w-100'>
-                          <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                      </div>
-                      <div class="col">
-                          <p>{{ product.title }}</p>
-                      </div>
-                  </div>
-              </a>
-              {% endfor %}
-            </div>
-  
-            <div class='carousel-innerbox'>
-              {% for product in popular_products|slice:"10:11" %}
-              <a href="{% url 'products:detail' product.pk %}">
-                  <div class="in-img">
-                      <div class='w-100'>
-                          <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                      </div>
-                      <div class="col">
-                          <p>{{ product.title }}</p>
-                      </div>
-                  </div>
-              </a>
-              {% endfor %}
-            </div>
-  
-            <div class='carousel-innerbox'>
-              {% for product in popular_products|slice:"11:12" %}
-              <a href="{% url 'products:detail' product.pk %}">
-                  <div class="in-img">
-                      <div class='w-100'>
-                          <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                      </div>
-                      <div class="col">
-                          <p>{{ product.title }}</p>
-                      </div>
-                  </div>
-              </a>
-              {% endfor %}
-            </div>
+            {% endfor %}
   
           </div>
   
@@ -371,9 +235,9 @@
   
           <div class="d-flex justify-content-around">
   
+            {% for product in top_latest_commented_products|slice:"0:3" %}
             <div class='carousel-innerbox'>
               <div class="in-img">
-                {% for product in top_latest_commented_products|slice:"0:1" %}
                 <a href="{% url 'products:detail' product.pk %}">
                   <div class="w-100">
                     <img class="img_in" src="{{ product.image.url }}" alt="{{ product.title }}">
@@ -385,45 +249,9 @@
                     {% endwith %}
                   </div>
                 </a>
-              {% endfor %}
-                </div>
+              </div>
             </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_latest_commented_products|slice:"1:2" %}
-                <a href="{% url 'products:detail' product.pk %}">
-                    <div class="w-100">
-                        <img class="img_in" src="{{ product.image.url }}" alt="{{ product.title }}">
-                    </div>
-                    <div class="col">
-                        <p>{{ product.title }}</p>
-                        {% with product.comments.last as last_comment %}
-                          {{ last_comment.content }}
-                        {% endwith %}
-                    </div>
-                </a>
             {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_latest_commented_products|slice:"2:3" %}
-                <a href="{% url 'products:detail' product.pk %}">
-                  <div class="w-100">
-                    <img class="img_in" src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                  <div class="col">
-                    <p>{{ product.title }}</p>
-                    {% with product.comments.last as last_comment %}
-                      {{ last_comment.content }}
-                    {% endwith %}
-                  </div>
-                </a>
-              {% endfor %}
-                </div>
-            </div>
   
           </div>
   
@@ -433,9 +261,9 @@
   
           <div class="d-flex justify-content-around">
   
+            {% for product in top_latest_commented_products|slice:"3:6" %}
             <div class='carousel-innerbox'>
               <div class="in-img">
-                {% for product in top_latest_commented_products|slice:"3:4" %}
                 <a href="{% url 'products:detail' product.pk %}">
                   <div class="w-100">
                     <img class="img_in" src="{{ product.image.url }}" alt="{{ product.title }}">
@@ -447,45 +275,9 @@
                     {% endwith %}
                   </div>
                 </a>
-              {% endfor %}
-                </div>
+              </div>
             </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_latest_commented_products|slice:"4:5" %}
-                <a href="{% url 'products:detail' product.pk %}">
-                  <div class="w-100">
-                    <img class="img_in" src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                  <div class="col">
-                    <p>{{ product.title }}</p>
-                    {% with product.comments.last as last_comment %}
-                      {{ last_comment.content }}
-                    {% endwith %}
-                  </div>
-                </a>
-              {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_latest_commented_products|slice:"5:6" %}
-                <a href="{% url 'products:detail' product.pk %}">
-                  <div class="w-100">
-                    <img class="img_in" src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                  <div class="col">
-                    <p>{{ product.title }}</p>
-                    {% with product.comments.last as last_comment %}
-                      {{ last_comment.content }}
-                    {% endwith %}
-                  </div>
-                </a>
-              {% endfor %}
-                </div>
-            </div>
+            {% endfor %}
   
           </div>
   
@@ -495,9 +287,9 @@
           
           <div class="d-flex justify-content-around">
   
+            {% for product in top_latest_commented_products|slice:"6:9" %}
             <div class='carousel-innerbox'>
               <div class="in-img">
-                {% for product in top_latest_commented_products|slice:"6:7" %}
                 <a href="{% url 'products:detail' product.pk %}">
                   <div class="w-100">
                     <img class="img_in" src="{{ product.image.url }}" alt="{{ product.title }}">
@@ -509,44 +301,9 @@
                     {% endwith %}
                   </div>
                 </a>
-              {% endfor %}
-                </div>
+              </div>
             </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_latest_commented_products|slice:"7:8" %}
-                <a href="{% url 'products:detail' product.pk %}">
-                  <div class="w-100">
-                    <img class="img_in" src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                  <div class="col">
-                    {% with product.comments.last as last_comment %}
-                      {{ last_comment.content }}
-                    {% endwith %}
-                  </div>
-                </a>
-              {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_latest_commented_products|slice:"8:9" %}
-                <a href="{% url 'products:detail' product.pk %}">
-                  <div class="w-100">
-                    <img class="img_in" src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                  <div class="col">
-                    <p>{{ product.title }}</p>
-                    {% with product.comments.last as last_comment %}
-                      {{ last_comment.content }}
-                    {% endwith %}
-                  </div>
-                </a>
-              {% endfor %}
-                </div>
-            </div>
+            {% endfor %}
   
           </div>
   
@@ -607,9 +364,9 @@
   
           <div class="d-flex justify-content-around">
   
+            {% for product in top_rated_products|slice:"0:4" %}
             <div class='carousel-innerbox'>
               <div class="in-img">
-                {% for product in top_rated_products|slice:"0:1" %}
                 <a href="{% url 'products:detail' product.pk%}">
                   <div class='w-100'>
                     <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
@@ -618,54 +375,9 @@
                       <p>{{ product.title }}</p> ({{ product.star}})
                     </div>
                   </a>
-                  {% endfor %}
                 </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_rated_products|slice:"1:2" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p> ({{ product.star}})
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_rated_products|slice:"2:3" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p> ({{ product.star}})
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_rated_products|slice:"3:4" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p> ({{ product.star}})
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
+              </div>
+              {% endfor %}
   
           </div>
   
@@ -675,9 +387,9 @@
   
           <div class="d-flex justify-content-around">
   
+            {% for product in top_rated_products|slice:"4:8" %}
             <div class='carousel-innerbox'>
               <div class="in-img">
-                {% for product in top_rated_products|slice:"4:5" %}
                 <a href="{% url 'products:detail' product.pk%}">
                   <div class='w-100'>
                     <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
@@ -686,54 +398,9 @@
                       <p>{{ product.title }}</p> ({{ product.star}})
                     </div>
                   </a>
-                  {% endfor %}
                 </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_rated_products|slice:"5:6" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p> ({{ product.star}})
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_rated_products|slice:"6:7" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p> ({{ product.star}})
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_rated_products|slice:"7:8" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p> ({{ product.star}})
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
+              </div>
+              {% endfor %}
   
           </div>
   
@@ -743,9 +410,9 @@
           
           <div class="d-flex justify-content-around">
   
+            {% for product in top_rated_products|slice:"8:12" %}
             <div class='carousel-innerbox'>
               <div class="in-img">
-                {% for product in top_rated_products|slice:"8:9" %}
                 <a href="{% url 'products:detail' product.pk%}">
                   <div class='w-100'>
                     <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
@@ -754,54 +421,9 @@
                       <p>{{ product.title }}</p> ({{ product.star}})
                     </div>
                   </a>
-                  {% endfor %}
                 </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_rated_products|slice:"9:10" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p> ({{ product.star}})
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_rated_products|slice:"10:11" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p> ({{ product.star}})
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in top_rated_products|slice:"11:12" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p> ({{ product.star}})
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
+              </div>
+              {% endfor %}
   
           </div>
   
@@ -862,9 +484,9 @@
   
           <div class="d-flex justify-content-around">
   
+            {% for product in discounted_products|slice:"0:4" %}
             <div class='carousel-innerbox'>
               <div class="in-img">
-                {% for product in discounted_products|slice:"0:1" %}
                 <a href="{% url 'products:detail' product.pk%}">
                   <div class='w-100'>
                     <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
@@ -874,57 +496,9 @@
                       <p>{{product.discount_rate}}%</p>
                     </div>
                   </a>
-                  {% endfor %}
                 </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in discounted_products|slice:"1:2" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p>
-                      <p>{{product.discount_rate}}%</p>
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in discounted_products|slice:"2:3" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p>
-                      <p>{{product.discount_rate}}%</p>
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in discounted_products|slice:"3:4" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p>
-                      <p>{{product.discount_rate}}%</p>
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
+              </div>
+              {% endfor %}
   
           </div>
   
@@ -934,9 +508,9 @@
   
           <div class="d-flex justify-content-around">
   
+            {% for product in discounted_products|slice:"4:8" %}
             <div class='carousel-innerbox'>
               <div class="in-img">
-                {% for product in discounted_products|slice:"4:5" %}
                 <a href="{% url 'products:detail' product.pk%}">
                   <div class='w-100'>
                     <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
@@ -946,57 +520,9 @@
                       <p>{{product.discount_rate}}%</p>
                     </div>
                   </a>
-                  {% endfor %}
                 </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in discounted_products|slice:"5:6" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p>
-                      <p>{{product.discount_rate}}%</p>
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in discounted_products|slice:"6:7" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p>
-                      <p>{{product.discount_rate}}%</p>
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in discounted_products|slice:"7:8" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p>
-                      <p>{{product.discount_rate}}%</p>
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
+              </div>
+              {% endfor %}
   
           </div>
   
@@ -1006,9 +532,9 @@
           
           <div class="d-flex justify-content-around">
   
+            {% for product in discounted_products|slice:"8:12" %}
             <div class='carousel-innerbox'>
               <div class="in-img">
-                {% for product in discounted_products|slice:"8:9" %}
                 <a href="{% url 'products:detail' product.pk%}">
                   <div class='w-100'>
                     <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
@@ -1018,57 +544,9 @@
                       <p>{{product.discount_rate}}%</p>
                     </div>
                   </a>
-                  {% endfor %}
                 </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in discounted_products|slice:"9:10" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p>
-                      <p>{{product.discount_rate}}%</p>
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in discounted_products|slice:"10:11" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p>
-                      <p>{{product.discount_rate}}%</p>
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
-  
-            <div class='carousel-innerbox'>
-              <div class="in-img">
-                {% for product in discounted_products|slice:"11:12" %}
-                <a href="{% url 'products:detail' product.pk%}">
-                  <div class='w-100'>
-                    <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                  </div>
-                    <div class="col">
-                      <p>{{ product.title }}</p>
-                      <p>{{product.discount_rate}}%</p>
-                    </div>
-                  </a>
-                  {% endfor %}
-                </div>
-            </div>
+              </div>
+              {% endfor %}
   
           </div>
   
