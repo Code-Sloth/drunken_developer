@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}">
+{% include 'mypage_top.html' %}
+
+<div class="container mt-4">
+  <div class="review_box">
+    {% for comment in person.comment_set.all %}
+    <p>{{ comment.content }}
+      {{ comment.star }}
+      {{ comment.created_time }}
+    </p>
+      
+    {% endfor %}
+  </div>
+</div>
+</div><!-- mypage_top에서 열린 .body-->
+{% endblock content %}

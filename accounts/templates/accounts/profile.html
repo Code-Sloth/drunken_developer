@@ -1,37 +1,40 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<div>
-  <h1>
-    {{ person.username }}님의 프로필 페이지
-  </h1>
-
-  <h3>{{person.username}}의 게시글</h3>
-  {% for products in person.products_set.all %}
-    <div>{{ products.title }}</div>
-  {% endfor %}
-
-  <h3>{{person.username}}의 댓글</h3>
-  {% for comment in person.comment_set.all %}
-    <div>{{ comment.content }}</div>
-  {% endfor %}
-
-  <div>
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+{% include 'mypage_top.html' %}
+<div class="container mt-4">
+  <div class = "profile_box">
+    <p class="user_info">회원정보</p>
     <div>
-      팔로잉 : {{ person.followings.all|length }} / 팔로워 : {{person.followers.all|length}}
+      <div class="info_item">
+        <span class="label">아이디</span>
+        <strong class="content">{{ person.username }}</strong>
+      </div>
+      <div class="info_item">
+        <span class="label">회원명</span>
+        <strong class="content">{{ person.last_name }}</strong>
+      </div>
+      <div class="info_item">
+        <span class="label">비밀번호</span>
+        <strong class="content"><a href="{% url 'accounts:change_password' %}">설정하기 &gt; </a></strong>
+      </div>
+      <div class="info_item">
+        <span class="label">이메일</span>
+        <strong class="content">{{ person.email }}</strong>
+      </div>
+      <div class="info_item">
+        <span class="label">성별</span>
+        <strong class="content">{{ person.gender }}</strong>
+      </div>
+      <div class="info_item">
+        <span class="label">생년월일</span>
+        <strong class="content">{{ person.birthday }}</strong>
+      </div>
     </div>
-    {% if request.user != person %}
-    <div>
-      <form action="{% url 'accounts:follow' person.pk %}" method="POST">
-        {% csrf_token %}
-        {% if request.user in person.followers.all %}
-          <input type="submit" value="언팔로우">
-        {% else %}
-          <input type="submit" value="팔로우">
-        {% endif %}
-      </form>
-    </div>
-  {% endif %}
+    <a class="profile_update" href="{% url 'accounts:update' %}">수정</a>
   </div>
+
 </div>
-<a href="{% url 'products:index' %}">[back]</a>
+</div><!-- mypage_top에서 열린 .body-->
 {% endblock content %}

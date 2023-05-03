@@ -10,13 +10,13 @@ from django.contrib.auth.forms import PasswordChangeForm
 
 # Create your views here.
 @login_required
-def profile(request, username):
+def mypage(request, username):
     User = get_user_model()
     person = User.objects.get(username=username)
     context = {
         'person': person,
     }
-    return render(request, 'accounts/profile.html', context)
+    return render(request, 'accounts/mypage.html', context)
 
 
 def login(request):
@@ -107,4 +107,40 @@ def follow(request, user_pk):
             person.followrs.remove(request.user)
         else:
             person.followers.add(request.user)
-    return redirect('accounts:profile', person.username)
+    return redirect('accounts:mypage', person.username)
+
+
+def like(request, username):
+    User = get_user_model()
+    person = User.objects.get(username=username)
+    context = {
+        'person': person,
+    }
+    return render(request, 'accounts/like.html', context)
+
+
+def review(request, username):
+    User = get_user_model()
+    person = User.objects.get(username=username)
+    context = {
+        'person': person,
+    }
+    return render(request, 'accounts/review.html', context)
+
+
+def profile(request, username):
+    User = get_user_model()
+    person = User.objects.get(username=username)
+    context = {
+        'person': person,
+    }
+    return render(request, 'accounts/profile.html', context)
+
+
+def purchase(request, username):
+    User = get_user_model()
+    person = User.objects.get(username=username)
+    context = {
+        'person': person,
+    }
+    return render(request, 'accounts/purchase.html', context)
