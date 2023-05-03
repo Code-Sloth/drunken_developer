@@ -1,0 +1,27 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/mypage.css' %}">
+<div class="body">
+  <div class="container">
+    <div class="d-flex justify-content-center text-center">
+      <h3 class='mt-4 fw-bold'>마이페이지</h3>
+    </div>
+    <div class="top mt-3">
+      <div class="member">
+        <p class="ps-5">{{ person.username }}님</p>
+      </div>
+      <div class="page_link_wrap">
+        <a class="page_link" href="{% url 'accounts:like' user.username %}">관심상품
+          <img class="img_size" src="{% static 'image/mypage_like.png' %}" alt="">
+        </a>
+        <a class="page_link" href="{% url 'accounts:purchase' user.username %}">주문내역
+          <img class="img_size" src="{% static 'image/mypage_purchase.png' %}" alt="">
+        </a>
+        <a class="page_link" href="{% url 'accounts:review' user.username %}">리뷰
+          <img class="img_size" src="{% static 'image/mypage_review.png' %}" alt="">
+        </a>
+        <a class="page_link" href="{% url 'accounts:profile' user.username %}">회원정보
+          <img class="img_size" src="{% static 'image/mypage_profile.png' %}" alt="">
+        </a>
+      </div>
+    </div>
+  </div>

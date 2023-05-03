@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/listing.css' %}">
+{% include 'mypage_top.html' %}
+
+<div class="container mt-4">
+  <div>
+    <span class='fw-bold ms-1'>{{ person.like_products.count }}</span> 건의 결과가 있어요
+  </div>
+  <div class='listing-section'>
+    {% for product in person.like_products.all %}
+      <div class='listing-product'>
+        <a class='listing-product-a' href="{% url 'products:detail' product.pk %}">
+          {% if product.image %}
+            <div class='product-img'>
+              <img class='w-100 rounded' src="{{ product.image.url }}" alt="{{ product.title }}">
+            </div>
+          {% endif %}
+          
+          <div class='product-title'>
+            {{ product.title }}
+          </div>
+
+          {% if product.discount_rate %}
+            <div class='product-price'>
+              {{ product.price }}원
+            </div>
+          {% else %}
+            <div class='product-price'></div>
+          {% endif %}
+
+          <div>
+            {{ product.discounted_price }}원
+          </div>
+
+          <div class='product-star-comment'>
+            <div class='product-star'>
+              <img class='h-100' src="{% static 'image/star1.png' %}" alt="star1">
+              <div>
+                {{ product.star }}
+              </div>
+            </div>
+
+            <div class='product-comment'>
+              리뷰 {{ product.comments.count }}
+            </div>
+          </div>
+          
+          <div class='product-content'>
+            {{ product.content }}
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>  
+</div><!-- mypage_top에서 열린 .body-->
+{% endblock content %}
