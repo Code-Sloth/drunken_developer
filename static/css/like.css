@@ -22,6 +22,14 @@
   overflow: hidden;
 }
 
+.product-img img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-img img:hover {
+  transform: scale(1.05);
+}
+
 .listing-product-a {
   font-size: 13px;
   font-weight: bold;
