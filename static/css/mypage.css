@@ -45,3 +45,29 @@
   font-size: 13px;
 }
 
+.mypage_box {
+  width: 100%;
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 10px;
+  padding: 30px 60px 50px;
+  color:#707070;
+  font-size: 13px;
+}
+
+.mypage_info {
+  position: relative;
+}
+
+.mypage_info_item {
+  font-size: 16px;
+  border-bottom: 0.5px solid rgb(255, 222, 168);
+  padding-bottom: 15px;
+  font-weight: bold;
+  display: flex;
+}
+
+.title_img {
+  position: absolute;
+  right: 0;
+  top:0;
+}

@@ -4,8 +4,11 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
 {% include 'mypage_top.html' %}
 <div class="container mt-4">
-  <div class = "profile_box">
-    <p class="user_info">회원정보</p>
+  <div class="mypage_box">
+    <div class="mypage_info">
+      <p class="mypage_info_item">회원정보</p>
+      <img class="img_size title_img" src="{% static 'image/mypage_profile.png' %}" alt="">
+    </div>
     <div>
       <div class="info_item">
         <span class="label">아이디</span>
