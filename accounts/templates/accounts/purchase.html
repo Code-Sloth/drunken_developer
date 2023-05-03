@@ -1,15 +1,112 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/purchase.css' %}">
-{% include 'mypage_top.html' %}
+
 <div class="container mt-4">
   <div class="mypage_box">
     <div class="mypage_info">
       <p class="mypage_info_item">주문 내역</p>
       <img class="img_size title_img" src="{% static 'image/mypage_purchase.png' %}" alt="">
     </div>
+
+    <div class='purchase-box mt-5'>
+      {% for product,purchase in product_purchase %}
+        <div class='purchase-for'>
+          <a href="{% url 'products:detail' product.pk %}">
+            <div class='d-flex'>
+              {% if product.image %}
+                <div class='purchase-img'>
+                  <img class='w-100' src="{{ product.image.url }}" alt="{{ product.title }}">
+                </div>
+              {% endif %}
+              <div class='purchase-content'>
+
+                <div class='purchase-left'>
+                  <div class='purchase-title'>
+                    {{ product.title }}
+                  </div>
+
+                  <div class='purchase-text'>
+                    {{ product.content }}
+                  </div>
+
+                  {% if product.discount_rate %}
+                    <div class='purchase-price'>
+                      {{ product.price|intcomma }}원
+                    </div>
+                  {% else %}
+                    <div class='purchase-price'></div>
+                  {% endif %}
+      
+                  <div class='purchase-discounted-price'>
+                    {{ product.discounted_price|intcomma }}원
+                  </div>
+
+                  <div class='product-star-comment'>
+                    <div class='product-star'>
+                      <img class='h-100' src="{% static 'image/star1.png' %}" alt="star1">
+                      <div>
+                        {{ product.star }}
+                      </div>
+                    </div>
+      
+                    <div class='product-comment'>
+                      리뷰 {{ product.comments.count }}
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class='purchase-right'>
+                  <div class='purchase-right-left'>
+                    <div>
+                      주문번호
+                    </div>
+
+                    <div>
+                      주문자명
+                    </div>
+
+                    <div>
+                      구매수량
+                    </div>
+
+                    <div>
+                      결제금액
+                    </div>
+
+                    <div>
+                      결제승인시각
+                    </div>
+                  </div>
+
+                  <div class='purchase-right-right'>
+                    <div>
+                      {{ product.pk }}
+                    </div>
+                    <div>
+                      {{ request.user.username }}
+                    </div>
+                    <div>
+                      {{ purchase.count }}
+                    </div>
+                    <div>
+                      {{ purchase.price|intcomma }}원
+                    </div>
+                    <div>
+                      {{ purchase.created_string_time }}
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
-</div><!-- mypage_top에서 열린 .body-->
 {% endblock content %}

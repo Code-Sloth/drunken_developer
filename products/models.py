@@ -76,7 +76,7 @@ class Purchase(models.Model):
 
     @property
     def created_string_time(self):
-        time = datetime.now(tz=timezone.utc) - self.purchase_time
+        time = datetime.now(tz=timezone.utc) - self.created_time
 
         if time < timedelta(minutes=1):
             return '방금 전'
@@ -85,7 +85,7 @@ class Purchase(models.Model):
         elif time < timedelta(days=1):
             return str(int(time.seconds / 3600)) + '시간 전'
         elif time < timedelta(days=7):
-            time = datetime.now(tz=timezone.utc).date() - self.purchase_time.date()
+            time = datetime.now(tz=timezone.utc).date() - self.created_time.date()
             return str(time.days) + '일 전'
         else:
             return self.strftime('%Y-%m-%d')

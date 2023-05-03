@@ -35,7 +35,7 @@
 		<div class='nav-right'>
 			{% if user.is_authenticated %}
 				<div class='right-user'>
-					<a href="{% url 'accounts:mypage' request.user.username %}">
+					<a href="{% url 'accounts:mypage' %}?q=like">
 						<div class='d-flex'>
 							<div class='right-username'>{{ request.user }} 님</div>
 							<div class='right-img'>

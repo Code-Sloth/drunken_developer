@@ -2,26 +2,25 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/mypage.css' %}">
 <div class="body">
   <div class="container">
-    <div class="d-flex justify-content-center text-center">
-      <h3 class='mt-4 fw-bold'>마이페이지</h3>
-    </div>
-    <div class="top mt-3">
+
+    <div class="top" style='margin-top:150px;'>
       <div class="member">
-        <p class="ps-5">{{ person.username }}님</p>
+        <p class="ps-5 m-0 ms-2"><span class='mypage-username'>{{ user.username }}</span> 님</p>
       </div>
       <div class="page_link_wrap">
-        <a class="page_link" href="{% url 'accounts:like' user.username %}">관심상품
-          <img class="img_size" src="{% static 'image/mypage_like.png' %}" alt="">
+        <a class="page_link {% if q == 'like' %}query{% endif %}" href="{% url 'accounts:mypage' %}?q=like">관심상품
+          <img class="img_size" src="{% static 'image/mypage_like.png' %}" alt="like">
         </a>
-        <a class="page_link" href="{% url 'accounts:purchase' user.username %}">주문내역
-          <img class="img_size" src="{% static 'image/mypage_purchase.png' %}" alt="">
+        <a class="page_link {% if q == 'purchase' %}query{% endif %}" href="{% url 'accounts:mypage' %}?q=purchase">주문내역
+          <img class="img_size" src="{% static 'image/mypage_purchase.png' %}" alt="purchase">
         </a>
-        <a class="page_link" href="{% url 'accounts:review' user.username %}">리뷰
-          <img class="img_size" src="{% static 'image/mypage_review.png' %}" alt="">
+        <a class="page_link {% if q == 'review' %}query{% endif %}" href="{% url 'accounts:mypage' %}?q=review">리뷰
+          <img class="img_size" src="{% static 'image/mypage_review.png' %}" alt="review">
         </a>
-        <a class="page_link" href="{% url 'accounts:profile' user.username %}">회원정보
-          <img class="img_size" src="{% static 'image/mypage_profile.png' %}" alt="">
+        <a class="page_link {% if q == 'profile' %}query{% endif %}" href="{% url 'accounts:mypage' %}?q=profile">회원정보
+          <img class="img_size" src="{% static 'image/mypage_profile.png' %}" alt="profile">
         </a>
       </div>
     </div>
   </div>
+</div>

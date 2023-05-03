@@ -2,32 +2,42 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}">
-{% include 'mypage_top.html' %}
+
 <div class="container mt-4">
   <div class="mypage_box">
     <div class="mypage_info">
       <p class="mypage_info_item">리뷰</p>
-      <img class="img_size title_img" src="{% static 'image/mypage_review.png' %}" alt="">
+      <img class="img_size title_img" src="{% static 'image/mypage_review.png' %}" alt="review">
     </div>
     <div>
-      {% for comment in person.comment_set.all %}
-    <p>{{ comment.content }}
-      {{ comment.star }}
-      {{ comment.created_time }}
-    </p>
-    {% endfor %}
+      {% for comment in user.comment_set.all %}
+        <div class='review-container'>
+          <a href="{% url 'products:detail' comment.product.pk %}">
+            <div class='review-box'>
+
+              <div class='review-left'>
+                {{ comment.content }}
+              </div>
+    
+              <div class='review-right d-flex'>
+                <div class='review-time'>
+                  {{ comment.created_time }}
+                </div>
+
+                <div style='width: 15px;'>
+                  <img class='w-100' src="{% static 'image/star1.png' %}" alt="star1">
+                </div>
+
+                <div class='review-star'>
+                  {{ comment.star }}
+                </div>
+              </div>
+
+            </div>
+          </a>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </div>
-{% comment %} <div class="container mt-4">
-  <div class="review_box">
-    {% for comment in person.comment_set.all %}
-    <p>{{ comment.content }}
-      {{ comment.star }}
-      {{ comment.created_time }}
-    </p>
-    {% endfor %}
-  </div>
-</div> {% endcomment %}
-</div><!-- mypage_top에서 열린 .body-->
 {% endblock content %}

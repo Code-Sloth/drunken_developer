@@ -3,5 +3,17 @@
 {% block content %}
 
 {% include 'mypage_top.html' %}
-</div><!-- mypage_top에서 열린 .body-->
+
+<div style="font-family: 'SpoqaHanSansNeo-Regular';">
+  {% if q == 'like' %}
+    {% include 'accounts/like.html' %}
+  {% elif q == 'purchase' %}
+    {% include 'accounts/purchase.html' %}
+  {% elif q == 'review' %}
+    {% include 'accounts/review.html' %}
+  {% elif q == 'profile' %}
+    {% include 'accounts/profile.html' %}
+  {% endif %}
+</div>
+
 {% endblock content %}
