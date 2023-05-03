@@ -127,12 +127,14 @@
             <div class='carousel-innerbox'>
               <a href="{% url 'products:detail' product.pk %}">
                   <div class="in-img">
-                      <div class='w-100'>
-                          <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
-                      </div>
-                      <div class="col">
-                          <p>{{ product.title }}</p>
-                      </div>
+                    <div class='w-100'>
+                      <img class='img_in' src="{{ product.image.url }}" alt="{{ product.title }}">
+                    </div>
+                  </div>
+                  <div class="col" style="text-align: center;">
+                    <p>{{ product.title }}</p> 
+                    <p>{{ product.star}}</p>
+                    <p>리뷰 {{product.comments.count}}</p>
                   </div>
               </a>
             </div>
