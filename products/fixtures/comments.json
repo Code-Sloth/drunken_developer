@@ -830,5 +830,18 @@
         "image": "",
         "star": 2
     }
+},
+{
+    "model": "products.comment",
+    "pk": 82,
+    "fields": {
+        "user": 1,
+        "product": 38,
+        "content": "편의점에서 산 막걸리만 접하다가 구매해봤는데 생각보다 훨씬 맛있네요",
+        "created_at": "2023-05-03T05:55:53.578Z",
+        "updated_at": "2023-05-03T05:55:53.578Z",
+        "image": "comments/lmw/복순_r96irF3.jpg",
+        "star": 5
+    }
 }
 ]
