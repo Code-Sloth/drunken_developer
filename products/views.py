@@ -14,13 +14,7 @@ import requests
 
 def index(request):
     popular_products = Product.objects.annotate(num_likes=Count('like_users')).order_by('-num_likes')
-    top_latest_commented_products = Product.objects.annotate(
-    num_comments=Count('comments')
-    ).order_by('-num_comments').prefetch_related(
-        'comments__user'
-    ).annotate(
-        latest_comment=Max('comments__created_at')
-    ).order_by('-latest_comment')
+    top_latest_comments = Comment.objects.all().order_by('-star','-pk')
 
     top_rated_products = Product.objects.annotate(num_stars=Avg('star')).order_by('-num_stars')
     discounted_products = Product.objects.annotate(
@@ -34,7 +28,7 @@ def index(request):
     ).order_by('-discount_rate_max', '-discount_price')
     context = {
         'popular_products': popular_products,
-        'top_latest_commented_products': top_latest_commented_products,
+        'top_latest_comments': top_latest_comments,
         'top_rated_products': top_rated_products,
         'discounted_products': discounted_products,
     }
@@ -294,6 +288,8 @@ def func_sort(queryset, s):
         return queryset.order_by('-discounted_price')
     elif s == 'low':
         return queryset.order_by('discounted_price')
+    elif s == 'late_low':
+        return queryset.order_by('-discount_rate')
 
 def quiz(request):
     responses = {}

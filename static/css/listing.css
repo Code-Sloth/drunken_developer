@@ -221,10 +221,13 @@
   width: 280px;
   height: 575px;
   margin-bottom: 40px;
-  padding:5px;
   border: 1px solid rgb(240 240 240);
   border-radius: 5px;
   margin-right: 5px;
+}
+
+.product-contentbox {
+  padding: 5px;
 }
 
 .listing-product-a {
@@ -244,7 +247,7 @@
   color:rgb(200 200 200);
   font-weight: 400;
   height: 15px;
-  margin-bottom:15px;
+  margin-bottom: 10px;
   text-decoration: line-through;
 }
 
@@ -277,6 +280,7 @@
 }
 
 .product-content {
+  font-size: 15px;
   padding-top: 10px;
   color: rgb(150 150 150);
   display: -webkit-box;

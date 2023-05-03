@@ -98,11 +98,11 @@ class Comment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def comment_image_path(instance, filename):
-        return f'products/{instance.pk}/{filename}'
+        return f'comments/{instance.user.username}/{filename}'
 
     image = ProcessedImageField(
         upload_to=comment_image_path,
-        processors=[ResizeToFill(100,100)],
+        processors=[ResizeToFill(270,270)],
         format='JPEG',
         options={'quality' : 100},
         blank=True,
