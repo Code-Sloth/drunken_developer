@@ -100,7 +100,7 @@
           <span>요즘 대세 주류를 만나보세요!</span>
         </h4>
       </div>
-      <a href="">
+      <a href="{% url 'products:listing' %}?category=all&sort=recommend">
         <p>
           <span>더보기</span>
           <span class='container-title-svg'>
@@ -350,7 +350,7 @@
                       </div>
                     </div>
 
-                    <div class='comment-contentbox'>
+                    <div class='comment-contentbox ms-1'>
                       {{ comment.content }}
                     </div>
 
@@ -391,7 +391,7 @@
                     </div>
                   </div>
 
-                  <div class='comment-contentbox'>
+                  <div class='comment-contentbox ms-1'>
                     {{ comment.content }}
                   </div>
 
@@ -432,7 +432,7 @@
                     </div>
                   </div>
 
-                  <div class='comment-contentbox'>
+                  <div class='comment-contentbox ms-1'>
                     {{ comment.content }}
                   </div>
 
@@ -478,7 +478,7 @@
           <span>별점이 가장 높아요!</span>
         </h4>
       </div>
-      <a href="">
+      <a href="{% url 'products:listing' %}?category=all&sort=rating">
         <p>
           <span>더보기</span>
           <span class='container-title-svg'>
