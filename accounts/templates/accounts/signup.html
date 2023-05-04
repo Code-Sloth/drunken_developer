@@ -1,15 +1,48 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<form class="mx-auto"action="{% url 'accounts:signup' %}" method="POST" enctype = 'multipart/form-data' style="width: 20rem; margin-top: 10rem;">
+<link rel="stylesheet" type="text/css" href="{% static 'css/accounts.css' %}">
+
+
+<form class="mx-auto"action="{% url 'accounts:signup' %}" method="POST" enctype = 'multipart/form-data' style="width: 20rem; margin-top: 8rem;">
   {% csrf_token %}
+
+  <div class='sign-title'>
+    환영해요!
+  </div>
+
   {% for field in form %}
-    <div class="input-group mb-3">
-      {{ field }}
-    </div>
+    {% if forloop.counter <= 6 %}
+      <div class="input-group mb-3">
+        {{ field }}
+      </div>
+    {% endif %}
   {% endfor %}
+  
+  <div class="input-group mb-3">
+    <label class='birth'>생년월일</label>
+    {{ form.birthday }}
+  </div>
+
+  <div class="input-group mb-3">
+    <label class='birth mb-1'>프로필이미지</label>
+    <div>
+      {{ form.image }}
+    </div>
+  </div>
+
   <div class="d-grid">
     <input type="submit" class="btn btn-light" value='회원가입'>
   </div>
-  </form>
+</form>
+
 {% endblock content %}
+'username',
+'email',
+'last_name',
+'password1',
+'password2',
+'gender',
+'birthday',
+'image',
