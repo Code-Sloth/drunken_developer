@@ -4,8 +4,13 @@
   <div class="container">
 
     <div class="top" style='margin-top:150px;'>
-      <div class="member">
-        <p class="ps-5 m-0 ms-2"><span class='mypage-username'>{{ user.username }}</span> 님</p>
+      <div class="member d-flex">
+        {% if request.user.image %}
+          <div style='width: 70px; margin-left: 40px;'>
+            <img class='w-100 rounded-circle' src="{{ request.user.image.url }}" alt="{{ request.user.username }}">
+          </div>
+        {% endif %}
+        <p class="ps-5 m-0"><span class='mypage-username'>{{ user.username }}</span> 님</p>
       </div>
       <div class="page_link_wrap">
         <a class="page_link {% if q == 'like' %}query{% endif %}" href="{% url 'accounts:mypage' %}?q=like">관심상품

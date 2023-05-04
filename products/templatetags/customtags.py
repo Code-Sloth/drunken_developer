@@ -21,5 +21,10 @@ def string_kr(value):
         return '있음'
     elif value == 'False':
         return '없음'
+    elif value == 'man':
+        return '남'
+    elif value == 'woman':
+        return '여'
 
 register.filter('string_kr',string_kr)
+

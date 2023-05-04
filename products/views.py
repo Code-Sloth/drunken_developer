@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Product, Comment
 from .forms import ProductForm, CommentForm
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Subquery, OuterRef
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.db.models import Q,F
@@ -129,7 +129,7 @@ def comment_sort(queryset, s):
     else:
         return queryset.order_by('star')
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def create(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)

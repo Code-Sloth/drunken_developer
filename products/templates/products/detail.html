@@ -49,7 +49,7 @@
           <div>종류: {{ product.category|string_kr }}</div>
           <div>도수: {{ product.alcohol_percentage }}%</div>
           <div>용량: {{ product.volume }}ml</div>
-          <div class='content-delivery'>배송기간: {{ product.delivery_date }}일</div>
+          <div class='content-delivery'>배송기간: {{ product.delivery_date }}일 이내 배송</div>
         </div>
 
         <div class='detail-sale'>
@@ -207,7 +207,7 @@
 
           <div class='comment-contentbox'>
             <div class='comment-content'>
-              {{ comment.content }}
+              {{ comment.content|linebreaks }}
             </div>
 
             {% if comment.image %}

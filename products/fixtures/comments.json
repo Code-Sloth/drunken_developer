@@ -157,19 +157,6 @@
 },
 {
     "model": "products.comment",
-    "pk": 27,
-    "fields": {
-        "user": 2,
-        "product": 19,
-        "content": "해변에 놓고 길뻔..",
-        "created_at": "2023-05-02T01:55:43.820Z",
-        "updated_at": "2023-05-02T01:55:43.820Z",
-        "image": "products/None/제주위트에일.jpg",
-        "star": 4
-    }
-},
-{
-    "model": "products.comment",
     "pk": 28,
     "fields": {
         "user": 1,
@@ -179,32 +166,6 @@
         "updated_at": "2023-05-02T01:55:58.492Z",
         "image": "products/None/c3.jpg",
         "star": 2
-    }
-},
-{
-    "model": "products.comment",
-    "pk": 29,
-    "fields": {
-        "user": 2,
-        "product": 19,
-        "content": "마씨따",
-        "created_at": "2023-05-02T01:56:06.268Z",
-        "updated_at": "2023-05-02T01:56:06.269Z",
-        "image": "products/None/제주위트에일2.jpg",
-        "star": 5
-    }
-},
-{
-    "model": "products.comment",
-    "pk": 31,
-    "fields": {
-        "user": 2,
-        "product": 19,
-        "content": "충동구매햇습니다 벌써 3번째...",
-        "created_at": "2023-05-02T01:57:05.473Z",
-        "updated_at": "2023-05-02T01:57:05.473Z",
-        "image": "products/None/제주3.jpg",
-        "star": 5
     }
 },
 {
@@ -243,19 +204,6 @@
         "created_at": "2023-05-02T01:57:31.475Z",
         "updated_at": "2023-05-02T01:57:31.475Z",
         "image": "",
-        "star": 5
-    }
-},
-{
-    "model": "products.comment",
-    "pk": 35,
-    "fields": {
-        "user": 2,
-        "product": 19,
-        "content": "종류별로 맛보는 재미가 있습니다.",
-        "created_at": "2023-05-02T01:58:15.970Z",
-        "updated_at": "2023-05-02T01:58:15.970Z",
-        "image": "products/None/엥ㄹ.jpg",
         "star": 5
     }
 },
@@ -335,19 +283,6 @@
         "updated_at": "2023-05-02T02:00:06.959Z",
         "image": "products/None/c6.jpg",
         "star": 4
-    }
-},
-{
-    "model": "products.comment",
-    "pk": 42,
-    "fields": {
-        "user": 2,
-        "product": 19,
-        "content": "박스에 하나 비어있길래 채울려고 구매했습니다",
-        "created_at": "2023-05-02T02:00:07.848Z",
-        "updated_at": "2023-05-02T02:00:07.848Z",
-        "image": "products/None/제주1.jpg",
-        "star": 5
     }
 },
 {
@@ -452,32 +387,6 @@
         "updated_at": "2023-05-02T02:06:52.569Z",
         "image": "",
         "star": 3
-    }
-},
-{
-    "model": "products.comment",
-    "pk": 51,
-    "fields": {
-        "user": 2,
-        "product": 27,
-        "content": "달고 마씨다 입니다",
-        "created_at": "2023-05-02T02:07:07.591Z",
-        "updated_at": "2023-05-02T02:07:07.591Z",
-        "image": "products/None/썸머2.jpg",
-        "star": 5
-    }
-},
-{
-    "model": "products.comment",
-    "pk": 52,
-    "fields": {
-        "user": 2,
-        "product": 27,
-        "content": "이게 맥주냐 음류지 이딴걸 팔아",
-        "created_at": "2023-05-02T02:07:24.391Z",
-        "updated_at": "2023-05-02T02:07:24.391Z",
-        "image": "products/None/썸머1.jpg",
-        "star": 1
     }
 },
 {
@@ -820,19 +729,6 @@
 },
 {
     "model": "products.comment",
-    "pk": 80,
-    "fields": {
-        "user": 7,
-        "product": 27,
-        "content": "너무 달아요",
-        "created_at": "2023-05-02T02:28:32.181Z",
-        "updated_at": "2023-05-02T02:28:32.181Z",
-        "image": "",
-        "star": 2
-    }
-},
-{
-    "model": "products.comment",
     "pk": 82,
     "fields": {
         "user": 1,
@@ -841,6 +737,188 @@
         "created_at": "2023-05-03T05:55:53.578Z",
         "updated_at": "2023-05-03T05:55:53.578Z",
         "image": "comments/lmw/복순_r96irF3.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 83,
+    "fields": {
+        "user": 3,
+        "product": 8,
+        "content": "맛있네요 많이파세요",
+        "created_at": "2023-05-04T07:44:51.264Z",
+        "updated_at": "2023-05-04T07:44:51.264Z",
+        "image": "",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 84,
+    "fields": {
+        "user": 2,
+        "product": 30,
+        "content": "생각보다 나쁘지 않았습니다",
+        "created_at": "2023-05-04T07:45:17.597Z",
+        "updated_at": "2023-05-04T07:45:17.597Z",
+        "image": "",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 85,
+    "fields": {
+        "user": 3,
+        "product": 12,
+        "content": "맛있어요 매일 먹고싶어요",
+        "created_at": "2023-05-04T07:45:21.508Z",
+        "updated_at": "2023-05-04T07:45:21.508Z",
+        "image": "",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 86,
+    "fields": {
+        "user": 3,
+        "product": 33,
+        "content": "맛있는데 너무 비싸요",
+        "created_at": "2023-05-04T07:45:43.999Z",
+        "updated_at": "2023-05-04T07:45:43.999Z",
+        "image": "",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 87,
+    "fields": {
+        "user": 15,
+        "product": 26,
+        "content": "최근에 푹 빠진 맥주... 특히 열대 과일, 복숭아, 파인애플 등의 신선한 과실향이 느껴지는데, 과하지 않아서 너무 좋다.",
+        "created_at": "2023-05-04T07:46:09.888Z",
+        "updated_at": "2023-05-04T07:46:09.888Z",
+        "image": "comments/lmw4/덕덕구스.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 88,
+    "fields": {
+        "user": 2,
+        "product": 37,
+        "content": "두고 계속 마셔봐야 알 것 같습니다.",
+        "created_at": "2023-05-04T07:48:35.581Z",
+        "updated_at": "2023-05-04T07:48:35.581Z",
+        "image": "comments/admin911/위스키_후기용.jpg",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 89,
+    "fields": {
+        "user": 3,
+        "product": 76,
+        "content": "백록담 맛있어요 최고",
+        "created_at": "2023-05-04T07:49:48.898Z",
+        "updated_at": "2023-05-04T07:49:48.898Z",
+        "image": "comments/yuyoung/백록담.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 91,
+    "fields": {
+        "user": 5,
+        "product": 39,
+        "content": "나쁘지 않은거 같습니다.",
+        "created_at": "2023-05-04T07:50:34.596Z",
+        "updated_at": "2023-05-04T07:50:34.596Z",
+        "image": "",
+        "star": 4
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 92,
+    "fields": {
+        "user": 7,
+        "product": 56,
+        "content": "맛있어요 피트 최고입니다",
+        "created_at": "2023-05-04T07:55:08.530Z",
+        "updated_at": "2023-05-04T07:55:08.530Z",
+        "image": "comments/yuyoung2/KakaoTalk_20230504_165408520.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 93,
+    "fields": {
+        "user": 7,
+        "product": 47,
+        "content": "저렴한 가격에 구입하여 방어회에 한잔 했습니다\r\n역시 최고의 위스키에요",
+        "created_at": "2023-05-04T07:56:12.782Z",
+        "updated_at": "2023-05-04T07:56:12.782Z",
+        "image": "comments/yuyoung2/KakaoTalk_20230504_165408520_01.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 94,
+    "fields": {
+        "user": 16,
+        "product": 41,
+        "content": "마일드하고 청량감이 좋았습니다",
+        "created_at": "2023-05-04T07:58:20.242Z",
+        "updated_at": "2023-05-04T07:58:20.242Z",
+        "image": "comments/1234/추사후기.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 99,
+    "fields": {
+        "user": 17,
+        "product": 38,
+        "content": "세명이서 잘 나눠 마셨습니다",
+        "created_at": "2023-05-04T08:04:45.981Z",
+        "updated_at": "2023-05-04T08:04:45.981Z",
+        "image": "comments/1231222/275360296_5017947754964395_1518521834206072406_n.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 107,
+    "fields": {
+        "user": 6,
+        "product": 47,
+        "content": "약간의 배와 바닐라, 시트러스 그리고 오크향이 오묘하게 어우러져 있으며, 어떻게 보면 크리미한 느낌마저 느껴진다.",
+        "created_at": "2023-05-04T08:40:20.204Z",
+        "updated_at": "2023-05-04T08:40:20.204Z",
+        "image": "comments/lmw3/로얄_u0OXyFF.jpg",
+        "star": 5
+    }
+},
+{
+    "model": "products.comment",
+    "pk": 109,
+    "fields": {
+        "user": 18,
+        "product": 40,
+        "content": "문경의 오미자로 와인을 빚은 후 샤랑트 증류기로 증류하여 3년간의 숙성을 거쳐 만든 술이라 그런지 향이 좋았습니다",
+        "created_at": "2023-05-04T08:41:32.870Z",
+        "updated_at": "2023-05-04T08:41:32.870Z",
+        "image": "comments/1312323/고운달_아크.jpg",
         "star": 5
     }
 }

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load customtags %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
 
@@ -28,7 +29,7 @@
       </div>
       <div class="info_item">
         <span class="label">성별</span>
-        <strong class="content">{{ user.gender }}</strong>
+        <strong class="content">{{ user.gender|string_kr }}</strong>
       </div>
       <div class="info_item">
         <span class="label">생년월일</span>

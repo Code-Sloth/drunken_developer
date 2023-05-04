@@ -296,7 +296,7 @@
   color: rgb(112 112 112);
   font-size: 12px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   height: 50px;
