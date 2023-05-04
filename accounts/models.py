@@ -10,8 +10,8 @@ import os
 class User(AbstractUser):
     birthday = models.DateField(null=True)
 
-    gender_Choices = (('man','남') ,('woman','여'))
-    gender = models.CharField(max_length=20, choices=gender_Choices)
+    gender_Choices = (('choose','성별 선택'), ('man','남') ,('woman','여'))
+    gender = models.CharField(max_length=20, choices=gender_Choices, default='choose')
 
     followings = models.ManyToManyField('self', symmetrical=False,related_name='followers')
 

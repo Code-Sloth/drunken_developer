@@ -1,16 +1,43 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<form class="account-form mx-auto" action="{% url 'accounts:update' %}" method="POST" enctype = 'multipart/form-data' style="width: 20rem; margin-top: 14rem;">
+<link rel="stylesheet" type="text/css" href="{% static 'css/accounts.css' %}">
+
+<form class="account-form mx-auto" action="{% url 'accounts:update' %}" method="POST" enctype = 'multipart/form-data' style="width: 20rem; margin-top: 11rem;">
   {% csrf_token %}
-  {% for field in form %}
-    <div class="input-group mb-3">
-      {{ field }}
-    </div>
-  {% endfor %}
-  <div class="d-grid mb-3">
-    <a class="btn btn-light mb-3" href="{% url 'accounts:change_password' %}" role="button">비밀번호 변경</a>
-    <button class="btn btn-light" type="submit">회원정보 수정</button>
+
+  <div class='sign-title'>
+    변경할 정보를 입력하세요
+  </div>
+
+  <div class="input-group mb-3">
+    <label class='birth'>이메일</label>
+    {{ form.email }}
+  </div>
+
+  <div class="input-group mb-3">
+    <label class='birth'>이름</label>
+    {{ form.last_name }}
+  </div>
+
+  <div>
+    <label class='birth'>현재 프로필 이미지</label>
+    {% if request.user.image %}
+      <div style='width: 100px;'>
+        <img class='w-100' src="{{ request.user.image.url }}" alt="{{ request.user.username }}">
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="image-white mb-4">
+    {{ form.image }}
+  </div>
+    
+  <input class='p-2' type="submit" value='회원정보수정'>
+
+  <div class='login-signup'>
+    <a style='line-height: 48px;' href="{% url 'accounts:change_password' %}">비밀번호변경</a>
   </div>
 </form>
 {% endblock content %}

@@ -2,11 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import get_user_model
-from .forms import CustomUserCreationForm, CustomUserChangeForm, CustomAuthenticationForm
+from .forms import CustomUserCreationForm, CustomUserChangeForm, CustomAuthenticationForm, CustomPasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
-from django.contrib.auth.forms import PasswordChangeForm
 from products.models import Purchase,Product
 
 # Create your views here.
@@ -90,13 +88,13 @@ def update(request):
 @login_required
 def change_password(request):
     if request.method =='POST':
-        form = PasswordChangeForm(request.user, request.POST)
+        form = CustomPasswordChangeForm(request.user, request.POST)
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
             return redirect('products:index')
     else:
-        form = PasswordChangeForm(request.user)
+        form = CustomPasswordChangeForm(request.user)
     context = {
         'form': form,
     }
@@ -105,7 +103,7 @@ def change_password(request):
 
 def follow(request):
     User = get_user_model()
-    person = User.objects.get(pk=user_pk)
+    person = User.objects.get(pk=User.pk)
     if person != request.user:
         if person.followers.fillter(pk=request.user.pk).exists():
             person.followrs.remove(request.user)
