@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm, PasswordChangeForm
 from django import forms
 
 class CustomUserCreationForm(UserCreationForm):
@@ -11,6 +11,7 @@ class CustomUserCreationForm(UserCreationForm):
             'last_name',
             'password1',
             'password2',
+            'gender',
             'birthday',
             'image',
         )
@@ -37,6 +38,7 @@ class CustomUserCreationForm(UserCreationForm):
         self.fields['password1'].widget.attrs['placeholder'] = '비밀번호'
         self.fields['password2'].widget.attrs['class'] = 'form-control mt-1'
         self.fields['password2'].widget.attrs['placeholder'] = '비밀번호 확인'
+        self.fields['gender'].widget.attrs['class'] = 'form-select mt-1'
     
 
 class CustomUserChangeForm(UserChangeForm):
@@ -69,7 +71,7 @@ class CustomAuthenticationForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.fields['username'].widget.attrs['class'] = 'form-control mt-1'
-        self.fields['username'].widget.attrs['placeholder'] = '아이디'
-        self.fields['password'].widget.attrs['class'] = 'form-control mt-1'
-        self.fields['password'].widget.attrs['placeholder'] = '비밀번호'
+        self.fields['username'].widget.attrs['placeholder'] = '아이디를 입력해 주세요'
+
+        self.fields['password'].widget.attrs['placeholder'] = '비밀번호를 입력해 주세요'
+

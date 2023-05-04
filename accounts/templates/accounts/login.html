@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/accounts.css' %}">
+
 <form class="mx-auto"action="{% url 'accounts:login' %}" method="POST" style="width: 20rem; margin-top: 14rem;">
   {% csrf_token %}
   {% for field in form %}
@@ -11,4 +14,6 @@
   <div class="d-grid">
     <input type="submit" class="btn btn-light" value='로그인'>
   </div>
+</form>
+
 {% endblock content %}
