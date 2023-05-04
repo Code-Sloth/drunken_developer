@@ -8,7 +8,7 @@ import os
 # Create your models here.
 
 class User(AbstractUser):
-    birthday = models.DateField()
+    birthday = models.DateField(null=True)
 
     gender_Choices = (('man','남') ,('woman','여'))
     gender = models.CharField(max_length=20, choices=gender_Choices)
