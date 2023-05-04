@@ -2,6 +2,7 @@
 {% load static %}
 {% load humanize %}
 {% load customtags %}
+{% block title %}{{ product.title }}{% endblock title %}
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
@@ -75,8 +76,8 @@
       <div>
         <div>옵션</div>
         <select class='form-select' name="option" id="product-option">
-          <option value="">어떤 옵션을 원하시나요?</option>
-          <option value="">{{ product.title }}</option>
+          <option value="option1">어떤 옵션을 원하시나요?</option>
+          <option value="option2">{{ product.title }}</option>
         </select>
       </div>
 
@@ -110,7 +111,7 @@
 
       <form class='sidebar-interest' action="{% if user.is_anonymous %}{% url 'accounts:login' %}{% else %}{% url 'products:likes' product.pk %}{% endif %}" method="POST">
         {% csrf_token %}
-        <button type='sutmit'>
+        <button class='option-btn' type='submit'>
           <div class='sidebar-interest-img'>
             <img class='w-100' src="{% static 'image/interest.png' %}" alt="">
           </div>
@@ -126,7 +127,7 @@
         {% csrf_token %}
         <input type="hidden" class='kakao-count' name='kakao-count' value='1'>
         <input type="hidden" class='original-price' value='{{ product.discounted_price }}'>
-        <button name='kakao-price' value='{{ product.discounted_price }}' type='submit' class='sidebar-buy'>
+        <button name='kakao-price' value='{{ product.discounted_price }}' type='submit' class='sidebar-buy option-btn'>
           카카오페이 결제
         </button>
       </form>
