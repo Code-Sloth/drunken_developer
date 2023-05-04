@@ -393,9 +393,9 @@
 
 .comment_form_image {
   position: absolute;
-  top: 60px;
+  top: 50px;
   left: 20px;
-  width: 70px;
+  width: 80px;
   z-index: 5;
 }
 
