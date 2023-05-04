@@ -172,7 +172,7 @@
 
     {% comment %} 댓글 상세 {% endcomment %}
     <div class='detail-comment'>
-      {% for comment in comments %}
+      {% for comment, comment_form in comment_comment_form %}
         <div class='detail-comment-allbox'>
           <div class='comment-header'>
             <div class='comment-header-title'>
@@ -198,6 +198,8 @@
               </div>
 
               {% if request.user == comment.user %}
+                <button class='update-btn comment-delete ms-3' type='submit'>수정</button>
+
                 <form action="{% url 'products:comment_delete' product.pk comment.pk %}" method="POST">
                   {% csrf_token %}
                   <button class='comment-delete' class='btn btn-outline-secondary' type='submit'>삭제</button>
@@ -206,7 +208,7 @@
             </div>
           </div>
 
-          <div class='comment-contentbox'>
+          <div class='comment-contentbox d-block'>
             <div class='comment-content'>
               {{ comment.content|linebreaks }}
             </div>
@@ -217,14 +219,27 @@
               </div>
             {% endif %}
           </div>
+
+          <form class='comment_form mb-5 d-none' data-user-id="{{ product.pk }}" enctype="multipart/form-data">
+            <input type="hidden" class="comment_pk" value="{{ comment.pk }}">
+            {{ comment_form.content }}
+            {% if comment.image %}
+              <div class='comment_form_image'>
+                <img class='w-100' src="{{ comment.image.url }}" alt="#">
+              </div>
+            {% endif %}
+            {{ comment_form.image }}
+            <button class='comment-submit-btn' type='submit'>등록</button>
+          </form>
         </div>
       {% endfor %}
     </div>
-  
+
   </div>
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="{% static 'js/detail.js' %}"></script>
 {% endblock content %}
 

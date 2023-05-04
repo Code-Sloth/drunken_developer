@@ -374,3 +374,52 @@
 .product-rightbox {
   padding-top: 30px;
 }
+
+/* ajax */
+
+.comment_form {
+  position: relative;
+}
+
+.comment_form textarea {
+  font-size: 13px;
+  max-height: 150px;
+  color: rgb(112 112 112);
+}
+
+.comment_form, .comment_form a {
+  color: white;
+}
+
+.comment_form_image {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width: 70px;
+  z-index: 5;
+}
+
+.comment_form input[type='file'] {
+  position: absolute;
+  top: 150px;
+  color: rgb(112 112 112);
+}
+
+.comment-submit-btn {
+  position: absolute;
+  color: rgb(112 112 112);
+  top: 202px;
+  right: 5px;
+  width: 100px;
+  height: 30px;
+  font-size: 14px;
+  border: 1px solid rgb(240 240 240);
+  border-radius: 5px;
+  background-color: white;
+  padding: 0 20px;
+}
+
+.comment-submit-btn:hover {
+  border-color: rgb(255, 180, 59);
+  color: rgb(255, 180, 59);
+}
