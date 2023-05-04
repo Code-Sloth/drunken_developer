@@ -8,6 +8,7 @@ from django.db.models import Q,F
 from django.db.models import Count, Avg, Max
 from django.db.models import Case, When, Value, IntegerField
 import requests
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -37,19 +38,54 @@ def index(request):
 
 def detail(request, product_pk):
     product = Product.objects.get(pk=product_pk)
-    comment_form = CommentForm()
     comments = product.comments.all().order_by('-pk')
+
+    comment_comment_form = []
+    for comment in comments:
+        comment_form = CommentForm(instance=comment)
+        comment_comment_form.append((comment, comment_form))
 
     sort = request.GET.get('sort','')
     if sort:
         comments = comment_sort(comments, sort)
 
+        comment_comment_form = []
+        for comment in comments:
+            comment_form = CommentForm(instance=comment)
+            comment_comment_form.append((comment, comment_form))
+
     context = {
         'product': product,
-        'comment_form': comment_form,
-        'comments': comments,
+        'comment_comment_form': comment_comment_form,
     }
     return render(request, 'products/detail.html', context)
+
+def comment_update(request, product_pk, comment_pk):
+    product = Product.objects.get(pk=product_pk)
+    comment = Comment.objects.get(pk=comment_pk)
+    comment_form = CommentForm(request.POST,request.FILES, instance=comment)
+
+    if comment_form.is_valid():
+        comment = comment_form.save(commit=False)
+        # comment.star = int(request.POST.get('star'))
+        comment.save()
+        
+        context = {
+            'commentContent': comment.content,
+            'commentImageUrl': comment.image.url
+        }
+        return JsonResponse(context)
+    else:
+        print(comment_form.errors)
+
+
+def comment_sort(queryset, s):
+    if s == 'recent':
+        return queryset.order_by('-pk')
+    elif s == 'high':
+        return queryset.order_by('-star')
+    else:
+        return queryset.order_by('star')
 
 @login_required
 def kakaopay(request, product_pk):
@@ -119,15 +155,6 @@ def pay_fail(request):
 @login_required
 def pay_cancel(request):
     return render(request, 'products/pay_cancel.html')
-
-
-def comment_sort(queryset, s):
-    if s == 'recent':
-        return queryset.order_by('-pk')
-    elif s == 'high':
-        return queryset.order_by('-star')
-    else:
-        return queryset.order_by('star')
 
 @user_passes_test(lambda u: u.is_superuser)
 def create(request):

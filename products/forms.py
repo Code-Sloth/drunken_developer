@@ -25,6 +25,14 @@ class ProductForm(forms.ModelForm):
         self.fields['image'].widget.attrs['class'] = 'form-control mt-1'
 
 class CommentForm(forms.ModelForm):
+    image = forms.ImageField(
+        label = False,
+        widget=forms.ClearableFileInput(
+            attrs={
+                'class': 'form-control',
+            }
+        )
+    )
 
     class Meta:
         model = Comment
