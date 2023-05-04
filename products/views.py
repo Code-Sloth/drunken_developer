@@ -219,6 +219,7 @@ def listing(request):
     # products = get_list_or_404(Product)
     q = request.GET.get('q','')
     if q:
+      q = str_kr(q)
       products = Product.objects.filter(
 				Q(title__icontains=q)|
 				Q(content__icontains=q)|
@@ -330,3 +331,15 @@ def quiz_response(request):
         return render(request, 'products/quiz.html', {'products':products, 'index':7})
 
     return render(request, 'products/quiz.html', {'index': next_index})
+
+def str_kr(q):
+    if q == '전통주':
+        return 'traditional'
+    elif q == '맥주':
+        return 'beer'
+    elif q == '위스키':
+        return 'whiskey'
+    elif q == '와인':
+        return 'wine'
+    else:
+        return q
