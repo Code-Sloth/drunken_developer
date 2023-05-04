@@ -33,8 +33,13 @@
 		</div>
 
 		<div class='nav-right'>
+			{% if user.is_superuser %}
+				<a class='' href="{% url 'products:create' %}">
+					<button type='submit'>게시물 작성</button>
+				</a>
+			{% endif %}
 			{% if user.is_authenticated %}
-				<div class='right-user'>
+			<div class='right-user'>
 					<a href="{% url 'accounts:mypage' %}?q=like">
 						<div class='d-flex'>
 							<div class='right-username'>{{ request.user }} 님</div>
