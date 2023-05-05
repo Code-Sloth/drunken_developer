@@ -67,12 +67,13 @@ def comment_update(request, product_pk, comment_pk):
 
     if comment_form.is_valid():
         comment = comment_form.save(commit=False)
-        # comment.star = int(request.POST.get('star'))
+        comment.star = int(request.POST.get('star-rating'))
         comment.save()
         
         context = {
             'commentContent': comment.content,
-            'commentImageUrl': comment.image.url
+            'commentImageUrl': comment.image.url,
+            'commentStar_count': comment.star,
         }
         return JsonResponse(context)
     else:

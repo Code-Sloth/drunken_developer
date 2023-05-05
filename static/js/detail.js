@@ -91,6 +91,55 @@ allBox.forEach((box) => {
     })
   }
 
+  const starBtns = box.querySelectorAll('.comment_star')
+  const starRating = box.querySelector('#star_rating')
+  const starContent = box.querySelector('.comment-star-content')
+
+  starBtns.forEach((bt) => {
+    const img = bt.querySelector('img')
+    const attr = bt.getAttribute('data-value')
+
+    if (attr <= starRating.value) {
+      img.src = "/static/image/star1.svg"
+      img.alt = "star1"
+    } else {
+      img.src = "/static/image/graystar1.svg"
+      img.alt = "graystar1"
+    }
+  })
+
+  starBtns.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+      const value = event.target.getAttribute('data-value')
+
+      if (value == 1) {
+        starContent.textContent = '나쁨'
+      } else if (value == 2) {
+        starContent.textContent = '별로'
+      } else if (value == 3) {
+        starContent.textContent = '보통'
+      } else if (value == 4) {
+        starContent.textContent = '좋음'
+      } else if (value == 5) {
+        starContent.textContent = '최고'
+      }
+
+      starRating.value = value
+      starBtns.forEach((bt) => {
+        const img = bt.querySelector('img')
+        const attr = bt.getAttribute('data-value')
+
+        if (attr <= value) {
+          img.src = "/static/image/star1.svg"
+          img.alt = "star1"
+        } else {
+          img.src = "/static/image/graystar1.svg"
+          img.alt = "graystar1"
+        }
+      })
+    })
+  })
+
   const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
 
   if (commentForm) {
@@ -102,6 +151,7 @@ allBox.forEach((box) => {
       const commentId = commentForm.querySelector('.comment_pk').value
       const formData = new FormData(commentForm)
       formData.append('csrfmiddlewaretoken', csrftoken)
+      formData.append('star-rating', starRating.value)
 
       axios({
         method: 'POST',
@@ -133,6 +183,13 @@ allBox.forEach((box) => {
           commentContent.textContent = responseContent
           commentImg.src = responseImageUrl
           commentImg.alt = responseContent
+
+          const commentStarStar = box.querySelector('.comment-star-star')
+          const commentStarCount = box.querySelector('.comment-star-count')
+          const commentStar = response.data.commentStar_count
+
+          commentStarStar.style['width'] = `${commentStar*20}%`
+          commentStarCount.textContent = commentStar
 
         })
 

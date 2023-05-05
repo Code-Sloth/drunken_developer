@@ -222,14 +222,40 @@
 
           <form class='comment_form mb-5 d-none' data-user-id="{{ product.pk }}" enctype="multipart/form-data">
             <input type="hidden" class="comment_pk" value="{{ comment.pk }}">
+
             {{ comment_form.content }}
+
             {% if comment.image %}
               <div class='comment_form_image'>
                 <img class='w-100' src="{{ comment.image.url }}" alt="#">
               </div>
             {% endif %}
+
             {{ comment_form.image }}
-            <button class='comment-submit-btn' type='submit'>등록</button>
+
+            <div class='d-flex comment-form-star'>
+              <button type="button" class='comment_star' id="star1" data-value="1">
+                <img src="{% static 'image/star1.svg' %}" id="img1" alt="star" data-value="1">
+              </button>
+              <button type="button" class='comment_star' id="star2" data-value="2">
+                <img src="{% static 'image/star1.svg' %}" id="img2" alt="star" data-value="2">
+              </button>
+              <button type="button" class='comment_star' id="star3" data-value="3">
+                <img src="{% static 'image/star1.svg' %}" id="img3" alt="star" data-value="3">
+              </button>
+              <button type="button" class='comment_star' id="star4" data-value="4">
+                <img src="{% static 'image/star1.svg' %}" id="img4" alt="star" data-value="4">
+              </button>
+              <button type="button" class='comment_star' id="star5" data-value="5">
+                <img src="{% static 'image/star1.svg' %}" id="img5" alt="star" data-value="5">
+              </button>
+
+              <div class='comment-star-content'>
+                최고
+              </div>
+            </div>
+
+            <button id='star_rating' name='star_rating' value='{{ comment.star }}' class='comment-submit-btn' type='submit'>등록</button>
           </form>
         </div>
       {% endfor %}

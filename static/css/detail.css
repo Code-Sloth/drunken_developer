@@ -423,3 +423,17 @@
   border-color: rgb(255, 180, 59);
   color: rgb(255, 180, 59);
 }
+
+.comment-form-star button {
+  background-color: white;
+  padding: 0;
+  border: 0;
+}
+
+.comment-star-content {
+  position: absolute;
+  font-size: 14px;
+  top: 205px;
+  left: 145px;
+  color: rgb(112 112 112);
+}
