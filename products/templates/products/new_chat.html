@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class='container'>
+    <form action="{% url 'products:new_chat' %}" method="POST">
+      {% csrf_token %}
+      <input type="text" name='q'>
+      <button type='submit'>입력</button>
+    </form>
+  </div>
+{% endblock content %}

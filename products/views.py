@@ -371,3 +371,26 @@ def str_kr(q):
         return 'wine'
     else:
         return q
+    
+import openai
+from aaproject.settings import OPEN_API_KEY
+from django.http import HttpResponse
+
+openai.api_key = OPEN_API_KEY
+
+def new_chat(request):
+    messages = []
+
+    user_content = request.POST.get('gpt-q','')
+
+    messages.append({
+        "role": "user",
+        "content": f"{user_content}",
+    })
+
+    completion = openai.ChatCompletion.create(
+        model = "gpt-3.5-turbo",
+        messages = messages,
+    )
+    gptresponse = completion.choices[0].message['content'].replace('\n', '<br>')
+    return JsonResponse({'gptresponse': gptresponse})

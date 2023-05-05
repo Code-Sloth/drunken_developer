@@ -31,3 +31,67 @@
   opacity: 1;
   transform: scale(1.05);
 }
+
+/* CHAT GPT */
+
+.gpt {
+  position: fixed;
+  bottom: 120px;
+  right: 50px;
+  width: 250px;
+}
+
+.gpt-response {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  width: 250px;
+  max-width: 250px;
+  height: 400px;
+  padding: 10px;
+  background-color: rgb(240 240 240);
+  border-radius: 10px;
+  overflow: auto;
+  margin-bottom: 10px;
+  color: rgb(80 80 80);
+  box-shadow: -1px -3px 10px 2px rgba(0,0,0,0.05);
+  border: 0.5px solid rgb(200 200 200);
+}
+
+.gpt-collapse-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+
+.gpt-collapse-btn a {
+  background-color: white;
+  border: 0;
+  opacity: 0.8;
+}
+
+.gpt-collapse-btn a:hover {
+  background-color: white;
+  opacity: 1;
+}
+
+.gpt-input {
+  width: 100%;
+  padding: 5px 5px;
+  padding-right: 35px;
+  border: 0.5px solid rgb(200 200 200);
+  border-radius: 5px;
+}
+
+.gpt-input:focus {
+  outline-color: rgb(200 200 200);
+  color: rgb(50 50 50);
+}
+
+.gpt-input-btn {
+  position: absolute;
+  right: 7px;
+  bottom: 5px;
+  width: 30px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 0;
+  opacity: 0.7;
+}
