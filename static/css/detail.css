@@ -263,6 +263,12 @@
   border-radius: 10px;
 }
 
+@media(max-width: 1500px) {
+  .product-sidebar {
+    right: 5%;
+  }
+}
+
 .product-sidebar select {
   padding: 10px;
   width: 100%;
