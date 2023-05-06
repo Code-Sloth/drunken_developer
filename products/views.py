@@ -9,6 +9,8 @@ from django.db.models import Count, Avg, Max
 from django.db.models import Case, When, Value, IntegerField
 import requests
 from django.http import JsonResponse
+import openai
+from aaproject.settings import OPEN_API_KEY, KAKAO_KEY
 
 # Create your views here.
 
@@ -94,7 +96,7 @@ def kakaopay(request, product_pk):
     kakao_count = request.POST.get('kakao-count')
     product = Product.objects.get(pk=product_pk)
     
-    admin_key = '5c7f81cf35fcdc52ae7aabe26b5e762e'
+    admin_key = KAKAO_KEY
     url = f'https://kapi.kakao.com/v1/payment/ready'
     headers = {
         'Authorization': f'KakaoAK {admin_key}',
@@ -372,9 +374,6 @@ def str_kr(q):
     else:
         return q
     
-import openai
-from aaproject.settings import OPEN_API_KEY
-from django.http import HttpResponse
 
 openai.api_key = OPEN_API_KEY
 

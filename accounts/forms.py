@@ -42,7 +42,8 @@ class CustomUserChangeForm(UserChangeForm):
             attrs={
                 'class': 'form-control',
             }
-        )
+        ),
+        required=False
     )
 
     class Meta(UserChangeForm.Meta):
