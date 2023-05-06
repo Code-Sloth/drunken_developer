@@ -32,7 +32,7 @@ KAKAO_KEY = os.getenv('KAKAO_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['port-0-drunken-developer-687p2alhbjawgb.sel4.cloudtype.app']
+ALLOWED_HOSTS = ['drinkit.kro.kr']
 
 
 # Application definition
