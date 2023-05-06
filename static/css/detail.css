@@ -443,3 +443,9 @@
   left: 145px;
   color: rgb(112 112 112);
 }
+
+.kakao-icon {
+  width: 29px;
+  height: 29px;
+  margin-right: 12px;
+}
