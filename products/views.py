@@ -10,7 +10,12 @@ from django.db.models import Case, When, Value, IntegerField
 import requests
 from django.http import JsonResponse
 import openai
-from aaproject.settings import OPEN_API_KEY, KAKAO_KEY
+from dotenv import load_dotenv
+import os
+
+
+OPEN_API_KEY = os.getenv('OPEN_API_KEY')
+KAKAO_KEY = os.getenv('KAKAO_KEY')
 
 # Create your views here.
 
