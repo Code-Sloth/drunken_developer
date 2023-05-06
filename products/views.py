@@ -115,9 +115,9 @@ def kakaopay(request, product_pk):
         'total_amount': kakao_price, #가격
         'tax_free_amount':'0',
  
-        'approval_url':f'http://127.0.0.1:8000/products/{product.pk}/pay_success/', 
-        'fail_url':'http://127.0.0.1:8000/products/pay_fail',
-        'cancel_url':'http://127.0.0.1:8000/products/pay_cancel'
+        'approval_url':f'/{product.pk}/pay_success/', 
+        'fail_url':'/products/pay_fail',
+        'cancel_url':'/products/pay_cancel'
     }
     res = requests.post(url, data=data, headers=headers)
     result = res.json()
@@ -128,7 +128,7 @@ def kakaopay(request, product_pk):
 def pay_success(request, product_pk):
     product = Product.objects.get(pk=product_pk)
     url = 'https://kapi.kakao.com/v1/payment/approve'
-    admin_key = '5c7f81cf35fcdc52ae7aabe26b5e762e'
+    admin_key = KAKAO_KEY
     
     headers = {
         'Authorization': f'KakaoAK {admin_key}'
