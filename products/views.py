@@ -115,9 +115,9 @@ def kakaopay(request, product_pk):
         'total_amount': kakao_price, #가격
         'tax_free_amount':'0',
  
-        'approval_url':f'/{product.pk}/pay_success/', 
-        'fail_url':'/products/pay_fail',
-        'cancel_url':'/products/pay_cancel'
+        'approval_url':f'https://drinkit.kro.kr/{product.pk}/pay_success/', 
+        'fail_url':'https://drinkit.kro.kr/products/pay_fail',
+        'cancel_url':'https://drinkit.kro.kr/products/pay_cancel'
     }
     res = requests.post(url, data=data, headers=headers)
     result = res.json()
