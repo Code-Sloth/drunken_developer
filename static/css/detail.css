@@ -269,6 +269,18 @@
   }
 }
 
+@media(min-width: 1500px) and (max-width: 1600px) {
+  .product-sidebar {
+    right: 10%;
+  }
+}
+
+@media(min-width: 1600px) and (max-width: 1700px) {
+  .product-sidebar {
+    right: 15%;
+  }
+}
+
 .product-sidebar select {
   padding: 10px;
   width: 100%;
