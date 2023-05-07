@@ -185,7 +185,6 @@ def create(request):
 
 @login_required
 def delete(request, product_pk):
-    # product = get_object_or_404(pk=product_pk)
     product = Product.objects.get(pk=product_pk)
     if request.user == product.user:
         product.delete()
@@ -214,7 +213,6 @@ def update(request, product_pk):
 
 @login_required
 def comment_create(request, product_pk):
-    # product = get_object_or_404(pk=product_pk)
     product = Product.objects.get(pk=product_pk)
     comment_form = CommentForm(request.POST,request.FILES)
 
@@ -234,7 +232,6 @@ def comment_create(request, product_pk):
 
 @login_required
 def comment_delete(request, product_pk, comment_pk):
-    # comment = get_object_or_404(Comment, pk=comment_pk)
     comment = Comment.objects.get(pk=comment_pk)
     if request.user == comment.user:
         comment.delete()
@@ -242,7 +239,6 @@ def comment_delete(request, product_pk, comment_pk):
 
 @login_required
 def likes(request, product_pk):
-    # product = get_object_or_404(pk=product_pk)
     product = Product.objects.get(pk=product_pk)
     if product.like_users.filter(pk=request.user.pk).exists():
         product.like_users.remove(request.user)
@@ -251,7 +247,6 @@ def likes(request, product_pk):
     return redirect('products:detail', product_pk)
 
 def listing(request):
-    # products = get_list_or_404(Product)
     q = request.GET.get('q','')
     if q:
       q = str_kr(q)
